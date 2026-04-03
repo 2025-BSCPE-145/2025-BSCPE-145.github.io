@@ -1,19 +1,20 @@
 ---
 title: "My First Blog Post"
-date: 2026-04-02 22:00:00 +0500   # Pakistan time (PKT)
-categories: [general, tech]
-tags: [first-post, github]
+date: 2026-04-02 22:30:00 +0500
+categories: [general]
+tags: [welcome, github-pages]
 ---
 
-Hello world! 👋
+Hello everyone! 👋
 
-This is my very first post on this minimal blog.
+This is my very first post on this minimal blog hosted on GitHub Pages.
 
-You can write in **Markdown** — it's super easy:
+I created this site using only Markdown — no complex coding needed.
 
-- Bullet points
-- **Bold** and *italic*
-- [Links](https://github.com)
-- Code blocks, images, etc.
+## What I'll write about
+- My university projects (BSCPE)
+- Programming tips
+- Life as a student in Faisalabad
+- And more...
 
-GitHub Pages will automatically turn this into a nice blog post.
+Thanks for visiting!
