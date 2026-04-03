@@ -108,3 +108,26 @@ form textarea {
   border-radius: 10px;
   overflow-x: auto;
 }
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  border-right: 1px solid #334155;
+  height: 100vh;
+  position: sticky;
+  top: 70px;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar a:hover {
+  color: cyan;
+}
