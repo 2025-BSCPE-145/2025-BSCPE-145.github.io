@@ -7,30 +7,59 @@
 
 <body>
 
+<!-- 🌐 NAVBAR -->
+<nav>
+  <h2>Noor Fatima</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><button onclick="toggleDarkMode()">🌙</button></li>
+  </ul>
+</nav>
+
 <div class="container">
 
-  <h1>Noor Fatima</h1>
-  <p>Engineering Student</p>
-
-  <div class="card">
+  <!-- 👤 ABOUT -->
+  <section id="about" class="card">
     <h2>About Me</h2>
     <p>I am an engineering student at UET.</p>
-  </div>
+  </section>
 
-  <div class="card">
+  <!-- 💡 SKILLS -->
+  <section id="skills" class="card">
     <h2>Skills</h2>
     <ul>
       <li>C#</li>
       <li>SQL</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
+  <!-- 📂 PROJECTS -->
+  <section id="projects">
     <h2>Projects</h2>
-    <p>My GitHub website</p>
-  </div>
+
+    <div class="project-card">
+      <h3>GitHub Blog Website</h3>
+      <p>My personal blog built using GitHub Pages.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Student Database System</h3>
+      <p>SQL-based system for managing student records.</p>
+      <a href="#">View Project</a>
+    </div>
+
+  </section>
 
 </div>
+
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
