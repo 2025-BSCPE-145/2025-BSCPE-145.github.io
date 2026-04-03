@@ -4,13 +4,11 @@ body {
   background: #f4f6f8;
   transition: 0.3s;
 }
-
 /* 🌙 DARK MODE */
 body.dark {
   background: #1e1e1e;
   color: white;
 }
-
 /* 🌐 NAVBAR */
 nav {
   display: flex;
@@ -19,13 +17,11 @@ nav {
   color: white;
   padding: 15px;
 }
-
 nav ul {
   display: flex;
   list-style: none;
   gap: 15px;
 }
-
 nav a, nav button {
   color: white;
   text-decoration: none;
