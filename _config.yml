@@ -1,15 +1,10 @@
-title: Your Blog Title
-description: A simple minimal blog
-author: Noor   # Change to your name
-baseurl: ""    # Important for GitHub Pages
-url: "https://2025-BSCPE-145.github.io"
+title: My Minimal Blog
+description: A simple blog by 2025-BSCPE-145
+author: Noor Fatima
 
-# Theme (GitHub Pages supports this by default)
 theme: minima
 
-# Optional: Show future posts or not
-future: true
-
-# Optional: Add social links (uncomment if you want)
-# twitter_username: yourtwitter
-# github_username:  2025-BSCPE-145
+# Optional settings
+show_excerpts: true
+baseurl: ""
+url: "https://2025-BSCPE-145.github.io"
