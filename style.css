@@ -29,14 +29,12 @@ nav a, nav button {
   border: none;
   cursor: pointer;
 }
-
 /* 📦 CONTAINER */
 .container {
   width: 80%;
   margin: auto;
   padding: 20px;
 }
-
 /* 📄 CARD */
 .card {
   background: white;
