@@ -1,10 +1,9 @@
-title: My Minimal Blog
-description: A simple blog by 2025-BSCPE-145
-author: Noor Fatima
+title: My Personal Blog
+description: BSCPE Student | Faisalabad
+author: 2025-BSCPE-145
 
-theme: minima
+theme: jekyll-theme-cayman     # Change to jekyll-theme-minimal if you want even simpler
 
-# Optional settings
 show_excerpts: true
 baseurl: ""
 url: "https://2025-BSCPE-145.github.io"
