@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 .light {
   background: white;
@@ -12,15 +12,20 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 30px;
   background: #111827;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
+}
+.light nav a {
+  color: black;
 }
 .hero {
   text-align: center;
@@ -41,10 +46,12 @@ nav a {
   background: #1f2937;
   padding: 20px;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 .btn {
   background: cyan;
@@ -54,14 +61,50 @@ nav a {
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
+  border-radius: 6px;
 }
 .outline {
   background: transparent;
   border: 1px solid cyan;
   color: cyan;
 }
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* =======================
+   BLOG / ARTICLE SYSTEM
+======================= */
+.article {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+  line-height: 1.7;
+}
+
+.article h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.meta {
+  color: gray;
+  font-size: 14px;
+}
+
+.article h2 {
+  margin-top: 30px;
+  color: cyan;
+}
+
+.code {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
 }
