@@ -131,3 +131,12 @@ form textarea {
 .sidebar a:hover {
   color: cyan;
 }
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: cyan;
+  z-index: 2000;
+}
