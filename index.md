@@ -5,6 +5,6 @@ title: Home
 
 # Welcome to My Blog
 
-This is a simple, minimal blog built with GitHub Pages and Markdown.
+Hi, I'm a student from Faisalabad. This is my simple personal blog where I'll share my thoughts, projects, and learning journey.
 
-Browse my posts below or use the navigation.
+## Latest Posts
