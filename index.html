@@ -1,8 +1,133 @@
-<div class="project-card">
-    <h3>Interactive Quiz App</h3>
-    <p>A fun and engaging multiple-choice quiz application with timer, score tracking, progress bar, and instant feedback. Built with vanilla JavaScript, HTML & CSS.</p>
-    <div class="project-links">
-        <a href="#" class="btn">Live Demo</a>
-        <a href="#" class="btn">GitHub</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Noor Portfolio</title>
+
+  <style>
+    /* =======================
+       GLOBAL STYLES
+    ======================= */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    /* =======================
+       NAVBAR
+    ======================= */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.7);
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 10%;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .navbar a:hover {
+      color: #38bdf8;
+    }
+
+    /* =======================
+       HERO SECTION
+    ======================= */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* =======================
+       TOPIC CARDS
+    ======================= */
+    .card {
+      background: #1e293b;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      display: inline-block;
+      width: 250px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #38bdf8;
+    }
+
+    .card a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================
+       NAVBAR
+  ======================= -->
+  <div class="navbar">
+    <div><b>Noor</b></div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#topics">Topics</a>
+      <a href="#">Contact</a>
     </div>
-</div>
+  </div>
+
+  <!-- =======================
+       HERO SECTION
+  ======================= -->
+  <section class="hero">
+    <h1>Welcome to My Learning Website</h1>
+    <p>I share knowledge about programming and technology</p>
+  </section>
+
+  <!-- =======================
+       LEARNING TOPICS
+  ======================= -->
+  <section id="topics">
+    <h2>Learning Topics</h2>
+
+    <div class="card">
+      <h3>💻 Programming Fundamentals</h3>
+      <p>Learn basics like variables, loops, and conditions.</p>
+      <a href="programming.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>🐍 Python</h3>
+      <p>Explore Python programming from beginner to advanced.</p>
+      <a href="python.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>🗄️ Database</h3>
+      <p>Understand SQL, tables, and database concepts.</p>
+      <a href="database.html">Read More</a>
+    </div>
+
+  </section>
+
+</body>
+</html>
