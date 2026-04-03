@@ -1,9 +1,1 @@
-title: My Personal Blog
-description: BSCPE Student | Faisalabad
-author: 2025-BSCPE-145
-
-theme: jekyll-theme-cayman     # Change to jekyll-theme-minimal if you want even simpler
-
-show_excerpts: true
-baseurl: ""
-url: "https://2025-BSCPE-145.github.io"
+theme: jekyll-theme-chirpy
