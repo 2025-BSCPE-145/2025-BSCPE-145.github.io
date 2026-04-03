@@ -22,37 +22,30 @@ nav a {
   margin: 0 10px;
   text-decoration: none;
 }
-
 .hero {
   text-align: center;
   padding: 80px 20px;
 }
-
 .hero span {
   color: cyan;
 }
-
 .section {
   padding: 40px;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
-
 .card {
   background: #1f2937;
   padding: 20px;
   border-radius: 12px;
   transition: 0.3s;
 }
-
 .card:hover {
   transform: translateY(-5px);
 }
-
 .btn {
   background: cyan;
   padding: 10px 15px;
@@ -62,13 +55,11 @@ nav a {
   display: inline-block;
   margin-top: 10px;
 }
-
 .outline {
   background: transparent;
   border: 1px solid cyan;
   color: cyan;
 }
-
 form input, form textarea {
   width: 100%;
   margin: 10px 0;
