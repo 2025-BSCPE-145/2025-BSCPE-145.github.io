@@ -5,12 +5,10 @@ body {
   color: white;
   transition: 0.3s;
 }
-
 .light {
   background: white;
   color: black;
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,7 +17,6 @@ body {
   position: sticky;
   top: 0;
 }
-
 nav a {
   color: white;
   margin: 0 10px;
