@@ -1,60 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Noor Fatima</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noori | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- 🌐 NAVBAR -->
-<nav>
-  <h2>Noor Fatima</h2>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><button onclick="toggleDarkMode()">🌙</button></li>
-  </ul>
-</nav>
-<div class="container">
-  <!-- 👤 ABOUT -->
-  <section id="about" class="card">
-    <h2>About Me</h2>
-    <p>I am an engineering student at UET.</p>
-  </section>
-  <!-- 💡 SKILLS -->
-  <section id="skills" class="card">
-    <h2>Skills</h2>
-    <ul>
-      <li>C#</li>
-      <li>SQL</li>
-    </ul>
-  </section>
+  <header class="navbar">
+    <h2>Noori.dev</h2>
 
-  <!-- 📂 PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <div class="project-card">
-      <h3>GitHub Blog Website</h3>
-      <p>My personal blog built using GitHub Pages.</p>
-      <a href="#">View Project</a>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm <span>Noori</span></h1>
+    <p>Engineering Student | Web Developer | Builder 🚀</p>
+
+    <div class="hero-btns">
+      <a href="projects.html" class="btn">View Projects</a>
+      <a href="contact.html" class="btn outline">Contact Me</a>
     </div>
-
-    <div class="project-card">
-      <h3>Student Database System</h3>
-      <p>SQL-based system for managing student records.</p>
-      <a href="#">View Project</a>
-    </div>
-
   </section>
 
-</div>
+  <section class="section">
+    <h2>🔥 Featured Projects</h2>
 
-<script>
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
-}
-</script>
+    <div class="grid">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>Modern responsive portfolio with dark mode</p>
+        <a href="#">Live</a>
+      </div>
 
+      <div class="card">
+        <h3>GitHub Blog</h3>
+        <p>Personal blogging platform using GitHub Pages</p>
+        <a href="#">Live</a>
+      </div>
+
+      <div class="card">
+        <h3>Mini Calculator</h3>
+        <p>JavaScript calculator project</p>
+        <a href="#">Live</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
