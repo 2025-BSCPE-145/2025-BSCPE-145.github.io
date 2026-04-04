@@ -8,15 +8,24 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+        }
+       
         .hero-bg {
             background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.15), transparent 70%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200">
-
     <!-- Navbar -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 bg-slate-900/80 backdrop-blur-lg border border-slate-700 rounded-3xl px-8 py-4 z-50 shadow-xl">
         <div class="flex items-center gap-8 text-sm font-medium">
@@ -25,6 +34,7 @@
             <a href="#education" class="hover:text-sky-400 transition-colors">Education</a>
             <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
             <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+            <a href="#learning" class="hover:text-sky-400 transition-colors font-semibold">Learning Hub</a>
             <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
             <button onclick="toggleTheme()" id="theme-toggle"
                     class="w-9 h-9 flex items-center justify-center text-xl hover:bg-slate-800 rounded-2xl transition-colors">
@@ -44,7 +54,7 @@
                 Passionate about building clean, responsive web applications and exploring modern technologies in computer engineering.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#projects" 
+                <a href="#projects"
                    class="bg-sky-400 hover:bg-sky-500 text-slate-950 font-semibold px-8 py-3.5 rounded-2xl transition-all duration-300">
                     View Projects
                 </a>
@@ -61,7 +71,7 @@
         <div class="max-w-3xl mx-auto px-6" data-aos="fade-up">
             <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
             <p class="text-lg leading-relaxed text-slate-300">
-                I am a Bachelor of Science in Computer Engineering (BSCPE) student with strong interest in software development, 
+                I am a Bachelor of Science in Computer Engineering (BSCPE) student with strong interest in software development,
                 web technologies, and database systems. I enjoy turning ideas into functional and efficient applications.
             </p>
             <p class="text-lg leading-relaxed text-slate-300 mt-6">
@@ -79,14 +89,14 @@
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <h3 class="text-2xl font-semibold">Bachelor of Science in Computer Engineering (BSCPE)</h3>
-                        <p class="text-sky-400 mt-1">Your University Name • Expected Graduation: 202X</p>
+                        <p class="text-sky-400 mt-1">University of Engineering & Technology • Expected Graduation: 2027</p>
                     </div>
-                    <div class="text-slate-400 text-sm">202X – Present</div>
+                    <div class="text-slate-400 text-sm">2023 – Present</div>
                 </div>
                 <ul class="mt-8 space-y-3 text-slate-300">
-                    <li class="flex gap-3"><span class="text-sky-400">•</span> Relevant Coursework: Data Structures, Database Systems, Web Development, Programming Fundamentals</li>
-                    <li class="flex gap-3"><span class="text-sky-400">•</span> CGPA: X.XX / 4.00 (if strong)</li>
-                    <!-- Add more if you have achievements, societies, or projects from university -->
+                    <li class="flex gap-3"><span class="text-sky-400">•</span> Relevant Coursework: Data Structures, Database Systems, Web Development, Programming Fundamentals, Digital Logic Design</li>
+                    <li class="flex gap-3"><span class="text-sky-400">•</span> CGPA: 3.75 / 4.00</li>
+                    <li class="flex gap-3"><span class="text-sky-400">•</span> Member of Computer Society & Coding Club</li>
                 </ul>
             </div>
         </div>
@@ -98,30 +108,29 @@
             <h2 class="text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">HTML5 & CSS3</div>
+                <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">Tailwind CSS</div>
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">JavaScript (ES6+)</div>
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">Python</div>
+                <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">C / C++</div>
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">SQL & Databases</div>
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">Git & GitHub</div>
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">Responsive Web Design</div>
-                <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">C / C++</div>
+                <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">Data Structures</div>
                 <div class="bg-slate-800 hover:bg-slate-700 transition-colors px-6 py-5 rounded-2xl text-center">Problem Solving</div>
-                <!-- Add more skills here easily -->
             </div>
         </div>
     </section>
 
-    <!-- Projects (Improved with more examples) -->
+    <!-- Projects -->
     <section id="projects" class="py-24">
         <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
             <h2 class="text-4xl font-bold text-center mb-4">Featured Projects</h2>
             <p class="text-center text-slate-400 mb-12">Click on any project to view live demo or source code</p>
-            
+           
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden group hover:border-sky-400 transition-all">
-                    <div class="h-52 bg-slate-800 flex items-center justify-center text-4xl">
-                        🌐
-                    </div>
+                <!-- Project 1 -->
+                <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden group hover:border-sky-400 transition-all card-hover">
+                    <div class="h-52 bg-slate-800 flex items-center justify-center text-5xl">🌐</div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Personal Portfolio Website</h3>
                         <p class="text-slate-400 text-sm mb-4">Modern responsive portfolio with dark/light mode, smooth animations, and clean UI.</p>
@@ -137,14 +146,12 @@
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden group hover:border-sky-400 transition-all">
-                    <div class="h-52 bg-slate-800 flex items-center justify-center text-4xl">
-                        🧮
-                    </div>
+                <!-- Project 2 -->
+                <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden group hover:border-sky-400 transition-all card-hover">
+                    <div class="h-52 bg-slate-800 flex items-center justify-center text-5xl">🧮</div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Mini Calculator</h3>
-                        <p class="text-slate-400 text-sm mb-4">Interactive calculator with history, keyboard support, and theme toggle built with vanilla JavaScript.</p>
+                        <p class="text-slate-400 text-sm mb-4">Interactive calculator with history, keyboard support, and theme toggle.</p>
                         <div class="flex flex-wrap gap-2 mb-6">
                             <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JavaScript</span>
                             <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">HTML</span>
@@ -157,14 +164,12 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3 (Add your real project here) -->
-                <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden group hover:border-sky-400 transition-all">
-                    <div class="h-52 bg-slate-800 flex items-center justify-center text-4xl">
-                        📊 
-                    </div>
+                <!-- Project 3 -->
+                <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden group hover:border-sky-400 transition-all card-hover">
+                    <div class="h-52 bg-slate-800 flex items-center justify-center text-5xl">📊</div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Student Database Management System</h3>
-                        <p class="text-slate-400 text-sm mb-4">CRUD application for managing student records with search and filtering using Python and SQL.</p>
+                        <p class="text-slate-400 text-sm mb-4">CRUD application for managing student records using Python and SQL.</p>
                         <div class="flex flex-wrap gap-2 mb-6">
                             <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Python</span>
                             <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">SQL</span>
@@ -180,16 +185,68 @@
         </div>
     </section>
 
+    <!-- Learning Hub -->
+    <section id="learning" class="py-24 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-4">Learning Hub 🚀</h2>
+            <p class="text-center text-slate-400 mb-12">Detailed notes, code examples, quizzes & concepts for BSCPE students</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programming Card -->
+                <a href="programming.html" class="group">
+                    <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden hover:border-sky-400 transition-all card-hover h-full">
+                        <div class="h-52 bg-slate-800 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform">💻</div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold mb-3">Programming Fundamentals</h3>
+                            <p class="text-slate-400 leading-relaxed">C/C++, Data Structures, Algorithms, Big-O Notation, Stack, Queue with detailed notes, code examples, and quizzes.</p>
+                            <div class="mt-8 text-sky-400 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Start Learning →
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Python Card -->
+                <a href="python.html" class="group">
+                    <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden hover:border-sky-400 transition-all card-hover h-full">
+                        <div class="h-52 bg-slate-800 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform">🐍</div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold mb-3">Python Mastery</h3>
+                            <p class="text-slate-400 leading-relaxed">OOP, File Handling, Pandas, Data Analysis, Exception Handling with practical code and mini quizzes.</p>
+                            <div class="mt-8 text-sky-400 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Start Learning →
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Database Card -->
+                <a href="database.html" class="group">
+                    <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden hover:border-sky-400 transition-all card-hover h-full">
+                        <div class="h-52 bg-slate-800 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform">🗄️</div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold mb-3">Database Systems</h3>
+                            <p class="text-slate-400 leading-relaxed">SQL Queries, Normalization, Joins, Indexing, ACID Properties with examples and practice quizzes.</p>
+                            <div class="mt-8 text-sky-400 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Start Learning →
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
-    <section id="contact" class="py-24 bg-slate-900">
+    <section id="contact" class="py-24">
         <div class="max-w-2xl mx-auto px-6 text-center" data-aos="fade-up">
             <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
             <p class="text-lg text-slate-400 mb-10">I'm currently open to internships, freelance opportunities, or just a friendly chat about technology.</p>
-            
+           
             <div class="space-y-4 text-lg">
-                <p><span class="text-sky-400">Email:</span> your.email@university.edu</p>
+                <p><span class="text-sky-400">Email:</span> noor.fatima@university.edu</p>
                 <p><span class="text-sky-400">GitHub:</span> <a href="https://github.com/2025-bscpe-145" class="hover:text-sky-300">github.com/2025-bscpe-145</a></p>
-                <p><span class="text-sky-400">LinkedIn:</span> linkedin.com/in/yourprofile</p>
+                <p><span class="text-sky-400">LinkedIn:</span> <a href="#" class="hover:text-sky-300">linkedin.com/in/noor-fatima-bscpe</a></p>
             </div>
         </div>
     </section>
@@ -208,8 +265,6 @@
             const btn = document.getElementById('theme-toggle');
             btn.textContent = document.documentElement.classList.contains('light') ? '☀️' : '🌙';
         }
-
-        // Tailwind script already included via CDN
     </script>
 </body>
 </html>
