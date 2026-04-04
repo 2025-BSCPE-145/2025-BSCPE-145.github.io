@@ -1,157 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core Programming | Noor Fatima</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .code { font-family: ui-monospace, monospace; }
-    </style>
-</head>
-<body class="bg-slate-950 text-slate-200">
+# Core Programming | Noor Fatima
 
-    <!-- Navbar -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 bg-slate-900/80 backdrop-blur-lg border border-slate-700 rounded-3xl px-8 py-4 z-50 shadow-xl">
-        <div class="flex items-center gap-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-sky-400 transition-colors">Home</a>
-            <a href="programming.html" class="text-sky-400">Programming</a>
-            <a href="python.html" class="hover:text-sky-400 transition-colors">Python</a>
-            <a href="database.html" class="hover:text-sky-400 transition-colors">Database</a>
-            <button onclick="toggleTheme()" id="theme-toggle"
-                    class="w-9 h-9 flex items-center justify-center text-xl hover:bg-slate-800 rounded-2xl transition-colors">
-                🌙
-            </button>
-        </div>
-    </nav>
+## Core Programming Concepts
 
-    <!-- Hero -->
-    <section class="pt-28 pb-20 px-6 max-w-5xl mx-auto">
-        <div data-aos="fade-up">
-            <h1 class="text-5xl font-bold mb-4">Core Programming Concepts</h1>
-            <p class="text-xl text-slate-400">Mastering algorithms, data structures, problem-solving, and efficient coding in C/C++ and other languages — foundational skills for every computer engineer.</p>
-        </div>
-    </section>
+Mastering algorithms, data structures, problem-solving, and efficient coding in C/C++ and other languages.
 
-    <section class="py-20 bg-slate-900">
-        <div class="max-w-5xl mx-auto px-6 space-y-20">
+### Variables & Data Types (with Code)
 
-            <!-- What is Programming -->
-            <div data-aos="fade-up">
-                <h2 class="text-3xl font-semibold mb-6">🔹 What is Programming?</h2>
-                <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 text-lg">
-                    <p>Programming is the process of designing and building executable computer programs to solve specific problems. It involves writing instructions (code) that a computer can understand and execute.</p>
-                </div>
-            </div>
+```cpp
+#include <iostream>
+using namespace std;
 
-            <!-- Key Concepts -->
-            <div data-aos="fade-up">
-                <h2 class="text-3xl font-semibold mb-6">🔹 Key Programming Concepts</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">Variables & Data Types</h3>
-                        <p class="text-slate-300">Storing and manipulating different kinds of data (int, float, char, string, bool, arrays, etc.).</p>
-                    </div>
-                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">Control Structures</h3>
-                        <p class="text-slate-300">if-else, switch, loops (for, while, do-while) for decision making and repetition.</p>
-                    </div>
-                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">Functions & Modularity</h3>
-                        <p class="text-slate-300">Breaking code into reusable blocks for better readability and maintenance.</p>
-                    </div>
-                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">Pointers & Memory Management (C/C++)</h3>
-                        <p class="text-slate-300">Direct memory access, dynamic allocation, and understanding how computers manage data.</p>
-                    </div>
-                </div>
-            </div>
+int main() {
+    int age = 20;
+    float cgpa = 3.45;
+    char grade = 'A';
+    string name = "Noor Fatima";
+    bool isPassed = true;
 
-            <!-- Time Complexity (Big-O) -->
-            <div data-aos="fade-up">
-                <h2 class="text-3xl font-semibold mb-6">🔹 Time & Space Complexity (Big-O Notation)</h2>
-                <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
-                    <p class="mb-6">Analyzing how the runtime or memory usage grows with input size.</p>
-                    <div class="grid md:grid-cols-3 gap-6 text-center text-sm">
-                        <div class="bg-slate-950 p-6 rounded-2xl"><strong class="text-emerald-400">O(1)</strong><br>Constant</div>
-                        <div class="bg-slate-950 p-6 rounded-2xl"><strong class="text-amber-400">O(log n)</strong><br>Logarithmic (Binary Search)</div>
-                        <div class="bg-slate-950 p-6 rounded-2xl"><strong class="text-red-400">O(n²)</strong><br>Quadratic (Bubble Sort)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Structures & Algorithms -->
-            <div data-aos="fade-up">
-                <h2 class="text-3xl font-semibold mb-6">🔹 Data Structures & Algorithms</h2>
-                <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-semibold mb-3">Common Data Structures Implemented</h4>
-                            <ul class="space-y-3 text-slate-300 text-sm">
-                                <li>• Arrays & Linked Lists</li>
-                                <li>• Stacks & Queues</li>
-                                <li>• Trees (Binary, BST)</li>
-                                <li>• Hash Tables</li>
-                            </ul>
-                        </div>
-                        <div class="code bg-slate-950 p-6 rounded-2xl text-emerald-300 text-sm overflow-auto">
-                            <div>// Example: Stack using Array in C++</div>
-                            <div class="mt-4">class Stack &#123;<br>
-      int top, arr[100];<br>
-      void push(int x) &#123; ... &#125;<br>
-                            &#125;;
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Projects -->
-            <div data-aos="fade-up">
-                <h2 class="text-3xl font-semibold mb-10">Featured Programming Projects</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 hover:border-sky-400 transition-all">
-                        <h3 class="text-2xl font-semibold mb-4">Data Structures Visualizer</h3>
-                        <p class="text-slate-400 mb-6">Interactive web tool to visualize Stack, Queue, Linked List operations and sorting algorithms (Bubble, Selection, Insertion Sort).</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-700 px-4 py-2 rounded-full">C++</span>
-                            <span class="text-xs bg-slate-700 px-4 py-2 rounded-full">JavaScript</span>
-                            <span class="text-xs bg-slate-700 px-4 py-2 rounded-full">HTML Canvas</span>
-                        </div>
-                        <a href="#" class="text-sky-400 hover:underline">Live Demo →</a>
-                    </div>
-
-                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 hover:border-sky-400 transition-all">
-                        <h3 class="text-2xl font-semibold mb-4">Pathfinding Visualizer (A* & Dijkstra)</h3>
-                        <p class="text-slate-400 mb-6">Grid-based visualization of shortest path algorithms commonly used in games and robotics.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-700 px-4 py-2 rounded-full">C++</span>
-                            <span class="text-xs bg-slate-700 px-4 py-2 rounded-full">Algorithms</span>
-                        </div>
-                        <a href="#" class="text-sky-400 hover:underline">View Code →</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="py-12 text-center text-slate-500 text-sm border-t border-slate-800">
-        <p>© 2026 Noor Fatima • BSCPE Student</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        function toggleTheme() {
-            document.documentElement.classList.toggle('light');
-            const btn = document.getElementById('theme-toggle');
-            btn.textContent = document.documentElement.classList.contains('light') ? '☀️' : '🌙';
-        }
-    </script>
-</body>
-</html>
+    cout << "Name: " << name << endl;
+    cout << "CGPA: " << cgpa << endl;
+    return 0;
+}
