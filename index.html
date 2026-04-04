@@ -1,156 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Noor Fatima</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor Fatima | BSCPE Student & Web Developer</title>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #38bdf8;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: flex;
+            gap: 25px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: var(--accent);
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
 
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        /* Background Grid */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, #38bdf8 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.08;
+            animation: move 25s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-30px, -30px); }
+        }
 
-<style>
-body {
-  margin:0;
-  font-family:Arial;
-  background:#0f172a;
-  color:white;
-  overflow-x:hidden;
-}
+        section {
+            padding: 100px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            font-weight: 700;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+        .hero .subtitle {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            margin: 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #0f172a;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+        }
+        .btn-secondary {
+            border: 2px solid var(--accent);
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: #0f172a;
+        }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15,23,42,0.7);
-  backdrop-filter: blur(10px);
-  padding: 10px 25px;
-  border-radius: 50px;
-  display:flex;
-  gap:20px;
-  z-index:1000;
-}
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
 
-.navbar a { color:white; text-decoration:none; }
-.navbar a:hover { color:#38bdf8; }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .skill-tag {
+            background: #1e293b;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .skill-tag:hover {
+            background: #334155;
+            transform: translateY(-4px);
+            color: var(--accent);
+        }
 
-.toggle-btn { background:none; border:none; color:white; cursor:pointer; }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .tech-stack {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+        .tech {
+            background: #334155;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
 
-/* Background animation */
-body::before {
-  content:"";
-  position:fixed;
-  width:150%; height:150%;
-  background: radial-gradient(circle,#38bdf8 1px,transparent 1px);
-  background-size:40px 40px;
-  animation: move 15s linear infinite;
-  z-index:-1;
-}
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #0a1321;
+            color: #64748b;
+        }
 
-@keyframes move {
-  0% { transform:translate(0,0); }
-  100% { transform:translate(-40px,-40px); }
-}
-
-section { padding:120px 10%; text-align:center; }
-
-.card {
-  background:#1e293b;
-  padding:20px;
-  border-radius:15px;
-  display:inline-block;
-  margin:20px;
-  width:250px;
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-10px);
-  box-shadow:0 0 20px #38bdf8;
-}
-
-/* Typing */
-.typing {
-  border-right:2px solid white;
-  width:0;
-  overflow:hidden;
-  white-space:nowrap;
-  animation: typing 4s steps(30,end) forwards, blink 0.7s infinite;
-}
-
-@keyframes typing { from { width:0 } to { width:100% } }
-@keyframes blink { 50% { border-color:transparent } }
-
-.light { background:white; color:black; }
-.light .card { background:#f1f5f9; }
-
-footer {
-  text-align:center;
-  padding:20px;
-}
-</style>
+        .light {
+            background: #f8fafc;
+            color: #1e2937;
+        }
+        .light .card, .light .navbar, .light .skill-tag {
+            background: white;
+            color: #1e2937;
+        }
+        .light .navbar {
+            background: rgba(255,255,255,0.9);
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button onclick="toggleMode()" class="toggle-btn">🌙</button>
+    </div>
 
-<!-- EXTRA ELEMENTS (FIXED POSITION) -->
-<div id="loader">Loading...</div>
-<div id="progress-bar"></div>
-<div id="tsparticles"></div>
-<div class="cursor"></div>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div data-aos="fade-up">
+            <h1>Hi, I'm <span style="color:#38bdf8;">Noor Fatima</span></h1>
+            <p class="subtitle">BSCPE Student | Aspiring Web Developer | Problem Solver</p>
+            <p style="max-width:600px; margin:20px auto; color:#94a3b8;">
+                Passionate about building efficient applications, learning modern technologies, 
+                and turning ideas into functional software.
+            </p>
+            <div>
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#" class="btn btn-secondary">Download Resume</a>
+            </div>
+        </div>
+    </section>
 
-<!-- Navbar -->
-<div class="navbar">
-<a href="index.html">Home</a>
-<a href="programming.html">Programming</a>
-<a href="python.html">Python</a>
-<a href="database.html">Database</a>
-<button onclick="toggleMode()" class="toggle-btn">🌙</button>
-</div>
+    <!-- About -->
+    <section id="about" data-aos="fade-up">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px;">About Me</h2>
+        <p>
+            I am a Bachelor of Science in Computer Engineering (BSCPE) student with a strong interest in software development, 
+            web technologies, and databases. I enjoy solving real-world problems through code and continuously improving my skills 
+            in programming, Python, and data management systems.
+        </p>
+        <p style="margin-top:20px;">
+            Currently focusing on building clean, responsive web applications and exploring full-stack development. 
+            Open to internships, collaborations, and learning opportunities.
+        </p>
+    </section>
 
-<!-- Hero -->
-<section>
-<h1 class="typing">Welcome to My Portfolio 🚀</h1>
-<p data-aos="fade-up">Explore Programming, Python & Database concepts in detail.</p>
-</section>
+    <!-- Skills -->
+    <section id="skills" data-aos="fade-up">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px;">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">HTML5 & CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">SQL & Databases</div>
+            <div class="skill-tag">Git & GitHub</div>
+            <div class="skill-tag">Responsive Design</div>
+            <div class="skill-tag">C/C++</div>
+            <div class="skill-tag">Problem Solving</div>
+            <!-- Add more as you learn: React, Tailwind, Node.js, etc. -->
+        </div>
+    </section>
 
-<!-- Topics -->
-<section>
-<h2 data-aos="fade-up">Learning Topics</h2>
+    <!-- Projects -->
+    <section id="projects" data-aos="fade-up">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:50px;">Featured Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="card" data-aos="fade-up">
+                <img src="https://via.placeholder.com/600x300/1e293b/38bdf8?text=Portfolio+Website" alt="Portfolio Website">
+                <div class="card-content">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>Modern, responsive portfolio with dark/light mode and smooth animations.</p>
+                    <div class="tech-stack">
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">JavaScript</span>
+                    </div>
+                    <a href="#" style="color:var(--accent);">Live Demo →</a> | 
+                    <a href="#" style="color:var(--accent);">Source Code</a>
+                </div>
+            </div>
 
-<div class="card" data-aos="fade-up">
-<h3>💻 Programming</h3>
-<p>Core concepts of coding</p>
-<a href="programming.html">Explore</a>
-</div>
+            <!-- Project 2 -->
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://via.placeholder.com/600x300/1e293b/38bdf8?text=Mini+Calculator" alt="Mini Calculator">
+                <div class="card-content">
+                    <h3>Mini Calculator</h3>
+                    <p>Interactive JavaScript calculator with history and theme toggle.</p>
+                    <div class="tech-stack">
+                        <span class="tech">JavaScript</span>
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                    </div>
+                    <a href="#" style="color:var(--accent);">Live Demo →</a> | 
+                    <a href="#" style="color:var(--accent);">Source Code</a>
+                </div>
+            </div>
 
-<div class="card" data-aos="zoom-in">
-<h3>🐍 Python</h3>
-<p>Modern programming language</p>
-<a href="python.html">Explore</a>
-</div>
+            <!-- Add more project cards here -->
+        </div>
+    </section>
 
-<div class="card" data-aos="flip-left">
-<h3>🗄️ Database</h3>
-<p>Data storage systems</p>
-<a href="database.html">Explore</a>
-</div>
+    <!-- Contact -->
+    <section id="contact" data-aos="fade-up">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px;">Get In Touch</h2>
+        <p style="text-align:center; max-width:500px; margin:0 auto 30px;">
+            I'm always open to discussing new opportunities, projects, or just saying hi!
+        </p>
+        <div style="text-align:center;">
+            <p><strong>Email:</strong> your.email@example.com</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/2025-bscpe-145" style="color:var(--accent);">github.com/2025-bscpe-145</a></p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/noorfatima (update link)</p>
+        </div>
+    </section>
 
-</section>
+    <footer>
+        <p>© 2026 Noor Fatima • Built with passion and GitHub Pages</p>
+    </footer>
 
-<footer>
-<p>© 2026 Noor Fatima | Software Engineer 🚀</p>
-</footer>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
 
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({ duration:1000, once:true });
-
-function toggleMode(){
-  document.body.classList.toggle("light");
-}
-</script>
-
+        function toggleMode() {
+            document.body.classList.toggle("light");
+            const btn = document.querySelector('.toggle-btn');
+            btn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+        }
+    </script>
 </body>
 </html>
