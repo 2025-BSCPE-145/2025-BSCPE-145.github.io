@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Programming Fundamentals</title>
+<meta charset="UTF-8">
+<title>Programming</title>
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:Arial;background:#0f172a;color:white}
+.navbar{position:fixed;top:15px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.7);padding:10px 20px;border-radius:50px}
+.container{padding:120px 10%}
+.card{background:#1e293b;padding:20px;border-radius:10px;margin-top:20px}
+pre{background:black;padding:10px;border-radius:10px}
+</style>
 </head>
-<body style="font-family: Arial; background:#0f172a; color:white; padding:40px;">
 
-  <h1>💻 Programming Fundamentals</h1>
+<body>
 
-  <p>Programming fundamentals are the basic concepts used in all programming languages.</p>
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="python.html">Python</a>
+<a href="database.html">Database</a>
+</div>
 
-  <h2>📌 Topics Covered:</h2>
-  <ul>
-    <li>Variables</li>
-    <li>Data Types</li>
-    <li>Operators</li>
-    <li>Loops (for, while)</li>
-    <li>Conditions (if, else)</li>
-  </ul>
+<div class="container">
 
-  <h2>💡 Example:</h2>
-  <pre>
+<h1 data-aos="fade-right">Programming Fundamentals</h1>
+
+<div class="card" data-aos="fade-up">
+<h2>🔹 What is Programming?</h2>
+<p>Programming is the process of writing instructions that a computer can execute.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h2>🔹 Key Concepts</h2>
+
+<h3>Variables</h3>
+<p>Store values in memory.</p>
+
+<h3>Data Types</h3>
+<p>Integer, Float, String, Boolean.</p>
+
+<h3>Control Structures</h3>
+<p>If-else and loops.</p>
+
+<h3>Functions</h3>
+<p>Reusable code blocks.</p>
+</div>
+
+<div class="card" data-aos="zoom-in">
+<h2>🔹 Example</h2>
+<pre>
 int a = 5;
-if(a > 0){
-  printf("Positive number");
-}
-  </pre>
+printf("%d", a);
+</pre>
+</div>
 
-  <a href="index.html">⬅ Back to Home</a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
 
 </body>
 </html>
