@@ -1,14 +1,22 @@
-<!-- ======================= index.html ======================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Noor Fatima</title>
+
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 <style>
-body { margin:0; font-family:Arial; background:#0f172a; color:white; overflow-x:hidden; }
-/* Floating Navbar */
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Navbar */
 .navbar {
   position: fixed;
   top: 15px;
@@ -16,15 +24,19 @@ body { margin:0; font-family:Arial; background:#0f172a; color:white; overflow-x:
   transform: translateX(-50%);
   background: rgba(15,23,42,0.7);
   backdrop-filter: blur(10px);
-  padding: 10px 20px;
+  padding: 10px 25px;
   border-radius: 50px;
   display:flex;
-  gap:15px;
+  gap:20px;
+  z-index:1000;
 }
+
 .navbar a { color:white; text-decoration:none; }
 .navbar a:hover { color:#38bdf8; }
+
 .toggle-btn { background:none; border:none; color:white; cursor:pointer; }
-/* Animated Background */
+
+/* Background animation */
 body::before {
   content:"";
   position:fixed;
@@ -34,11 +46,14 @@ body::before {
   animation: move 15s linear infinite;
   z-index:-1;
 }
+
 @keyframes move {
   0% { transform:translate(0,0); }
   100% { transform:translate(-40px,-40px); }
 }
+
 section { padding:120px 10%; text-align:center; }
+
 .card {
   background:#1e293b;
   padding:20px;
@@ -48,8 +63,13 @@ section { padding:120px 10%; text-align:center; }
   width:250px;
   transition:0.3s;
 }
-.card:hover { transform:translateY(-10px); box-shadow:0 0 20px #38bdf8; }
-/* Typing Animation */
+
+.card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 0 20px #38bdf8;
+}
+
+/* Typing */
 .typing {
   border-right:2px solid white;
   width:0;
@@ -57,109 +77,74 @@ section { padding:120px 10%; text-align:center; }
   white-space:nowrap;
   animation: typing 4s steps(30,end) forwards, blink 0.7s infinite;
 }
+
 @keyframes typing { from { width:0 } to { width:100% } }
 @keyframes blink { 50% { border-color:transparent } }
+
 .light { background:white; color:black; }
 .light .card { background:#f1f5f9; }
+
+footer {
+  text-align:center;
+  padding:20px;
+}
 </style>
 </head>
+
 <body>
+
+<!-- Navbar -->
 <div class="navbar">
-<a href="#">Home</a>
-<a href="#topics">Topics</a>
+<a href="index.html">Home</a>
+<a href="programming.html">Programming</a>
+<a href="python.html">Python</a>
+<a href="database.html">Database</a>
 <button onclick="toggleMode()" class="toggle-btn">🌙</button>
 </div>
+
+<!-- Hero -->
 <section>
-<h1 class="typing">Welcome 😊😊</h1>
+<h1 class="typing">Welcome to My Portfolio 🚀</h1>
+<p data-aos="fade-up">Explore Programming, Python & Database concepts in detail.</p>
 </section>
-<section id="topics">
-<h2>Learning Topics</h2>
+
+<!-- Topics -->
+<section>
+<h2 data-aos="fade-up">Learning Topics</h2>
+
 <div class="card" data-aos="fade-up">
 <h3>💻 Programming</h3>
-<a href="programming.html">Read</a>
+<p>Core concepts of coding</p>
+<a href="programming.html">Explore</a>
 </div>
+
 <div class="card" data-aos="zoom-in">
 <h3>🐍 Python</h3>
-<a href="python.html">Read</a>
+<p>Modern programming language</p>
+<a href="python.html">Explore</a>
 </div>
+
 <div class="card" data-aos="flip-left">
 <h3>🗄️ Database</h3>
-<a href="database.html">Read</a>
+<p>Data storage systems</p>
+<a href="database.html">Explore</a>
 </div>
+
 </section>
+
+<footer>
+<p>© 2026 Noor Fatima | Software Engineer 🚀</p>
+</footer>
+
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init();
-function toggleMode(){ document.body.classList.toggle("light"); }
+AOS.init({ duration:1000, once:true });
+
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
 </script>
-</body>
-</html>
-<!-- ======================= programming.html ======================= -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Programming</title>
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white}
-.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.7);padding:10px 20px;border-radius:50px}
-.container{padding:120px 10%}
-.card{background:#1e293b;padding:20px;border-radius:10px;margin-top:20px}
-pre{background:black;padding:10px;border-radius:10px}
-.light{background:white;color:black}
-</style>
-</head>
-<body>
-<div class="navbar"><a href="index.html">Home</a></div>
-<div class="container">
-<h1 data-aos="fade-right">Programming Fundamentals</h1>
-<div class="card" data-aos="fade-up">
-<p>Basics of coding.</p>
-</div>
-<pre data-aos="zoom-in">int a=5;</pre>
-</div>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
-</body>
-</html>
-<!-- ======================= python.html ======================= -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Python</title>
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<style>body{margin:0;font-family:Arial;background:#0f172a;color:white}.container{padding:120px 10%}.card{background:#1e293b;padding:20px;border-radius:10px;margin-top:20px}</style>
-</head>
-<body>
-<div class="container">
-<h1 data-aos="fade-left">Python</h1>
-<div class="card" data-aos="zoom-in">
-<p>Python basics</p>
-</div>
-</div>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
-</body>
-</html>
-<!-- ======================= database.html ======================= -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Database</title>
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<style>body{margin:0;font-family:Arial;background:#0f172a;color:white}.container{padding:120px 10%}.card{background:#1e293b;padding:20px;border-radius:10px;margin-top:20px}</style>
-</head>
-<body>
-<div class="container">
-<h1 data-aos="flip-up">Database</h1>
-<div class="card" data-aos="fade-up">
-<p>SQL basics</p>
-</div>
-</div>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+
 </body>
 </html>
