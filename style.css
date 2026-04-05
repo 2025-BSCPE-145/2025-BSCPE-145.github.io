@@ -1,66 +1,139 @@
-body {
+/* ===== GLOBAL RESET ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #e2e8f0;
 }
 
-/* HEADER */
+/* ===== BACKGROUND (APPLE-LIKE DARK GRADIENT) ===== */
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0b1220);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
 header {
   text-align: center;
   padding: 40px 20px;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* NAV */
+header p {
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+/* ===== NAVIGATION ===== */
 nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
 nav button {
   padding: 10px 18px;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
   background: rgba(255,255,255,0.08);
   color: white;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 nav button:hover {
-  background: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.18);
 }
 
-/* SECTIONS */
+/* ===== ACTIVE SECTION SYSTEM ===== */
 section {
   display: none;
   padding: 20px;
+  animation: fadeIn 0.5s ease;
 }
 
 section.active {
   display: block;
 }
 
-/* GLASS CARD */
+/* ===== GLASS CARD ===== */
 .card {
   max-width: 900px;
   margin: auto;
   padding: 25px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  transition: 0.3s;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.02);
+}
+
+/* ===== HEADINGS INSIDE CARDS ===== */
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.card h3 {
+  margin-top: 15px;
+  color: #38bdf8;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin: 10px;
+    padding: 18px;
+  }
 }
