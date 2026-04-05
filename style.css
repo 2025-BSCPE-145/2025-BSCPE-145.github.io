@@ -1,58 +1,120 @@
-body {
-  font-family: Arial, sans-serif;
+:root {
+  --bg: #0b1020;
+  --card: rgba(255,255,255,0.06);
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --radius: 16px;
+}
+
+* {
   margin: 0;
-  background: #f5f7fb;
-  color: #111;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: #111827;
-  color: white;
+body {
+  background: radial-gradient(circle at top, #111827, #05070d);
+  color: var(--text);
 }
 
-.navbar a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-/* HERO */
-.hero {
-  padding: 60px;
+/* HEADER */
+.topbar {
   text-align: center;
-  background: linear-gradient(135deg, #6366f1, #3b82f6);
-  color: white;
+  padding: 30px 20px;
+}
+
+.topbar h1 {
+  color: var(--accent);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px;
+}
+
+.nav button {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav button:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.nav button.active {
+  background: var(--accent);
+  color: black;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  padding: 40px;
+}
+
+.page.active {
+  display: block;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  padding: 40px;
+  margin-top: 20px;
 }
 
+/* CARDS */
 .card {
-  background: white;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
 }
 
-/* ABOUT + CONTACT */
-.about, .contact {
-  padding: 40px;
-  text-align: center;
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  width: 80%;
+  max-width: 700px;
+  background: rgba(20,20,30,0.95);
   padding: 20px;
-  background: #111827;
-  color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  color: red;
+  font-size: 18px;
 }
