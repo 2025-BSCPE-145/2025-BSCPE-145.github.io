@@ -173,7 +173,10 @@ hr {
   background: #38bdf8;
   border-radius: 10px;
 }
-
+.full-content {
+  display: none;
+  margin-top: 10px;
+}
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
   header h1 {
