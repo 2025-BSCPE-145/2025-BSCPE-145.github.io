@@ -1,71 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noori | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav>
+    <h2 class="logo">Noori</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="themeToggle">🌙</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Hi, I'm <span>Noori</span> 👋</h1>
+  <p>Frontend Developer | C++ | Python | UI Enthusiast</p>
+  <a href="#projects" class="btn">View My Work</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I'm an engineering student passionate about building modern web experiences.
+    I love turning ideas into real-world projects 🚀
+  </p>
+</section>
+
 <!-- PROJECTS -->
-<section id="projects" class="fade section">
-  <h2>Projects (Internship Ready 🚀)</h2>
+<section id="projects">
+  <h2>Projects</h2>
 
-  <div class="projects">
-
-    <div class="project-card">
-      <i class="fa-solid fa-globe"></i>
-      <h3>Personal Portfolio Website</h3>
-
-      <p>
-        A fully responsive and animated developer portfolio designed to showcase skills,
-        projects, and contact information in a professional UI format.
-      </p>
-
-      <ul class="project-list">
-        <li>Built with HTML5, CSS3, JavaScript</li>
-        <li>Responsive design (mobile + desktop)</li>
-        <li>Particle animation background</li>
-        <li>Scroll-based animations</li>
-      </ul>
-
-      <p class="tech">
-        <b>Tech Stack:</b> HTML, CSS, JS
-      </p>
+  <div class="project-grid">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Responsive personal portfolio with animations.</p>
     </div>
 
-    <div class="project-card">
-      <i class="fa-solid fa-blog"></i>
-      <h3>Multi-Page Blog Platform</h3>
-
-      <p>
-        A structured blog website with separate pages for posts, designed to simulate
-        real-world content management systems.
-      </p>
-
-      <ul class="project-list">
-        <li>Clean multi-page architecture</li>
-        <li>Organized content structure</li>
-        <li>SEO-friendly layout</li>
-        <li>Easy navigation system</li>
-      </ul>
-
-      <p class="tech">
-        <b>Tech Stack:</b> HTML, CSS
-      </p>
+    <div class="card">
+      <h3>Calculator App</h3>
+      <p>Simple JavaScript calculator.</p>
     </div>
-
-    <div class="project-card">
-      <i class="fa-solid fa-code"></i>
-      <h3>JavaScript Mini Applications</h3>
-
-      <p>
-        A collection of beginner-to-intermediate level JavaScript projects focusing on
-        logic building and DOM manipulation.
-      </p>
-
-      <ul class="project-list">
-        <li>Calculator app</li>
-        <li>To-do list manager</li>
-        <li>Interactive UI components</li>
-        <li>Event handling practice</li>
-      </ul>
-
-      <p class="tech">
-        <b>Tech Stack:</b> JavaScript, DOM API
-      </p>
-    </div>
-
   </div>
 </section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Email: noori@example.com</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
