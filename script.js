@@ -15,60 +15,6 @@ function show(id, event) {
 const data = {
 
 /* 💼 PROJECTS (EXPANDED) */
-p1: `
-  <h2>🚀 Portfolio System (Advanced Frontend Project)</h2>
-  <p>
-    A fully responsive multi-section portfolio system built using HTML, CSS, and JavaScript.
-    It simulates a component-based architecture similar to modern frameworks.
-  </p>
-  <ul>
-    <li>SPA-like navigation (no page reloads)</li>
-    <li>Dynamic DOM manipulation</li>
-    <li>Responsive mobile-first design</li>
-    <li>Reusable UI sections</li>
-    <li>Clean architecture for scalability</li>
-  </ul>
-`,
-
-p2: `
-  <h2>🗄️ Student Management System</h2>
-  <p>
-    A CRUD-based system designed to manage student records efficiently.
-    It demonstrates backend logic simulation in frontend JavaScript.
-  </p>
-  <ul>
-    <li>Create, Read, Update, Delete operations</li>
-    <li>Structured data handling</li>
-    <li>Form validation logic</li>
-    <li>Local storage integration (conceptual)</li>
-  </ul>
-`,
-
-p3: `
-  <h2>🧮 Smart Calculator Application</h2>
-  <p>
-    A functional calculator built using JavaScript focusing on event-driven programming.
-  </p>
-  <ul>
-    <li>Arithmetic operations (+ − × ÷)</li>
-    <li>Real-time input processing</li>
-    <li>Keyboard + button interaction support</li>
-    <li>DOM event handling mastery</li>
-  </ul>
-`,
-
-p4: `
-  <h2>🌐 Mini Web UI Framework (Experimental)</h2>
-  <p>
-    A lightweight UI concept project that mimics basic framework behavior using vanilla JavaScript.
-  </p>
-  <ul>
-    <li>Component-like structure simulation</li>
-    <li>State-based rendering idea</li>
-    <li>Dynamic HTML injection</li>
-    <li>Reusable UI logic patterns</li>
-  </ul>
-`,
 
 /* 📰 ARTICLES (EXPANDED + PROFESSIONAL) */
 a1: `
@@ -98,18 +44,7 @@ a2: `
   </ul>
 `,
 
-a3: `
-  <h2>🌐 Web Development Basics</h2>
-  <p>
-    Web development is the process of creating websites and web applications.
-  </p>
-  <ul>
-    <li>HTML → Structure of web pages</li>
-    <li>CSS → Styling and layout design</li>
-    <li>JavaScript → Interactivity and logic</li>
-    <li>DOM manipulation techniques</li>
-  </ul>
-`,
+
 
 /* 🌍 NEW ARTICLE (GITHUB PAGES FULL GUIDE) */
 a4: `
