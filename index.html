@@ -1,94 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noor Fatima | Engineering Portfolio</title>
 
-<title>Noor Fatima | Engineering Portfolio</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="topbar">
-  <h1>🚀 Noor Fatima</h1>
-  <p>Engineering Student • Developer • Builder</p>
+<!-- 🔵 NAVBAR -->
+<header>
+  <nav class="navbar">
+    <div class="logo">Noor Fatima</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<nav class="nav">
-  <button onclick="show('home')" class="active">Home</button>
-  <button onclick="show('projects')">Projects</button>
-  <button onclick="show('articles')">Articles</button>
-</nav>
+<!-- 🏠 HOME SECTION -->
+<section id="home" class="section home">
+  <div class="container">
+    <h1>Hi, I'm Noor Fatima 👋</h1>
+    <p>Engineering Student at UET | Passionate about Programming, Web Development & Data Systems</p>
 
-<main>
-
-<!-- HOME -->
-<section id="home" class="page active">
-  <h2>Welcome 👋</h2>
-  <p>Professional engineering portfolio showcasing projects, research, and technical writing.</p>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="page">
-  <h2>🚀 Projects</h2>
-
-  <div class="grid">
-
-    <div class="card" onclick="openModal('p1')">
-      <h3>Portfolio System (Web Engineering)</h3>
-      <p>Responsive multi-page UI with modular architecture</p>
-    </div>
-
-    <div class="card" onclick="openModal('p2')">
-      <h3>Student Management System</h3>
-      <p>Data handling system using structured logic & CRUD operations</p>
-    </div>
-
-    <div class="card" onclick="openModal('p3')">
-      <h3>Basic Calculator App</h3>
-      <p>JavaScript-based interactive arithmetic processor</p>
-    </div>
-
+    <a href="#projects" class="btn">View My Work</a>
   </div>
 </section>
-<!-- ARTICLES -->
-<section id="articles" class="page">
-  <h2>📚 Articles</h2>
 
-  <div class="grid">
+<!-- 👩‍💻 ABOUT SECTION -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I am an engineering student at UET with a strong interest in software development, web technologies,
+      and data management systems. I enjoy building real-world projects and continuously improving my technical skills.
+    </p>
 
-    <div class="card" onclick="openModal('a1')">
-      <h3>Programming Fundamentals</h3>
-      <p>Core concepts: variables, loops, conditions, and logic building</p>
-    </div>
-
-    <div class="card" onclick="openModal('a2')">
-      <h3>Database Systems (DBMS)</h3>
-      <p>Relational model, normalization, and SQL query structure</p>
-    </div>
-
-    <div class="card" onclick="openModal('a3')">
-      <h3>Web Development Basics</h3>
-      <p>HTML, CSS, and JavaScript workflow in modern web apps</p>
-    </div>
-
+    <p>
+      My goal is to become a skilled software engineer and contribute to impactful technology solutions.
+    </p>
   </div>
 </section>
-</main>
-  
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeModal()">✖</span>
-    <div id="modal-body"></div>
+<!-- 💼 PROJECTS SECTION -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Projects</h2>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Core Programming Project</h3>
+        <p>
+          A foundational programming project focusing on logic building, loops, conditions, and problem solving
+          using structured programming techniques.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Data Management System</h3>
+        <p>
+          A system designed to store, manage, and retrieve structured data efficiently using modern data handling concepts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Web Portfolio Website</h3>
+        <p>
+          A personal responsive portfolio website built using HTML, CSS, and JavaScript to showcase academic and technical work.
+        </p>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>
 
-<script src="script.js"></script>
+<!-- 📰 ARTICLES SECTION -->
+<section id="articles" class="section">
+  <div class="container">
+    <h2>Articles</h2>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Introduction to Programming</h3>
+        <p>
+          Programming is the process of designing and building executable computer programs.
+          This article explains basic concepts like variables, loops, and functions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Importance of Data Structures</h3>
+        <p>
+          Data structures help organize and store data efficiently, improving performance in real-world applications.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Web Development Basics</h3>
+        <p>
+          Learn how websites are built using HTML, CSS, and JavaScript with real-world examples.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 📞 CONTACT SECTION -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Me</h2>
+
+    <p>Email: noorfatima@example.com</p>
+    <p>GitHub: github.com/noorfatima</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- 🔻 FOOTER -->
+<footer>
+  <p>© 2026 Noor Fatima | Engineering Portfolio</p>
+</footer>
 
 </body>
 </html>
