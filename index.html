@@ -1,182 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Noor Fatima | Engineering Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#0f172a;
-  --card:#1e293b;
-  --text:#e2e8f0;
-  --accent:#38bdf8;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
-
-/* HEADER */
-header{
-  padding:20px;
-  text-align:center;
-  background:#0b1220;
-  border-bottom:1px solid #334155;
-}
-
-header h1{
-  color:var(--accent);
-}
-
-/* NAV */
-nav{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  padding:15px;
-  flex-wrap:wrap;
-}
-
-nav button{
-  padding:10px 15px;
-  border:none;
-  background:var(--card);
-  color:var(--text);
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-nav button:hover{
-  background:var(--accent);
-  color:#000;
-}
-
-/* SECTIONS */
-section{
-  display:none;
-  padding:30px;
-}
-
-section.active{
-  display:block;
-}
-
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:var(--card);
-  padding:20px;
-  border-radius:12px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  background:#273449;
-}
-
-/* MODAL */
-.modal{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.8);
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-content{
-  background:#1e293b;
-  padding:25px;
-  width:80%;
-  max-width:700px;
-  border-radius:12px;
-  max-height:80vh;
-  overflow:auto;
-}
-
-.close{
-  float:right;
-  cursor:pointer;
-  font-size:20px;
-  color:red;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>🚀 Noor Fatima | Engineering Portfolio</h1>
-  <p>Professional Developer • CS Student • Builder</p>
-</header>
-
-<nav>
-  <button onclick="show('home')">Home</button>
-  <button onclick="show('projects')">Projects</button>
-  <button onclick="show('articles')">Articles</button>
-</nav>
-
-<!-- HOME -->
-<section id="home" class="active">
-  <h2>Welcome 👋</h2>
-  <p>This is a professional engineering-level portfolio showcasing projects and technical articles.</p>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>🚀 Projects</h2>
-  <div class="grid">
-
-    <div class="card" onclick="openModal('p1')">
-      <h3>Portfolio Website</h3>
-      <p>Engineering-level breakdown</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ARTICLES -->
-<section id="articles">
-  <h2>📘 Articles</h2>
-  <div class="grid">
-
-    <div class="card" onclick="openModal('a1')">
-      <h3>Programming Fundamentals</h3>
-      <p>Core CS concepts explained</p>
-    </div>
-
-    <div class="card" onclick="openModal('a2')">
-      <h3>Database Systems</h3>
-      <p>DBMS deep explanation</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">✖</span>
-    <div id="modal-body"></div>
-  </div>
-</div>
-
 <script>
 function show(id){
   document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
@@ -250,184 +71,61 @@ p1: `
 
 <hr/>
 
-<h3>⚠️ Challenges Faced</h3>
-
-<ul>
-<li>Designing a scalable structure without frameworks</li>
-<li>Managing dynamic content inside JavaScript objects</li>
-<li>Building reusable UI components manually</li>
-</ul>
-
-<hr/>
-
-<h3>📈 Learning Outcomes</h3>
-
-<p>This project improved my understanding of:</p>
-
-<ul>
-<li>Frontend architecture design</li>
-<li>DOM manipulation and event handling</li>
-<li>UI/UX structuring principles</li>
-<li>Real-world deployment workflow</li>
-</ul>
-
-<hr/>
-
-<h3>🚀 Future Improvements</h3>
-
-<ul>
-<li>Add backend for blog system</li>
-<li>Convert into React-based portfolio</li>
-<li>Add animations and transitions</li>
-<li>Integrate contact form backend</li>
-</ul>
-
-<hr/>
-
 <h3>🎯 Conclusion</h3>
-<p>This project represents a transition from beginner-level coding to structured engineering thinking. It demonstrates how real-world developer portfolios are designed and deployed.</p>
-`
-
-,
+<p>This project represents a transition from beginner-level coding to structured engineering thinking.</p>
+`,
 
 a1: `
 <h2>📘 Programming Fundamentals (Engineering Blog Edition)</h2>
 
-<p>Programming fundamentals are the backbone of all software systems. Every application—from mobile apps to AI systems—relies on these core concepts.</p>
+<p>Programming fundamentals are the backbone of all software systems.</p>
 
 <hr/>
 
-<h3>🧠 Why Programming Fundamentals Matter</h3>
-<p>They define how a programmer thinks. Instead of memorizing syntax, you learn how to break real-world problems into logical steps.</p>
-
-<hr/>
-
-<h3>🪜 Step-by-Step Problem Solving in Programming</h3>
+<h3>🪜 Step-by-Step Problem Solving</h3>
 <ol>
-<li><b>Understand the problem</b> — What exactly is required?</li>
-<li><b>Break it down</b> — Divide into smaller logical parts</li>
-<li><b>Design algorithm</b> — Plan step-by-step solution</li>
-<li><b>Write code</b> — Convert logic into syntax</li>
-<li><b>Test & debug</b> — Fix errors and optimize</li>
+<li>Understand the problem</li>
+<li>Break it into parts</li>
+<li>Design algorithm</li>
+<li>Write code</li>
+<li>Test & debug</li>
 </ol>
-
-<hr/>
-
-<h3>🔑 Core Concepts Explained</h3>
-
-<h4>🧩 1. Variables</h4>
-<p>Variables are memory containers that store data.</p>
-<p><b>Example:</b> name = "Noor", age = 20</p>
-
-<h4>🔢 2. Data Types</h4>
-<ul>
-<li>Integer → Whole numbers (10, 20)</li>
-<li>Float → Decimal numbers (3.14)</li>
-<li>String → Text ("Hello World")</li>
-<li>Boolean → True / False</li>
-</ul>
-
-<h4>🔀 3. Conditional Statements</h4>
-<p>Used for decision-making in programs.</p>
-<p><b>Example:</b> If marks ≥ 50 → Pass, else → Fail</p>
-
-<h4>🔁 4. Loops</h4>
-<p>Used to repeat tasks efficiently without rewriting code.</p>
-
-<h4>⚙️ 5. Functions</h4>
-<p>Reusable blocks of code that improve structure and reduce repetition.</p>
-
-<hr/>
-
-<h3>🌍 Real-World Analogy</h3>
-<p>Programming fundamentals are like grammar in a language—without grammar, communication is impossible.</p>
-
-<hr/>
-
-<h3>📌 Applications</h3>
-<ul>
-<li>Web development</li>
-<li>Mobile applications</li>
-<li>Artificial Intelligence</li>
-<li>Database systems</li>
-</ul>
-
-<hr/>
-
-<h3>🎯 Conclusion</h3>
-<p>Strong fundamentals = strong engineering foundation. Every advanced developer starts here.</p>
-`
-a2: `
-<h2>🗄️ Database Systems (DBMS) — Complete Engineering Guide</h2>
-
-<p>A Database Management System (DBMS) is responsible for storing, organizing, and retrieving data efficiently in modern applications.</p>
-
-<hr/>
-
-<h3>🧠 Why Databases Are Important</h3>
-<p>Every digital system—banking, social media, e-commerce—depends on databases to manage massive amounts of structured data.</p>
-
-<hr/>
-
-<h3>🪜 How DBMS Works (Step-by-Step)</h3>
-<ol>
-<li>Data is collected from users or applications</li>
-<li>It is stored in structured tables</li>
-<li>Relationships are defined between tables</li>
-<li>SQL is used to query data</li>
-<li>Data is updated, deleted, or retrieved as needed</li>
-</ol>
-
-<hr/>
-
-<h3>📊 Database Structure</h3>
-<ul>
-<li><b>Table:</b> Collection of data (like Excel sheet)</li>
-<li><b>Row:</b> Single record</li>
-<li><b>Column:</b> Attribute/field</li>
-</ul>
 
 <hr/>
 
 <h3>🔑 Core Concepts</h3>
-
-<h4>🔐 Primary Key</h4>
-<p>Uniquely identifies each record in a table.</p>
-
-<h4>🔗 Foreign Key</h4>
-<p>Connects one table to another, creating relationships.</p>
-
-<h4>💻 SQL (Structured Query Language)</h4>
-<p>Used to interact with databases.</p>
-<p><b>Example:</b> SELECT * FROM students;</p>
-
-<h4>🧹 Normalization</h4>
-<p>Process of removing redundancy and improving database efficiency.</p>
-
-<hr/>
-
-<h3>🌍 Real-World Applications</h3>
 <ul>
-<li>Banking systems</li>
-<li>E-commerce platforms (Amazon-style systems)</li>
-<li>University management systems</li>
-<li>Social media platforms</li>
-</ul>
-
-<hr/>
-
-<h3>⚠️ Key Advantages</h3>
-<ul>
-<li>High data security</li>
-<li>Reduced redundancy</li>
-<li>Fast retrieval</li>
-<li>Scalability for large systems</li>
+<li>Variables</li>
+<li>Data Types</li>
+<li>Loops</li>
+<li>Functions</li>
 </ul>
 
 <hr/>
 
 <h3>🎯 Conclusion</h3>
-<p>DBMS is the backbone of every modern software system that handles data at scale.</p>
+<p>Strong fundamentals = strong developer.</p>
+`,
+
+a2: `
+<h2>🗄️ Database Systems (DBMS)</h2>
+
+<p>DBMS manages structured data efficiently.</p>
+
+<hr/>
+
+<h3>🔑 Concepts</h3>
+<ul>
+<li>Tables</li>
+<li>Primary Key</li>
+<li>SQL</li>
+<li>Normalization</li>
+</ul>
+
+<hr/>
+
+<h3>🎯 Conclusion</h3>
+<p>DBMS is the backbone of modern applications.</p>
 `
 
 };
@@ -441,6 +139,3 @@ function closeModal(){
   document.getElementById('modal').style.display='none';
 }
 </script>
-
-</body>
-</html>
