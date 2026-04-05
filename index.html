@@ -85,16 +85,9 @@
       padding:90px 20px;
     }
 
-    .hero h1{
-      font-size:40px;
-      color:var(--accent);
-    }
+    .hero h1{font-size:40px;color:var(--accent);}
 
-    .typing{
-      color:var(--muted);
-      margin-top:10px;
-      min-height:24px;
-    }
+    .typing{color:var(--muted);margin-top:10px;min-height:24px;}
 
     .btn{
       display:inline-block;
@@ -105,6 +98,7 @@
       border-radius:8px;
       text-decoration:none;
       font-weight:600;
+      cursor:pointer;
     }
 
     section{
@@ -131,13 +125,7 @@
       padding:20px;
       border-radius:12px;
       transition:0.3s;
-      opacity:0;
-      transform:translateY(20px);
-    }
-
-    .card.show{
-      opacity:1;
-      transform:translateY(0);
+      cursor:pointer;
     }
 
     .card:hover{
@@ -152,20 +140,41 @@
       padding:3px 8px;
       font-size:12px;
       border-radius:5px;
-    }
-
-    .contact input, .contact textarea{
-      width:100%;
-      padding:10px;
-      margin:8px 0;
-      border-radius:8px;
-      border:none;
+      cursor:pointer;
+      margin-right:5px;
     }
 
     footer{
       text-align:center;
       padding:30px;
       color:var(--muted);
+    }
+
+    /* MODAL */
+    .modal{
+      display:none;
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.7);
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .modal-content{
+      background:var(--card);
+      padding:25px;
+      border-radius:12px;
+      max-width:700px;
+      width:100%;
+    }
+
+    .close{
+      float:right;
+      cursor:pointer;
+      font-size:20px;
+      color:var(--accent);
     }
   </style>
 </head>
@@ -179,7 +188,6 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#articles">Articles</a>
-    <a href="#contact">Contact</a>
   </nav>
   <button class="toggle" onclick="toggleTheme()">Mode</button>
 </header>
@@ -187,23 +195,22 @@
 <section id="home" class="hero">
   <h1>Hello, I'm Noor Fatima 👩‍💻</h1>
   <div class="typing" id="typing"></div>
-  <a class="btn" href="#projects">View Work</a>
 </section>
 
 <section id="about">
   <h2>About</h2>
-  <div class="card show">
-    <p>Computer Engineering Student at UET Lahore (Faisalabad Campus). Roll No: 2025-BSCPE-145. Passionate about web development and programming fundamentals.</p>
+  <div class="card">
+    Computer Engineering Student at UET Lahore (Faisalabad Campus). Roll No: 2025-BSCPE-145
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="grid">
-    <div class="card">
-      <h3>Portfolio Website (No Template)</h3>
-      <p>Built from scratch using HTML/CSS. Includes full structure, responsive layout, and GitHub Pages deployment.</p>
-      <span class="tag">HTML CSS GitHub</span>
+    <div class="card" onclick="openModal('project1')">
+      <h3>Portfolio Website</h3>
+      <p>Click to see full details</p>
+      <span class="tag" onclick="openModal('project1')">Core Programming</span>
     </div>
   </div>
 </section>
@@ -211,59 +218,90 @@
 <section id="articles">
   <h2>Articles</h2>
   <div class="grid">
-    <div class="card">
+
+    <div class="card" onclick="openModal('article1')">
       <h3>Programming Fundamentals</h3>
-      <p>Core concepts like variables, loops, conditions, and functions that build logical thinking and programming skills.</p>
-      <span class="tag">Programming</span>
+      <p>Click to read full article</p>
+      <span class="tag" onclick="openModal('article1')">Core Programming</span>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openModal('article2')">
       <h3>Database Systems</h3>
-      <p>Structured data storage using tables, SQL, keys, and relationships used in real-world applications.</p>
-      <span class="tag">Databases</span>
+      <p>Click to read full article</p>
+      <span class="tag" onclick="openModal('article2')">Data Management</span>
     </div>
+
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <div class="card show">
-    <input placeholder="Your Name" />
-    <input placeholder="Your Email" />
-    <textarea placeholder="Message"></textarea>
-    <button class="btn">Send</button>
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <div id="modal-body"></div>
   </div>
-</section>
-
-<footer>
-  © 2026 Noor Fatima | Pro Portfolio 🚀
-</footer>
+</div>
 
 <script>
-  function toggleTheme(){
-    document.body.classList.toggle('light');
-  }
 
-  const text = "Computer Engineering Student | Web Developer | Learner";
-  let i=0;
-  function type(){
-    if(i<text.length){
-      document.getElementById("typing").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type,50);
-    }
-  }
-  type();
+const data = {
+  project1:`<h2>Portfolio Website (No Template)</h2>
+  <p>This project is a fully custom website built from scratch using HTML, CSS, and GitHub Pages. I designed structure, layout, responsiveness, and UI manually without templates.</p>
+  <ul>
+    <li>Built using HTML & CSS only</li>
+    <li>Fully responsive layout</li>
+    <li>Hosted on GitHub Pages</li>
+    <li>Learned real-world frontend workflow</li>
+  </ul>
+  <p><b>Outcome:</b> Strong understanding of real website development process.</p>`,
 
-  const cards = document.querySelectorAll('.card');
-  window.addEventListener('scroll', ()=>{
-    cards.forEach(c=>{
-      const rect = c.getBoundingClientRect().top;
-      if(rect < window.innerHeight - 100){
-        c.classList.add('show');
-      }
-    });
-  });
+  article1:`<h2>Programming Fundamentals</h2>
+  <p>Programming fundamentals are the base of all coding. They teach logical thinking and problem solving.</p>
+  <h3>Key Concepts</h3>
+  <ul>
+    <li>Variables – store data</li>
+    <li>Loops – repeat tasks</li>
+    <li>Conditions – decision making</li>
+    <li>Functions – reusable code</li>
+  </ul>
+  <p>These concepts are essential for advanced programming like web development and AI systems.</p>`,
+
+  article2:`<h2>Database Systems</h2>
+  <p>A database stores and manages structured data efficiently used in apps like banking and social media.</p>
+  <h3>Core Concepts</h3>
+  <ul>
+    <li>Tables – store data</li>
+    <li>Primary Key – unique ID</li>
+    <li>Foreign Key – relationships</li>
+    <li>SQL – database language</li>
+  </ul>
+  <p>Databases help in fast, secure, and organized data handling.</p>`
+};
+
+function openModal(key){
+  document.getElementById('modal-body').innerHTML = data[key];
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+
+function toggleTheme(){
+  document.body.classList.toggle('light');
+}
+
+const text = "Computer Engineering Student | Web Developer | Learner";
+let i=0;
+function type(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type,50);
+  }
+}
+type();
+
 </script>
 
 </body>
