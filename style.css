@@ -160,4 +160,68 @@ footer {
   .projects-grid {
     padding: 30px;
   }
+/* 🧪 LAB REPORT SECTION */
+#lab {
+  padding: 80px 20px;
+}
+
+/* Lab content styling */
+#lab .project-card {
+  line-height: 1.8;
+}
+
+/* Headings inside lab */
+#lab h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+#lab p {
+  margin: 10px 0;
+  color: #374151;
+}
+
+/* Lists */
+#lab ul {
+  margin: 10px 0 20px 20px;
+}
+
+#lab li {
+  margin-bottom: 6px;
+}
+
+/* Code / structure block */
+#lab pre {
+  background: #111827;
+  color: #e5e7eb;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Highlight sections */
+#lab strong {
+  color: #4f46e5;
+}
+
+/* Smooth spacing */
+#lab .project-card p,
+#lab .project-card ul {
+  margin-bottom: 12px;
+}
+  /* ✨ Fancy hover glow */
+#lab .project-card:hover {
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+/* 📌 Section divider */
+#lab::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc, transparent);
+  margin-bottom: 40px;
+}
 }
