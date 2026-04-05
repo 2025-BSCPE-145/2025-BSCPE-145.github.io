@@ -6,11 +6,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== BACKGROUND (APPLE-LIKE DARK GRADIENT) ===== */
+/* ===== BACKGROUND ===== */
 body {
   background: linear-gradient(135deg, #0f172a, #1e293b, #0b1220);
   color: #e2e8f0;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
@@ -56,7 +57,7 @@ nav button:hover {
   background: rgba(255,255,255,0.18);
 }
 
-/* ===== ACTIVE SECTION SYSTEM ===== */
+/* ===== SECTIONS ===== */
 section {
   display: none;
   padding: 20px;
@@ -88,7 +89,6 @@ section.active {
   transform: scale(1.02);
 }
 
-/* ===== HEADINGS INSIDE CARDS ===== */
 .card h2 {
   margin-bottom: 15px;
   font-size: 1.8rem;
@@ -109,6 +109,63 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ===== PROJECT STEPS ===== */
+.step {
+  margin-top: 15px;
+}
+
+.step h4 {
+  background: rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.step h4:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.step-content {
+  display: none;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+.step-content.show {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===== CODE BLOCK ===== */
+pre {
+  background: #020617;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+/* ===== COPY BUTTON ===== */
+.step button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.step button:hover {
+  background: #0ea5e9;
+}
+
 /* ===== ANIMATION ===== */
 @keyframes fadeIn {
   from {
@@ -119,6 +176,23 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 10px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 20px 0;
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
@@ -136,85 +210,4 @@ a:hover {
     margin: 10px;
     padding: 18px;
   }
-  /* ===== PROJECT STEPS (INTERACTIVE) ===== */
-.step {
-  margin-top: 15px;
-}
-
-.step h4 {
-  background: rgba(255,255,255,0.08);
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.step h4:hover {
-  background: rgba(255,255,255,0.18);
-}
-
-/* STEP CONTENT */
-.step-content {
-  display: none;
-  padding: 12px;
-  margin-top: 8px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.05);
-}
-
-/* SHOW STEP */
-.step-content.show {
-  display: block;
-  animation: fadeIn 0.4s ease;
-}
-
-/* CODE BLOCK */
-pre {
-  background: #020617;
-  padding: 12px;
-  border-radius: 10px;
-  overflow-x: auto;
-  font-size: 0.9rem;
-  color: #38bdf8;
-}
-
-/* COPY BUTTON */
-.step button {
-  margin-top: 8px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 8px;
-  background: #38bdf8;
-  color: black;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: 0.3s;
-}
-
-.step button:hover {
-  background: #0ea5e9;
-}
-
-
-
-
-
-
-/* ===== SCROLLBAR (PREMIUM TOUCH) ===== */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #38bdf8;
-  border-radius: 10px;
-}
-
-/* ===== SMALL UI POLISH ===== */
-hr {
-  border: none;
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 20px 0;
-}
 }
