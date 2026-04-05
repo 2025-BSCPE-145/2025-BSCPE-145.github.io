@@ -1,36 +1,137 @@
----
-layout: default
-title: "Home"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<section class="hero">
-  <h1>👋 Welcome to My Portfolio</h1>
-  <p>I am a beginner web developer building projects using HTML, CSS & GitHub Pages 🚀</p>
-</section>
+  <!-- SEO Meta Tags -->
+  <title>My First Website on GitHub | Noor Fatima</title>
+  <meta name="description" content="Noor Fatima shares her experience of building her first website from scratch using HTML, CSS, and GitHub Pages without using any template.">
+  <meta name="keywords" content="GitHub website, HTML CSS project, beginner web development, Noor Fatima blog">
+  <meta name="author" content="Noor Fatima">
 
-<section class="projects">
-  <h2>💼 My Projects</h2>
+  <!-- Open Graph -->
+  <meta property="og:title" content="My First Website on GitHub">
+  <meta property="og:description" content="A beginner-friendly journey of building a website without templates.">
+  <meta property="og:type" content="website">
 
-  <div class="project-grid">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <div class="project-card">
-      <h3>🌟 My First Website on GitHub</h3>
-      <p>
-        My first ever website built from scratch using HTML and CSS,
-        and deployed using GitHub Pages. This project helped me understand
-        how real websites are structured and hosted online.
-      </p>
+<body>
 
-      <div class="tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>GitHub Pages</span>
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">Noor Fatima</a>
       </div>
 
-      <a class="btn" href="YOUR-LINK-HERE" target="_blank">
-        🔗 View Project
-      </a>
-    </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Lab Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-  </div>
-</section>
+      <button class="hamburger" id="hamburger">☰</button>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>My First Website on GitHub 🚀</h1>
+    <p>
+      I built my first website completely from scratch using HTML and CSS — without using any template.
+      This project helped me understand real web development and how websites work behind the scenes.
+    </p>
+
+    <div style="margin-top: 2rem;">
+      <a href="posts/post1.html" class="btn-primary">Read Full Article</a>
+      <a href="blog.html" class="btn-secondary">View All Articles</a>
+    </div>
+  </section>
+
+  <!-- ARTICLE SUMMARY -->
+  <section class="latest-articles">
+    <h2>About This Project</h2>
+
+    <div class="article-card">
+      <img src="https://picsum.photos/id/1015/800/600" alt="GitHub Website Project">
+
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">Web Development</span>
+          <span class="article-date">05 Apr 2026</span>
+        </div>
+
+        <h3>Building My First Website Without Template</h3>
+
+        <p>
+          In this project, I challenged myself to build a complete website without using any pre-designed template.
+          I learned HTML structure, CSS styling, and how to deploy using GitHub Pages.
+        </p>
+
+        <ul>
+          <li>✔ Learned real coding fundamentals</li>
+          <li>✔ Faced and solved 404 errors</li>
+          <li>✔ Created multi-page structure</li>
+          <li>✔ Published my website online</li>
+        </ul>
+
+        <div class="article-meta">
+          <span class="read-time">6 min read</span>
+          <a href="posts/post1.html" class="read-more-btn">Read Full Article</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING SECTION -->
+  <section class="latest-articles">
+    <h2>What I Learned</h2>
+
+    <div class="article-card">
+      <div class="article-content">
+        <h3>Key Takeaways</h3>
+
+        <ul>
+          <li>Website structure (index, blog, posts)</li>
+          <li>Linking pages correctly</li>
+          <li>Basic responsive design</li>
+          <li>GitHub Pages deployment</li>
+        </ul>
+
+        <p>
+          This project gave me confidence to build more advanced websites and continue improving my frontend skills.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE GOALS -->
+  <section class="latest-articles">
+    <h2>Future Improvements</h2>
+
+    <div class="article-card">
+      <div class="article-content">
+        <ul>
+          <li>Add JavaScript for interactivity</li>
+          <li>Improve UI with animations</li>
+          <li>Add more blog posts</li>
+          <li>Implement dark/light mode</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Noor Fatima • Built with ❤️ using HTML & CSS</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
