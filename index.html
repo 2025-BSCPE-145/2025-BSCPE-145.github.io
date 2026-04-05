@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noor Fatima | Ultra GOD MODE Portfolio</title>
-
-  <meta name="description" content="Noor Fatima - Engineering Student & Frontend Developer Portfolio" />
+  <title>Noor Fatima | Engineering Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -30,23 +28,21 @@
       background: radial-gradient(circle at var(--x,50%) var(--y,50%), var(--bg), #000);
       color:var(--text);
       overflow-x:hidden;
-      transition:0.4s;
     }
 
     #progress{
       position:fixed;
-      top:0;
-      left:0;
+      top:0;left:0;
       height:3px;
-      background:var(--accent);
       width:0%;
+      background:var(--accent);
       z-index:9999;
     }
 
     .cursor{
       position:fixed;
-      width:14px;
-      height:14px;
+      width:12px;
+      height:12px;
       border-radius:50%;
       background:var(--accent);
       pointer-events:none;
@@ -57,88 +53,67 @@
     canvas{
       position:fixed;
       inset:0;
+      opacity:0.15;
       z-index:0;
-      opacity:0.2;
     }
 
     nav{
       position:fixed;
       top:0;
       width:100%;
-      padding:14px 8%;
-      backdrop-filter: blur(18px);
-      background:rgba(15,23,42,0.6);
+      padding:12px 8%;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      backdrop-filter:blur(20px);
+      background:rgba(15,23,42,0.6);
       z-index:1000;
     }
 
-    nav ul{display:flex;gap:16px;list-style:none;font-size:14px;}
-    nav ul li{cursor:pointer;opacity:0.8;}
-    nav ul li:hover{opacity:1;}
+    nav ul{display:flex;gap:14px;list-style:none;font-size:14px;}
+    nav li{cursor:pointer;opacity:0.8;}
+    nav li:hover{opacity:1;}
 
-    section{
-      padding:100px 10%;
-      min-height:100vh;
-      position:relative;
-      z-index:2;
-    }
+    section{display:none;padding:110px 10% 60px;min-height:100vh;}
+    section.active{display:block;}
 
-    .hero{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
+    .hero{text-align:center;padding-top:20vh;}
+    .hero h1{font-size:52px;background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 
-    .hero h2{
-      font-size:56px;
-      background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-    }
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
 
     .card{
       background:var(--panel);
-      padding:20px;
-      border-radius:16px;
+      padding:18px;
+      border-radius:14px;
       border:1px solid rgba(255,255,255,0.08);
       cursor:pointer;
       transition:0.3s;
     }
 
-    .card:hover{transform:scale(1.03);}
+    .card:hover{transform:translateY(-5px);}
 
-    .badge{font-size:12px;opacity:0.7;margin-top:5px;}
+    .badge{font-size:12px;opacity:0.7;margin-top:6px;}
 
     .modal{
       position:fixed;
       inset:0;
       display:none;
-      align-items:center;
       justify-content:center;
+      align-items:center;
       background:rgba(0,0,0,0.7);
       z-index:2000;
     }
 
     .modal-content{
       background:var(--bg);
-      padding:30px;
-      border-radius:16px;
-      max-width:600px;
-      width:90%;
+      padding:26px;
+      border-radius:14px;
+      width:92%;
+      max-width:650px;
     }
 
-    .active{opacity:1;}
+    .btn{padding:10px 14px;background:var(--accent);color:#fff;border:none;border-radius:10px;margin-top:12px;cursor:pointer;}
   </style>
 </head>
 <body>
@@ -150,40 +125,41 @@
 <nav>
   <h3>Noor Fatima.dev</h3>
   <ul>
-    <li onclick="go('home')">Home</li>
-    <li onclick="go('projects')">Projects</li>
-    <li onclick="go('labs')">Lab Reports</li>
-    <li onclick="go('work')">Work</li>
-    <li onclick="go('github')">GitHub</li>
+    <li onclick="route('home')">Home</li>
+    <li onclick="route('projects')">Projects</li>
+    <li onclick="route('labs')">Lab Reports</li>
+    <li onclick="route('work')">Work</li>
+    <li onclick="route('github')">GitHub</li>
   </ul>
 </nav>
 
-<section id="home" class="hero">
-  <h2>Noor Fatima</h2>
-  <p>Engineering Student • Frontend Developer • UI Engineer</p>
+<section id="home" class="active hero">
+  <h1>Noor Fatima</h1>
+  <p>Engineering Student • Developer • UI Engineer</p>
+  <button class="btn" onclick="downloadResume()">Download Resume</button>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="grid" id="projectGrid"></div>
+  <h2>Projects (Detailed Case Studies)</h2>
+  <div class="grid" id="projectsGrid"></div>
 </section>
 
 <section id="labs">
   <h2>Lab Reports</h2>
-  <div class="grid" id="labGrid"></div>
+  <div class="grid" id="labsGrid"></div>
 </section>
 
 <section id="work">
-  <h2>Work (Offline / Academic Projects)</h2>
+  <h2>Work / Engineering Practice</h2>
   <div class="grid" id="workGrid"></div>
 </section>
 
 <section id="github">
-  <h2>GitHub Projects</h2>
+  <h2>GitHub Repositories</h2>
   <div class="grid" id="githubGrid"></div>
 </section>
 
-<div class="modal" id="modal" onclick="closeModal()">
+<div class="modal" id="modal" onclick="this.style.display='none'">
   <div class="modal-content" onclick="event.stopPropagation()">
     <h2 id="mTitle"></h2>
     <p id="mDesc"></p>
@@ -192,11 +168,17 @@
 
 <script>
 
-function go(id){
-  document.querySelectorAll('section').forEach(s=>s.style.display='none');
-  document.getElementById(id).style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
+function route(id){
+  location.hash=id;
 }
+
+function render(){
+  const id=location.hash.replace('#','')||'home';
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+window.addEventListener('hashchange',render);
+render();
 
 const cursor=document.getElementById('cursor');
 document.addEventListener('mousemove',e=>{
@@ -204,45 +186,70 @@ document.addEventListener('mousemove',e=>{
   cursor.style.top=e.clientY+'px';
 });
 
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
-  document.getElementById('progress').style.width=scrolled+'%';
-});
-
+// ================= PROJECTS (ENHANCED) =================
 const projects=[
-  {t:"Portfolio UI",d:"Advanced UI system"},
-  {t:"Blog Engine",d:"Static blog system"}
+  {
+    t:"Portfolio Engineering System",
+    d:"A modular UI architecture with SPA routing, modal system, and dynamic rendering.",
+    tech:"HTML, CSS, JavaScript",
+    impact:"Improved UI performance and introduced component-based thinking"
+  },
+  {
+    t:"Blog Engine Prototype",
+    d:"Static blog UI with card-based rendering and structured layout system.",
+    tech:"HTML, CSS",
+    impact:"Practiced scalable content architecture design"
+  },
+  {
+    t:"UI Interaction System",
+    d:"Custom cursor, animations, and scroll-based progress system.",
+    tech:"JavaScript, Canvas API",
+    impact:"Enhanced user experience and motion design understanding"
+  }
 ];
 
-document.getElementById('projectGrid').innerHTML=
-projects.map(p=>`
-<div class='card' onclick="openModal('Project','${p.t}: ${p.d}')">
-<h3>${p.t}</h3><div class='badge'>Click</div>
-</div>`).join('');
+// ================= WORK (ENHANCED) =================
+const work=[
+  {
+    t:"C++ Problem Solving",
+    d:"Implemented algorithms: loops, arrays, and conditional logic.",
+    focus:"DSA Fundamentals"
+  },
+  {
+    t:"Frontend Practice Clones",
+    d:"Recreated modern UI layouts to study spacing, typography, and responsiveness.",
+    focus:"UI/UX Engineering"
+  },
+  {
+    t:"Engineering Study Notes",
+    d:"Structured academic notes for exam preparation and revision.",
+    focus:"Core Engineering Theory"
+  },
+  {
+    t:"Mini JavaScript Apps",
+    d:"Built small utilities like calculators and DOM-based tools.",
+    focus:"Logic Building"
+  }
+];
 
 const labs=[
-  {t:"Physics Lab",d:"Motion analysis report"},
-  {t:"Electrical Lab",d:"Ohm’s Law experiment"}
+  {t:"Physics Lab",d:"Motion and velocity analysis experiment."},
+  {t:"Electrical Lab",d:"Ohm’s law verification and circuit testing."},
+  {t:"Programming Lab",d:"C++ fundamentals and control structures."}
 ];
 
-document.getElementById('labGrid').innerHTML=
-labs.map(l=>`
-<div class='card' onclick="openModal('Lab Report','${l.t}: ${l.d}')">
-<h3>${l.t}</h3><div class='badge'>View</div>
-</div>`).join('');
+function renderGrid(id,data,type){
+  document.getElementById(id).innerHTML=data.map(x=>`
+    <div class='card' onclick="openModal('${type}','${x.t}\n\n${x.d}\n\n${x.tech||x.focus||''}\n\n${x.impact||''}')">
+      <h3>${x.t}</h3>
+      <div class='badge'>View Details</div>
+    </div>
+  `).join('');
+}
 
-const work=[
-  {t:"C++ Practice",d:"Console-based algorithms"},
-  {t:"HTML UI Clones",d:"Static frontend practice"},
-  {t:"Engineering Notes",d:"Offline academic work"}
-];
-
-document.getElementById('workGrid').innerHTML=
-work.map(w=>`
-<div class='card' onclick="openModal('Work','${w.t}: ${w.d}')">
-<h3>${w.t}</h3><div class='badge'>Offline</div>
-</div>`).join('');
+renderGrid('projectsGrid',projects,'Project');
+renderGrid('workGrid',work,'Work');
+renderGrid('labsGrid',labs,'Lab');
 
 function openModal(t,d){
   document.getElementById('mTitle').innerText=t;
@@ -250,65 +257,54 @@ function openModal(t,d){
   document.getElementById('modal').style.display='flex';
 }
 
-function closeModal(){
-  document.getElementById('modal').style.display='none';
+function downloadResume(){
+  const text=`Noor Fatima\nEngineering Student\n\nPROJECTS:\n- Portfolio Engineering System\n- Blog Engine Prototype\n- UI Interaction System\n\nWORK:\n- C++ Problem Solving\n- Frontend UI Clones\n- Engineering Notes\n- JavaScript Mini Apps`;
+
+  const blob=new Blob([text],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='Noor_Fatima_Resume.txt';
+  a.click();
 }
 
-async function loadGitHub(user){
+// GitHub
+async function loadGitHub(){
   try{
-    const res=await fetch(`https://api.github.com/users/${user}/repos`);
+    const res=await fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos');
     const data=await res.json();
-
-    document.getElementById('githubGrid').innerHTML=
-    data.slice(0,6).map(r=>`
+    document.getElementById('githubGrid').innerHTML=data.slice(0,6).map(r=>`
       <div class='card'>
         <h3>${r.name}</h3>
         <div class='badge'>⭐ ${r.stargazers_count}</div>
-        <p>${r.description||''}</p>
       </div>
     `).join('');
   }catch(e){
-    document.getElementById('githubGrid').innerHTML="Failed to load";
+    document.getElementById('githubGrid').innerHTML='Failed to load GitHub';
   }
 }
+loadGitHub();
 
-loadGitHub('YOUR_GITHUB_USERNAME');
-
+// background
 const c=document.getElementById('bg');
 const ctx=c.getContext('2d');
 c.width=window.innerWidth;
 c.height=window.innerHeight;
 
-let dots=Array.from({length:40},()=>({
-  x:Math.random()*c.width,
-  y:Math.random()*c.height,
-  vx:(Math.random()-0.5),
-  vy:(Math.random()-0.5)
-}));
+let dots=Array.from({length:35},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)}));
 
 function animate(){
   ctx.clearRect(0,0,c.width,c.height);
-  ctx.fillStyle='rgba(96,165,250,0.3)';
-
+  ctx.fillStyle='rgba(96,165,250,0.25)';
   dots.forEach(d=>{
-    d.x+=d.vx;
-    d.y+=d.vy;
+    d.x+=d.vx; d.y+=d.vy;
     if(d.x<0||d.x>c.width)d.vx*=-1;
     if(d.y<0||d.y>c.height)d.vy*=-1;
-
-    ctx.beginPath();
-    ctx.arc(d.x,d.y,2,0,Math.PI*2);
-    ctx.fill();
+    ctx.beginPath(); ctx.arc(d.x,d.y,2,0,Math.PI*2); ctx.fill();
   });
-
   requestAnimationFrame(animate);
 }
 animate();
 
-// default show home
-['projects','labs','work','github'].forEach(id=>document.getElementById(id).style.display='none');
-
 </script>
-
 </body>
 </html>
