@@ -1,8 +1,8 @@
-/* ==================== CSS VARIABLES - Soft Elegant Style ==================== */
+/* ==================== CSS VARIABLES ==================== */
 :root {
-  --bg-primary: #f8f4f0;      /* Warm off-white */
+  --bg-primary: #f8f4f0;
   --bg-secondary: #ffffff;
-  --accent: #c98686;          /* Soft rose */
+  --accent: #c98686;           /* Soft Rose - Elegant */
   --accent-hover: #b36b6b;
   --text-primary: #2c2c2c;
   --text-secondary: #555555;
@@ -10,6 +10,20 @@
   --shadow: 0 10px 30px rgba(201, 134, 134, 0.12);
   --radius: 16px;
 }
+
+/* === Teal Version (Uncomment & replace above if you prefer teal) === */
+/*
+:root {
+  --bg-primary: #f0f7f4;
+  --bg-secondary: #ffffff;
+  --accent: #45b8ac;           /* Soft Teal */
+  --accent-hover: #3a9b91;
+  --text-primary: #2c2c2c;
+  --text-secondary: #555555;
+  --border-color: #d1e0db;
+  --shadow: 0 10px 30px rgba(69, 184, 172, 0.12);
+}
+*/
 
 [data-theme="dark"] {
   --bg-primary: #1a1a2e;
@@ -23,31 +37,20 @@
 }
 
 /* ==================== BASE ==================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.4s, color 0.4s;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--accent-hover); }
 
-a:hover {
-  color: var(--accent-hover);
-}
-
-/* ==================== HEADER & NAVIGATION ==================== */
+/* ==================== HEADER & NAV ==================== */
 header {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
@@ -67,7 +70,7 @@ nav {
 }
 
 .logo a {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -80,24 +83,21 @@ nav {
 
 .nav-links a {
   font-weight: 500;
-  padding: 0.4rem 0;
   position: relative;
 }
 
 .nav-links a:after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
   background: var(--accent);
-  transition: width 0.3s ease;
+  transition: width 0.3s;
 }
 
-.nav-links a:hover:after {
-  width: 100%;
-}
+.nav-links a:hover:after { width: 100%; }
 
 .theme-toggle {
   background: none;
@@ -111,18 +111,22 @@ nav {
   justify-content: center;
   font-size: 1.4rem;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.theme-toggle:hover {
-  background: var(--accent);
-  color: var(--bg-secondary);
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-primary);
 }
 
-/* ==================== HERO SECTION ==================== */
+/* ==================== HERO ==================== */
 .hero {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 4rem auto 3rem;
   padding: 0 2rem;
   text-align: center;
 }
@@ -130,17 +134,16 @@ nav {
 .hero h1 {
   font-size: clamp(2.8rem, 6vw, 4.2rem);
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .hero p {
   font-size: 1.25rem;
   color: var(--text-secondary);
-  max-width: 700px;
+  max-width: 680px;
   margin: 0 auto 2rem;
 }
 
-/* ==================== BLOG POSTS GRID ==================== */
+/* ==================== BLOG GRID ==================== */
 .posts-grid {
   max-width: 1200px;
   margin: 3rem auto;
@@ -160,7 +163,7 @@ nav {
 }
 
 .card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(201, 134, 134, 0.18);
 }
 
@@ -188,19 +191,16 @@ nav {
 
 .card p {
   color: var(--text-secondary);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .read-more {
   color: var(--accent);
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.read-more:hover {
-  gap: 10px;
 }
 
 /* ==================== FOOTER ==================== */
@@ -208,36 +208,35 @@ footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
   text-align: center;
-  padding: 2.5rem 1rem;
-  margin-top: 5rem;
+  padding: 3rem 1rem 2rem;
+  margin-top: 6rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
 }
 
-/* ==================== RESPONSIVE ==================== */
+/* ==================== MOBILE ==================== */
 @media (max-width: 768px) {
-  nav {
-    padding: 0 1.2rem;
-  }
+  .hamburger { display: block; }
   
   .nav-links {
-    gap: 1.4rem;
-    font-size: 0.95rem;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--bg-secondary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 3rem;
+    transition: left 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
   
-  .hero {
-    margin: 3rem auto;
-    padding: 0 1.2rem;
+  .nav-links.active {
+    left: 0;
   }
   
-  .posts-grid {
+  .hero, .posts-grid {
     padding: 0 1.2rem;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    gap: 1rem;
   }
 }
