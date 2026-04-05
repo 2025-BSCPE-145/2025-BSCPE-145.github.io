@@ -1,268 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Noor Fatima | Engineering Portfolio</title>
+  <title>Noor Fatima | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <h1>Noor Fatima</h1>
-  <p>Computer Engineering Student | Problem Solver</p>
-</header>
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Noor Fatima</h1>
+    <p>Computer Engineering Student | Developer | Problem Solver</p>
 
-<nav>
- <button onclick="showSection('home', this)">Home</button>
-<button onclick="showSection('projects', this)">Projects</button>
-<button onclick="showSection('articles', this)">Articles</button>
-<button onclick="showSection('contact', this)">Contact</button>
-</nav>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<main>
-
-<!-- HOME -->
-<section id="home" class="active">
-  <div class="card">
-    <h2>Welcome 👋</h2>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>Welcome to My Portfolio 👩‍💻</h2>
     <p>
-      This is my professional engineering portfolio where I showcase my academic work,
-      programming knowledge, and technical learning journey.
-    </p>
-  </div>
-</section>
-
-<!-- PROJECTS (ONLY ONE PROJECT NOW) -->
-<section id="projects">
-  <div class="card">
-
-    <h2>Project 💼</h2>
-
-    <h3>🌐 How to Create a Website on GitHub</h3>
-
-    <p>
-      GitHub Pages is a free hosting platform that allows developers to build and deploy
-      professional websites directly from a GitHub repository.
+      I am passionate about building efficient software systems, learning new technologies,
+      and solving real-world engineering problems through code.
     </p>
 
-    <h4>1. Create a GitHub Account</h4>
-    <ul>
-      <li>Go to https://github.com</li>
-      <li>Sign up and verify your email</li>
-    </ul>
+    <a class="btn" href="projects.html">View My Projects</a>
+  </section>
 
-    <h4>2. Create a New Repository</h4>
-    <ul>
-      <li>Click <b>New Repository</b></li>
-      <li>Name: <b>username.github.io</b></li>
-      <li>Set to Public</li>
-      <li>Initialize with README</li>
-    </ul>
+  <!-- HIGHLIGHTS -->
+  <section class="highlights">
 
-    <h4>3. Clone Repository</h4>
-    <pre>
-git clone https://github.com/username/username.github.io.git
-cd username.github.io
-    </pre>
+    <div class="card">
+      <h3>💻 Programming</h3>
+      <p>C, C++, and Python development with focus on problem-solving and logic building.</p>
+    </div>
 
-    <h4>4. Create Website Files</h4>
-    <p><b>index.html</b></p>
+    <div class="card">
+      <h3>📊 Data Management</h3>
+      <p>Working with structured data, algorithms, and efficient storage systems.</p>
+    </div>
 
-    <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;My Professional Website&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
-&lt;p&gt;Hosted on GitHub Pages&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-    </pre>
+    <div class="card">
+      <h3>🌐 Web Development</h3>
+      <p>Building responsive websites using HTML, CSS, and JavaScript.</p>
+    </div>
 
-    <p><b>style.css (optional)</b></p>
-    <pre>
-body {
-  font-family: Arial;
-  background: #f4f4f4;
-}
-    </pre>
+  </section>
 
-    <h4>5. Add Images</h4>
-    <pre>
-images/
- └── profile.jpg
-    </pre>
-
-    <p>Use in HTML:</p>
-    <pre>
-&lt;img src="images/profile.jpg" alt="Profile Image"&gt;
-    </pre>
-
-    <h4>6. Commit and Push</h4>
-    <pre>
-git add .
-git commit -m "Initial setup"
-git push origin main
-    </pre>
-
-    <h4>7. Enable GitHub Pages</h4>
-    <ul>
-      <li>Go to Settings → Pages</li>
-      <li>Select branch: main</li>
-      <li>Folder: /root</li>
-    </ul>
-
-    <h4>8. Templates & Themes</h4>
-    <ul>
-      <li>Use GitHub Themes</li>
-      <li>Use HTML templates (HTML5 UP)</li>
-    </ul>
-
-    <h4>9. Continuous Updates</h4>
-    <pre>
-git pull origin main
-    </pre>
-
-    <h4>File Structure</h4>
-    <pre>
-username.github.io/
-│── index.html
-│── style.css
-│── images/
-│    └── profile.jpg
-└── README.md
-    </pre>
-
-    <h4>Tips</h4>
-    <ul>
-      <li>Use consistent design</li>
-      <li>Optimize images</li>
-      <li>Add portfolio & contact sections</li>
-      <li>Use custom domain (optional)</li>
-    </ul>
-
-  </div>
-</section>
-<!-- ARTICLES (NEW) -->
-<section id="articles">
-  <div class="card">
-
-    <h2>Articles 📝</h2>
-
-    <!-- DATABASE -->
-    <h3>📊 Database Systems</h3>
-
-    <p>
-      Database systems are used to store, manage, and retrieve data efficiently.
-      They play a critical role in modern applications such as banking, e-commerce,
-      healthcare, and social media platforms.
-    </p>
-
-    <h4>Core Components</h4>
-    <ul>
-      <li>Hardware (servers and storage)</li>
-      <li>Software (DBMS like MySQL, PostgreSQL)</li>
-      <li>Users (DBA, developers, end-users)</li>
-      <li>Procedures (rules for data handling)</li>
-    </ul>
-
-    <h4>Types</h4>
-    <ul>
-      <li>Relational (RDBMS)</li>
-      <li>NoSQL</li>
-      <li>Hierarchical</li>
-      <li>Object-Oriented</li>
-    </ul>
-
-    <h4>Applications</h4>
-    <ul>
-      <li>Banking systems</li>
-      <li>E-commerce platforms</li>
-      <li>Healthcare systems</li>
-      <li>Education systems</li>
-    </ul>
-
-    <hr>
-
-    <!-- PROGRAMMING -->
-    <h3>💻 Programming Fundamentals</h3>
-
-    <p>
-      Programming fundamentals form the base of all software development. 
-      They include logic building, problem-solving, and understanding how computers execute instructions.
-    </p>
-
-    <h4>Core Concepts</h4>
-
-    <p><b>Variables</b></p>
-    <pre>
-age = 25
-name = "Ali"
-    </pre>
-
-    <p><b>Loops</b></p>
-    <pre>
-for i in range(5):
-    print(i)
-    </pre>
-
-    <p><b>Functions</b></p>
-    <pre>
-def greet(name):
-    return "Hello " + name
-    </pre>
-
-    <h4>Data Structures</h4>
-    <ul>
-      <li>List</li>
-      <li>Dictionary</li>
-      <li>Set</li>
-      <li>Tuple</li>
-    </ul>
-
-    <h4>Conclusion</h4>
-    <p>
-      Mastering programming fundamentals enables developers to build efficient,
-      scalable, and real-world applications.
-    </p>
-
-  </div>
-</section>
-<!-- CONTACT -->
-<section id="contact">
-  <div class="card">
-    <h2>Contact 📞</h2>
-
-    <p>Email: NoorFatima45@example.com</p>
-
-    <p>
-      GitHub:
-      <a href="https://github.com/2025-BSCPE-145" target="_blank">
-        github.com/2025-BSCPE-145
-      </a>
-    </p>
-
-    <p>Location: Pakistan 🇵🇰</p>
-  </div>
-</section>
-
-</main>
-
-<script>
-function showSection(id) {
-  document.querySelectorAll("section").forEach(sec => {
-    sec.classList.remove("active");
-  });
-  document.getElementById(id).classList.add("active");
-}
-</script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Noor Fatima | Built with HTML, CSS & JavaScript</p>
+  </footer>
 
 </body>
 </html>
