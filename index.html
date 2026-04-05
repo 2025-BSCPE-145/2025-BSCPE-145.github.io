@@ -3,11 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noor Fatima | Developer Portfolio</title>
+  <title>Noori | Developer Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root{
+      --bg:#020617;
+      --panel:rgba(255,255,255,0.05);
+      --text:#e5e7eb;
+      --accent:#60a5fa;
+    }
+
+    [data-theme="light"]{
+      --bg:#f8fafc;
+      --panel:rgba(0,0,0,0.05);
+      --text:#0f172a;
+      --accent:#2563eb;
+    }
+
     *{
       margin:0;
       padding:0;
@@ -16,13 +30,36 @@
     }
 
     body{
-      background: radial-gradient(circle at var(--x,50%) var(--y,50%), #1e293b, #020617 60%);
-      color:#e5e7eb;
+      background: radial-gradient(circle at var(--x,50%) var(--y,50%), var(--bg), #000);
+      color:var(--text);
       overflow-x:hidden;
+      transition:0.4s;
       min-height:100vh;
     }
 
-    /* CURSOR GLOW */
+    /* LOADER */
+    .loader{
+      position:fixed;
+      inset:0;
+      background:var(--bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+    }
+
+    .spinner{
+      width:40px;
+      height:40px;
+      border:3px solid rgba(255,255,255,0.2);
+      border-top-color:var(--accent);
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* CURSOR */
     .cursor-glow{
       position:fixed;
       width:250px;
@@ -34,13 +71,13 @@
       z-index:0;
     }
 
-    a{color:inherit; text-decoration:none;}
+    a{color:inherit;text-decoration:none;}
 
     nav{
       position:fixed;
       top:0;
       width:100%;
-      padding:18px 8%;
+      padding:16px 8%;
       backdrop-filter: blur(16px);
       background: rgba(15, 23, 42, 0.6);
       display:flex;
@@ -49,8 +86,6 @@
       z-index:1000;
     }
 
-    nav h1{font-size:18px;}
-
     nav ul{
       display:flex;
       gap:18px;
@@ -58,7 +93,12 @@
       font-size:14px;
     }
 
-    nav ul li:hover{opacity:0.6;}
+    .toggle{
+      cursor:pointer;
+      padding:6px 10px;
+      border-radius:8px;
+      background:var(--panel);
+    }
 
     .hero{
       height:100vh;
@@ -69,60 +109,22 @@
       text-align:center;
       padding:0 20px;
       position:relative;
-      z-index:1;
     }
 
     .hero h2{
-      font-size:52px;
-      font-weight:700;
-      background: linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
+      font-size:54px;
+      background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      animation: float 4s ease-in-out infinite;
+      animation:float 4s ease-in-out infinite;
     }
 
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-8px)}
-    }
-
-    .hero p{opacity:0.8; max-width:650px; margin-top:10px;}
-
-    .btn{
-      margin-top:20px;
-      padding:10px 18px;
-      border-radius:12px;
-      background:linear-gradient(90deg,#3b82f6,#6366f1);
-      border:none;
-      color:white;
-      cursor:pointer;
-      transition:0.3s;
-      box-shadow:0 10px 25px rgba(59,130,246,0.3);
-    }
-
-    .btn:hover{
-      transform:scale(1.05) rotateX(5deg);
-    }
+    @keyframes float{50%{transform:translateY(-10px)}}
 
     section{
       padding:90px 10%;
-      position:relative;
-      z-index:1;
     }
 
-    .title{
-      font-size:30px;
-      margin-bottom:30px;
-    }
-
-    .about{
-      background:rgba(255,255,255,0.03);
-      padding:30px;
-      border-radius:18px;
-      backdrop-filter: blur(12px);
-    }
-
-    /* PROJECT GRID */
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -130,157 +132,116 @@
     }
 
     .card{
-      background:rgba(255,255,255,0.05);
+      background:var(--panel);
       padding:20px;
-      border-radius:18px;
+      border-radius:16px;
+      transition:0.3s;
       border:1px solid rgba(255,255,255,0.08);
-      transition:0.4s;
-      transform-style:preserve-3d;
     }
 
     .card:hover{
-      transform:rotateX(10deg) rotateY(-10deg) translateY(-6px);
-      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+      transform:translateY(-6px);
     }
 
-    .tag{font-size:12px; opacity:0.7;}
-
-    .skills span{
-      display:inline-block;
-      margin:6px;
-      padding:6px 12px;
-      background:rgba(255,255,255,0.05);
-      border-radius:20px;
+    .badge{
       font-size:12px;
+      opacity:0.7;
     }
 
-    .contact{text-align:center;}
-
-    .hidden{
-      opacity:0;
-      transform:translateY(30px);
-      transition:all 0.7s ease;
-    }
-
-    .show{
-      opacity:1;
-      transform:translateY(0);
-    }
+    .hidden{opacity:0;transform:translateY(30px);transition:0.6s;}
+    .show{opacity:1;transform:translateY(0);}
   </style>
 </head>
 <body>
 
+<div class="loader" id="loader"><div class="spinner"></div></div>
 <div class="cursor-glow" id="glow"></div>
 
 <nav>
   <h1>Noori.dev</h1>
   <ul>
-    <li><a href="#about">About</a></li>
+    <li><a href="#home">Home</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#github">GitHub</a></li>
   </ul>
+  <div class="toggle" onclick="toggleTheme()">Theme</div>
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
   <h2>Noor Fatima</h2>
-  <p>Engineering Student | Frontend Developer | Building high-performance modern UI systems.</p>
-  <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Explore Work</button>
-</section>
-
-<section id="about" class="hidden">
-  <h2 class="title">About Me</h2>
-  <div class="about">
-    I specialize in crafting modern, responsive, and interactive web interfaces. I focus on performance, animation systems, and clean UI architecture.
-  </div>
+  <p>Engineering Student • Frontend Developer • UI Engineer</p>
 </section>
 
 <section id="projects" class="hidden">
-  <h2 class="title">Projects (Live System)</h2>
-  <div class="grid" id="projectGrid"></div>
+  <h2>Local Projects</h2>
+  <div class="grid" id="localProjects"></div>
 </section>
 
-<section id="skills" class="hidden">
-  <h2 class="title">Skills</h2>
-  <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>UI/UX</span>
-    <span>GitHub</span>
-    <span>Animations</span>
-  </div>
-</section>
-
-<section id="contact" class="hidden contact">
-  <h2 class="title">Contact</h2>
-  <p>Let’s build something elite 🚀</p>
+<section id="github" class="hidden">
+  <h2>GitHub Live Projects</h2>
+  <div class="grid" id="githubGrid"></div>
 </section>
 
 <script>
 
-// CURSOR GLOW
-const glow = document.getElementById('glow');
-document.addEventListener('mousemove', (e)=>{
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-
-  document.body.style.setProperty('--x', e.clientX + 'px');
-  document.body.style.setProperty('--y', e.clientY + 'px');
+// loader
+window.addEventListener('load',()=>{
+  document.getElementById('loader').style.display='none';
 });
 
-// SCROLL ANIMATION
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+// cursor glow
+document.addEventListener('mousemove',(e)=>{
+  const glow=document.getElementById('glow');
+  glow.style.left=e.clientX+'px';
+  glow.style.top=e.clientY+'px';
+  document.body.style.setProperty('--x',e.clientX+'px');
+  document.body.style.setProperty('--y',e.clientY+'px');
 });
 
-document.querySelectorAll('.hidden').forEach(el=>observer.observe(el));
+// theme
+function toggleTheme(){
+  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
+}
 
-// PROJECT SYSTEM (STATIC + READY FOR API)
-const projects = [
-  {
-    title:"Portfolio Website",
-    desc:"Modern UI portfolio with animations and responsive layout",
-    tech:"HTML • CSS • JS"
-  },
-  {
-    title:"Blog UI System",
-    desc:"Card-based blog interface with clean reading experience",
-    tech:"Frontend Design"
-  },
-  {
-    title:"GitHub Pages Deployments",
-    desc:"Multiple live projects hosted using GitHub Pages",
-    tech:"Deployment"
-  }
+// scroll animation
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')});
+});
+document.querySelectorAll('.hidden').forEach(el=>obs.observe(el));
+
+// local projects
+const localProjects=[
+  {name:"Portfolio UI",desc:"Modern animated portfolio",tech:"HTML CSS JS"},
+  {name:"Blog UI",desc:"Card based blog system",tech:"Frontend"}
 ];
 
-const grid = document.getElementById('projectGrid');
+const local=document.getElementById('localProjects');
+local.innerHTML=localProjects.map(p=>`
+<div class='card'>
+  <h3>${p.name}</h3>
+  <div class='badge'>${p.tech}</div>
+  <p>${p.desc}</p>
+</div>`).join('');
 
-function renderProjects(){
-  grid.innerHTML = projects.map(p=>`
-    <div class="card">
-      <h3>${p.title}</h3>
-      <p class="tag">${p.tech}</p>
-      <p>${p.desc}</p>
-    </div>
-  `).join('');
-}
-
-renderProjects();
-
-// OPTIONAL: GitHub API ready hook (future upgrade)
-async function fetchGitHubProjects(username){
+// GitHub API projects (LIVE)
+async function loadGitHub(user){
   try{
-    const res = await fetch(`https://api.github.com/users/${username}/repos`);
-    const data = await res.json();
-    console.log("GitHub repos ready:", data);
+    const res=await fetch(`https://api.github.com/users/${user}/repos`);
+    const data=await res.json();
+
+    document.getElementById('githubGrid').innerHTML=data.map(r=>`
+      <div class='card'>
+        <h3>${r.name}</h3>
+        <div class='badge'>⭐ ${r.stargazers_count} • 🍴 ${r.forks_count}</div>
+        <p>${r.description||'No description'}</p>
+        <a href='${r.html_url}' target='_blank'>View Repo →</a>
+      </div>
+    `).join('');
+
   }catch(e){console.log(e)}
 }
+
+loadGitHub('your-github-username');
 
 </script>
 
