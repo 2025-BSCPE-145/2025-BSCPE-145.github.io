@@ -1,17 +1,28 @@
 function showSection(id, el) {
+  // Get target section safely
+  const targetSection = document.getElementById(id);
+  if (!targetSection) {
+    console.warn(`Section with id "${id}" not found.`);
+    return;
+  }
+
   // Hide all sections
-  document.querySelectorAll("section").forEach(sec => {
-    sec.classList.remove("active");
+  document.querySelectorAll("section").forEach(section => {
+    section.classList.remove("active");
   });
 
   // Show selected section
-  document.getElementById(id).classList.add("active");
+  targetSection.classList.add("active");
 
-  // Remove active from all buttons
-  document.querySelectorAll("nav button").forEach(btn => {
-    btn.classList.remove("active");
+  // Remove active state from all nav buttons
+  document.querySelectorAll("nav button").forEach(button => {
+    button.classList.remove("active");
+    button.setAttribute("aria-selected", "false");
   });
 
-  // Add active to clicked button
-  el.classList.add("active");
+  // Activate clicked button
+  if (el) {
+    el.classList.add("active");
+    el.setAttribute("aria-selected", "true");
+  }
 }
