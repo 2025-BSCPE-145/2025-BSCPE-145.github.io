@@ -12,11 +12,13 @@
 
 <body>
 
+<!-- HEADER -->
 <header>
   <h1>Noor Fatima</h1>
-  <p>Computer Engineering Student |  Problem Solver</p>
+  <p>Computer Engineering Student | Problem Solver</p>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
   <button onclick="showSection('home')">Home</button>
   <button onclick="showSection('projects')">Projects</button>
@@ -42,83 +44,24 @@
   <div class="card">
     <h2>Projects 💼</h2>
 
-   <h1>How to Make a Website on GitHub (GitHub Pages)</h1>
+    <h3>Core Programming</h3>
+    <p>
+      Implemented basic programming concepts such as loops, functions, and conditionals using C++.
+      Focused on building logic and problem-solving skills.
+    </p>
 
-<p>🧩 <strong>Step 1: Create a GitHub Account</strong></p>
-<ul>
-<li>Go to: <a href="(link unavailable)">(link unavailable)</a></li>
-<li>Sign up (if you don’t already have an account)</li>
-<li>Verify your email</li>
-</ul>
+    <h3>Data Management System</h3>
+    <p>
+      Designed a structured system for storing and managing data using file handling techniques
+      and logical operations.
+    </p>
 
-<p>📁 <strong>Step 2: Create a New Repository</strong></p>
-<p>This is your website “project folder”.</p>
-<ul>
-<li>Click: 👉 New Repository</li>
-<li>Fill:
-<ul>
-<li>Repository name: <em>(link unavailable)</em> (VERY IMPORTANT ⚠️ must match exactly)</li>
-<li>Set to Public</li>
-<li>Tick Add README (optional)</li>
-</ul>
-</li>
-<li>Then click: 👉 Create repository</li>
-</ul>
-
-<p>💻 <strong>Step 3: Add Your Website Files</strong></p>
-<p>You need at least:</p>
-<ol>
-<li>index.html (main page)</li>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;My Portfolio&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;Hello, I am Noor 👩💻&lt;/h1&gt;
-&lt;p&gt;Welcome to my GitHub website!&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<li>(Optional) style.css</li>
-<pre><code>body {
-font-family: Arial;
-text-align: center;
-background: #f4f4f4;
-}</code></pre>
-</ol>
-
-<p>⬆️ <strong>Step 4: Upload Files to GitHub</strong></p>
-<p>Inside your repository:</p>
-<ul>
-<li>Click Add file</li>
-<li>Choose Upload files</li>
-<li>Upload:
-<ul>
-<li>index.html</li>
-<li>style.css (if you have it)</li>
-</ul>
-</li>
-<li>Then click: 👉 Commit changes</li>
-</ul>
-
-<p>🌍 <strong>Step 5: Turn on GitHub Pages</strong></p>
-<p>Go to:</p>
-<ul>
-<li>Settings</li>
-<li>Scroll to Pages</li>
-</ul>
-<p>Then:</p>
-<ul>
-<li>Source: Deploy from branch</li>
-<li>Branch: main</li>
-<li>Folder: /root</li>
-<li>Click: 👉 Save</li>
-</ul>
-
-<p>🎉 <strong>Step 6: Open Your Website</strong></p>
-<p>After 1–2 minutes, your site will be live at:</p>
-
-    
+    <h3>Web Portfolio</h3>
+    <p>
+      Developed a responsive personal portfolio website using HTML, CSS, and JavaScript.
+      Deployed using GitHub Pages.
+    </p>
+  </div>
 </section>
 
 <!-- ARTICLES -->
@@ -127,13 +70,19 @@ background: #f4f4f4;
     <h2>Articles 📝</h2>
 
     <h3>Introduction to Programming</h3>
-    <p>Basics of logic building, algorithms, and structured thinking in programming.</p>
+    <p>
+      Programming is the process of writing instructions for computers to solve problems efficiently.
+    </p>
 
     <h3>GitHub Pages Deployment</h3>
-    <p>Step-by-step guide on how to host static websites using GitHub Pages.</p>
+    <p>
+      GitHub Pages allows developers to host static websites directly from a GitHub repository.
+    </p>
 
-    <h3>Data Structures Overview</h3>
-    <p>Understanding arrays, stacks, queues, and their real-world applications.</p>
+    <h3>How to Make a Website on GitHub</h3>
+    <p>
+      Create a repository, upload an index.html file, and enable GitHub Pages in settings.
+    </p>
   </div>
 </section>
 
@@ -141,13 +90,31 @@ background: #f4f4f4;
 <section id="contact">
   <div class="card">
     <h2>Contact 📞</h2>
+
     <p>Email: NoorFatima45@example.com</p>
-    <p>GitHub: https://github.com/2025-BSCPE-145.github.io</p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/2025-BSCPE-145" target="_blank">
+        github.com/2025-BSCPE-145
+      </a>
+    </p>
+
+    <p>Location: Pakistan 🇵🇰</p>
   </div>
 </section>
 
 </main>
 
-<script src="script.js"></script>
+<!-- SCRIPT -->
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
 </body>
 </html>
