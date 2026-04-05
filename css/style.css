@@ -205,4 +205,16 @@ footer {
 .buttons a:hover {
   background: #3730a3;
 }
+  /* 🌟 BASE ANIMATION STATE */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* ✨ ACTIVE STATE (when visible) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
