@@ -1,79 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What I Learned from CSS Layout Practice - Noor Fatima</title>
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>My First Website on GitHub — Built Without Any Template</title>
+    <meta name="description" content="Learn how I built my first website from scratch using HTML, CSS, and GitHub Pages without using any template. A beginner-friendly web development journey.">
+    <meta name="keywords" content="GitHub Pages, first website, HTML CSS project, beginner web development, portfolio website">
+    <meta name="author" content="Noor Fatima">
+
+    <!-- Open Graph (for sharing) -->
+    <meta property="og:title" content="My First Website on GitHub">
+    <meta property="og:description" content="A beginner's journey of building a website without templates.">
+    <meta property="og:type" content="article">
+
+    <!-- Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #020617;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-top: 30px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #1e293b;
+            padding: 10px;
+            border-left: 4px solid #38bdf8;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #334155;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <div class="logo"><a href="../index.html">Noor Fatima</a></div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../blog.html">Lab Articles</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger">☰</button>
-      <button id="theme-toggle" class="theme-toggle">🌙</button>
-    </nav>
-  </header>
 
-  <div class="post-container">
-    <div class="post-header">
-      <span class="post-tag">CSS Practice</span>
-      <h1 class="post-title">What I Learned from CSS Layout Practice</h1>
-      <div class="post-meta">
-        By Noor Fatima • 05 April 2026 • 7 min read
-      </div>
+<header>
+    <h1>My First Website on GitHub — Built Without Any Template</h1>
+    <p>By Noor Fatima</p>
+</header>
+
+<div class="container">
+
+    <h2>Introduction</h2>
+    <p>
+        Starting my journey in web development, I wanted to challenge myself by building something completely on my own.
+        Instead of relying on pre-built templates, I decided to create my first website from scratch and host it using GitHub Pages.
+    </p>
+    <p>
+        This project helped me understand the fundamentals of web development, including HTML structure, CSS styling, and how websites are deployed online.
+    </p>
+
+    <h2>Why I Chose Not to Use a Template</h2>
+    <ul>
+        <li>To understand how a website works internally</li>
+        <li>To practice writing my own code</li>
+        <li>To improve problem-solving skills</li>
+        <li>To build confidence as a developer</li>
+    </ul>
+
+    <div class="highlight">
+        Building from scratch gave me a deeper understanding of frontend development.
     </div>
 
-    <div class="post-content">
-      <p>In this post I share beginner lessons from CSS practice. I focused on layout, spacing, colors, and making pages look neat without using any advanced frameworks.</p>
+    <h2>Technologies I Used</h2>
+    <ul>
+        <li><strong>HTML</strong> – for structure</li>
+        <li><strong>CSS</strong> – for design</li>
+        <li><strong>GitHub Pages</strong> – for hosting</li>
+    </ul>
 
-      <h2>Using Flexbox for easy alignment</h2>
-      <p>Flexbox made it easy to align cards and navigation links. I used it for row and column layouts instead of trying complex positioning.</p>
+    <h2>Structure of My Website</h2>
+    <ul>
+        <li><strong>index.html</strong> → Homepage</li>
+        <li><strong>blog.html</strong> → Blog listing page</li>
+        <li><strong>/posts/</strong> → Individual blog posts</li>
+    </ul>
 
-      <!-- Beautiful Code Block with Copy Button -->
-      <div class="code-block">
-        <div class="code-header">
-          layout.css (flexbox)
-          <button class="copy-btn" onclick="copyCode()">Copy</button>
-        </div>
-        <pre><code>.card-row {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}</code></pre>
-      </div>
+    <h2>Challenges I Faced</h2>
+    <ul>
+        <li>Understanding GitHub folder structure</li>
+        <li>Fixing 404 errors</li>
+        <li>Linking pages correctly</li>
+        <li>Design and layout issues</li>
+    </ul>
 
-      <h2>What I Learned</h2>
-      <p>I now understand how to make my website look clean and organized on both mobile and desktop. This practice helped me a lot in making my blog look beautiful.</p>
+    <h2>What I Learned</h2>
+    <ul>
+        <li>Website structure and navigation</li>
+        <li>Multi-page linking</li>
+        <li>Basic responsive design</li>
+        <li>How GitHub Pages works</li>
+    </ul>
 
-      <a href="../blog.html" style="color: var(--accent); font-weight: 600; margin-top: 3rem; display: inline-block;">← Back to All Lab Articles</a>
+    <h2>Final Result</h2>
+    <p>
+        After completing the project, I successfully published my website online. Seeing my work live on the internet
+        was an amazing and motivating experience.
+    </p>
+
+    <h2>Future Improvements</h2>
+    <ul>
+        <li>Add JavaScript for interactivity</li>
+        <li>Improve design with animations</li>
+        <li>Add more blog posts</li>
+        <li>Implement dark/light mode</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Building my first website without using any template was challenging but rewarding.
+        It helped me build a strong foundation in web development and boosted my confidence.
+    </p>
+
+    <div class="highlight">
+        Tip: Every beginner should build at least one project from scratch 🚀
     </div>
-  </div>
 
-  <footer style="margin-top: 6rem; text-align: center; padding: 2rem;">
-    <p>&copy; 2026 Noor Fatima • BSCPE Student</p>
-  </footer>
+</div>
 
-  <script src="../js/script.js"></script>
-  <script>
-    function copyCode() {
-      const code = `.card-row {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}`;
-      navigator.clipboard.writeText(code).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = originalText; }, 2000);
-      });
-    }
-  </script>
+<footer>
+    <p>© 2026 Noor Fatima | Built with ❤️ using HTML & CSS</p>
+</footer>
+
 </body>
 </html>
