@@ -215,6 +215,20 @@ footer {
 #lab .project-card:hover {
   border: 1px solid rgba(79, 70, 229, 0.3);
 }
+  section {
+  display: none;
+  padding: 20px;
+}
+
+section.active {
+  display: block;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
 
 /* 📌 Section divider */
 #lab::before {
