@@ -1,141 +1,62 @@
-<script>
-function show(id){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
 }
 
-/* DATA SYSTEM */
+/* 🧠 DATA ENGINE (React-style structure) */
 const data = {
+  p1: `
+    <h2>🚀 Portfolio System</h2>
+    <p>Fully structured frontend engineering system with modular architecture.</p>
 
-p1: `
-<h2>🚀 Portfolio Website — Engineering Case Study</h2>
+    <h3>Features</h3>
+    <ul>
+      <li>Component-like structure</li>
+      <li>Modal-based rendering</li>
+      <li>Scalable UI system</li>
+    </ul>
+  `,
 
-<p>This project is a fully custom-built personal portfolio website designed to demonstrate real-world frontend engineering skills, UI structuring, and deployment workflow.</p>
+  a1: `
+    <h2>📘 Programming Fundamentals</h2>
+    <p>Core concepts of programming including logic building and problem solving.</p>
 
-<hr/>
+    <ul>
+      <li>Variables</li>
+      <li>Loops</li>
+      <li>Functions</li>
+    </ul>
+  `,
 
-<h3>🎯 Project Objective</h3>
-<p>The main goal was to design and develop a professional portfolio that can represent a developer’s skills, projects, and technical writing in a structured and scalable way.</p>
+  a2: `
+    <h2>🗄️ Database Systems</h2>
+    <p>DBMS is the backbone of all modern applications.</p>
 
-<hr/>
-
-<h3>🧠 Problem Statement</h3>
-<p>Most beginner portfolios are either template-based or lack proper structure. This project solves that by building a clean, modular, and expandable system from scratch using only HTML, CSS, and JavaScript.</p>
-
-<hr/>
-
-<h3>🪜 Step-by-Step Development Process</h3>
-
-<ol>
-<li><b>UI Planning</b> — Designed layout structure (Home, Projects, Articles, Contact)</li>
-<li><b>HTML Architecture</b> — Built semantic section-based structure</li>
-<li><b>CSS Design System</b> — Implemented variables, spacing rules, and card UI system</li>
-<li><b>Component Design</b> — Created reusable project/article cards</li>
-<li><b>JavaScript Logic</b> — Built navigation + modal system</li>
-<li><b>Content System</b> — Structured data-driven project/article rendering</li>
-<li><b>Deployment</b> — Hosted using GitHub Pages</li>
-</ol>
-
-<hr/>
-
-<h3>🧩 System Architecture</h3>
-
-<ul>
-<li><b>Frontend Layer:</b> HTML + CSS UI structure</li>
-<li><b>Logic Layer:</b> JavaScript (navigation + modal handling)</li>
-<li><b>Content Layer:</b> JavaScript object-based data storage</li>
-</ul>
-
-<hr/>
-
-<h3>🛠 Technologies Used</h3>
-
-<ul>
-<li>HTML5 — semantic structure</li>
-<li>CSS3 — responsive UI design</li>
-<li>JavaScript (ES6) — interactivity and logic</li>
-<li>GitHub Pages — deployment</li>
-</ul>
-
-<hr/>
-
-<h3>✨ Key Features</h3>
-
-<ul>
-<li>Fully custom UI (no frameworks or templates)</li>
-<li>Responsive design for all devices</li>
-<li>Interactive modal-based content system</li>
-<li>Single-page navigation experience</li>
-<li>Expandable architecture for future scaling</li>
-</ul>
-
-<hr/>
-
-<h3>🎯 Conclusion</h3>
-<p>This project represents a transition from beginner-level coding to structured engineering thinking.</p>
-`,
-
-a1: `
-<h2>📘 Programming Fundamentals (Engineering Blog Edition)</h2>
-
-<p>Programming fundamentals are the backbone of all software systems.</p>
-
-<hr/>
-
-<h3>🪜 Step-by-Step Problem Solving</h3>
-<ol>
-<li>Understand the problem</li>
-<li>Break it into parts</li>
-<li>Design algorithm</li>
-<li>Write code</li>
-<li>Test & debug</li>
-</ol>
-
-<hr/>
-
-<h3>🔑 Core Concepts</h3>
-<ul>
-<li>Variables</li>
-<li>Data Types</li>
-<li>Loops</li>
-<li>Functions</li>
-</ul>
-
-<hr/>
-
-<h3>🎯 Conclusion</h3>
-<p>Strong fundamentals = strong developer.</p>
-`,
-
-a2: `
-<h2>🗄️ Database Systems (DBMS)</h2>
-
-<p>DBMS manages structured data efficiently.</p>
-
-<hr/>
-
-<h3>🔑 Concepts</h3>
-<ul>
-<li>Tables</li>
-<li>Primary Key</li>
-<li>SQL</li>
-<li>Normalization</li>
-</ul>
-
-<hr/>
-
-<h3>🎯 Conclusion</h3>
-<p>DBMS is the backbone of modern applications.</p>
-`
-
+    <ul>
+      <li>Tables</li>
+      <li>SQL</li>
+      <li>Normalization</li>
+    </ul>
+  `
 };
 
-function openModal(key){
-  document.getElementById('modal-body').innerHTML = data[key];
-  document.getElementById('modal').style.display='flex';
+/* MODAL */
+function openModal(key) {
+  document.getElementById("modal-body").innerHTML = data[key];
+  document.getElementById("modal").style.display = "flex";
 }
 
-function closeModal(){
-  document.getElementById('modal').style.display='none';
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
 }
-</script>
+
+/* click outside modal */
+window.onclick = function(e){
+  const modal = document.getElementById("modal");
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+};
