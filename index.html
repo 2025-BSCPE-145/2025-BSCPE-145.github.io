@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noori | Developer Portfolio</title>
+  <title>Noori | GOD MODE Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -22,53 +22,34 @@
       --accent:#2563eb;
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins', sans-serif;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
     body{
       background: radial-gradient(circle at var(--x,50%) var(--y,50%), var(--bg), #000);
       color:var(--text);
       overflow-x:hidden;
-      transition:0.4s;
       min-height:100vh;
+      transition:0.4s;
     }
 
-    /* LOADER */
-    .loader{
+    /* PARTICLES CANVAS */
+    canvas{
       position:fixed;
       inset:0;
-      background:var(--bg);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
+      z-index:0;
+      opacity:0.25;
     }
 
-    .spinner{
-      width:40px;
-      height:40px;
-      border:3px solid rgba(255,255,255,0.2);
-      border-top-color:var(--accent);
-      border-radius:50%;
-      animation:spin 1s linear infinite;
-    }
-
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    /* CURSOR */
+    /* CURSOR GLOW */
     .cursor-glow{
       position:fixed;
-      width:250px;
-      height:250px;
+      width:220px;
+      height:220px;
       border-radius:50%;
-      background: radial-gradient(circle, rgba(96,165,250,0.25), transparent 60%);
+      background:radial-gradient(circle, rgba(96,165,250,0.25), transparent 60%);
       pointer-events:none;
       transform:translate(-50%,-50%);
-      z-index:0;
+      z-index:1;
     }
 
     a{color:inherit;text-decoration:none;}
@@ -78,28 +59,19 @@
       top:0;
       width:100%;
       padding:16px 8%;
-      backdrop-filter: blur(16px);
-      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(18px);
+      background:rgba(15,23,42,0.6);
       display:flex;
       justify-content:space-between;
       align-items:center;
       z-index:1000;
     }
 
-    nav ul{
-      display:flex;
-      gap:18px;
-      list-style:none;
-      font-size:14px;
-    }
+    nav ul{display:flex;gap:16px;list-style:none;font-size:14px;}
 
-    .toggle{
-      cursor:pointer;
-      padding:6px 10px;
-      border-radius:8px;
-      background:var(--panel);
-    }
+    .toggle{cursor:pointer;padding:6px 10px;border-radius:8px;background:var(--panel);}
 
+    /* HERO */
     .hero{
       height:100vh;
       display:flex;
@@ -107,12 +79,12 @@
       justify-content:center;
       align-items:center;
       text-align:center;
-      padding:0 20px;
       position:relative;
+      z-index:2;
     }
 
     .hero h2{
-      font-size:54px;
+      font-size:56px;
       background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -121,40 +93,50 @@
 
     @keyframes float{50%{transform:translateY(-10px)}}
 
-    section{
-      padding:90px 10%;
-    }
+    section{padding:90px 10%;position:relative;z-index:2;}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-    }
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
 
     .card{
       background:var(--panel);
       padding:20px;
       border-radius:16px;
-      transition:0.3s;
       border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+      cursor:pointer;
     }
 
-    .card:hover{
-      transform:translateY(-6px);
+    .card:hover{transform:translateY(-6px) scale(1.02);}
+
+    .badge{font-size:12px;opacity:0.7;}
+
+    /* MODAL */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
     }
 
-    .badge{
-      font-size:12px;
-      opacity:0.7;
+    .modal-content{
+      background:var(--bg);
+      padding:30px;
+      border-radius:16px;
+      width:90%;
+      max-width:500px;
+      border:1px solid rgba(255,255,255,0.1);
     }
 
-    .hidden{opacity:0;transform:translateY(30px);transition:0.6s;}
     .show{opacity:1;transform:translateY(0);}
+    .hidden{opacity:0;transform:translateY(30px);transition:0.6s;}
   </style>
 </head>
 <body>
 
-<div class="loader" id="loader"><div class="spinner"></div></div>
+<canvas id="particles"></canvas>
 <div class="cursor-glow" id="glow"></div>
 
 <nav>
@@ -172,69 +154,108 @@
   <p>Engineering Student • Frontend Developer • UI Engineer</p>
 </section>
 
-<section id="projects" class="hidden">
-  <h2>Local Projects</h2>
-  <div class="grid" id="localProjects"></div>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid" id="projectGrid"></div>
 </section>
 
-<section id="github" class="hidden">
-  <h2>GitHub Live Projects</h2>
+<section id="github">
+  <h2>GitHub Live</h2>
   <div class="grid" id="githubGrid"></div>
 </section>
 
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h2 id="mTitle"></h2>
+    <p id="mDesc"></p>
+  </div>
+</div>
+
 <script>
 
-// loader
-window.addEventListener('load',()=>{
-  document.getElementById('loader').style.display='none';
-});
+// THEME
+function toggleTheme(){
+  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
+}
 
-// cursor glow
+// CURSOR
+const glow=document.getElementById('glow');
 document.addEventListener('mousemove',(e)=>{
-  const glow=document.getElementById('glow');
   glow.style.left=e.clientX+'px';
   glow.style.top=e.clientY+'px';
   document.body.style.setProperty('--x',e.clientX+'px');
   document.body.style.setProperty('--y',e.clientY+'px');
 });
 
-// theme
-function toggleTheme(){
-  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
+// PARTICLES
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let dots=Array.from({length:80},()=>({
+  x:Math.random()*canvas.width,
+  y:Math.random()*canvas.height,
+  vx:(Math.random()-0.5)*1,
+  vy:(Math.random()-0.5)*1
+}));
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='rgba(96,165,250,0.5)';
+
+  dots.forEach(d=>{
+    d.x+=d.vx;
+    d.y+=d.vy;
+
+    if(d.x<0||d.x>canvas.width)d.vx*=-1;
+    if(d.y<0||d.y>canvas.height)d.vy*=-1;
+
+    ctx.beginPath();
+    ctx.arc(d.x,d.y,2,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(draw);
 }
+draw();
 
-// scroll animation
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')});
-});
-document.querySelectorAll('.hidden').forEach(el=>obs.observe(el));
-
-// local projects
-const localProjects=[
-  {name:"Portfolio UI",desc:"Modern animated portfolio",tech:"HTML CSS JS"},
-  {name:"Blog UI",desc:"Card based blog system",tech:"Frontend"}
+// PROJECT DATA
+const projects=[
+  {title:"Portfolio UI",desc:"Advanced animated portfolio system"},
+  {title:"Blog Engine UI",desc:"Card-based reading system"}
 ];
 
-const local=document.getElementById('localProjects');
-local.innerHTML=localProjects.map(p=>`
-<div class='card'>
-  <h3>${p.name}</h3>
-  <div class='badge'>${p.tech}</div>
-  <p>${p.desc}</p>
+const grid=document.getElementById('projectGrid');
+grid.innerHTML=projects.map((p,i)=>`
+<div class='card' onclick="openModal(${i})">
+  <h3>${p.title}</h3>
+  <div class='badge'>Click for details</div>
 </div>`).join('');
 
-// GitHub API projects (LIVE)
+function openModal(i){
+  const p=projects[i];
+  document.getElementById('mTitle').innerText=p.title;
+  document.getElementById('mDesc').innerText=p.desc;
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+
+// GITHUB LIVE
 async function loadGitHub(user){
   try{
     const res=await fetch(`https://api.github.com/users/${user}/repos`);
     const data=await res.json();
 
-    document.getElementById('githubGrid').innerHTML=data.map(r=>`
+    document.getElementById('githubGrid').innerHTML=data.slice(0,6).map(r=>`
       <div class='card'>
         <h3>${r.name}</h3>
         <div class='badge'>⭐ ${r.stargazers_count} • 🍴 ${r.forks_count}</div>
         <p>${r.description||'No description'}</p>
-        <a href='${r.html_url}' target='_blank'>View Repo →</a>
       </div>
     `).join('');
 
