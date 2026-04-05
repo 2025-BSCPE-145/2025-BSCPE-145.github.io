@@ -1,48 +1,87 @@
-/* 🧠 PROJECT SECTION */
-.projects-section {
-  padding: 70px 40px;
-  text-align: center;
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
 }
 
-.section-title {
-  font-size: 36px;
+body {
+  background: #f4f6fb;
   color: #111827;
 }
 
-.section-subtitle {
-  color: #6b7280;
-  margin-bottom: 40px;
-}
-
-/* 📦 GRID */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-/* 🧱 CARD */
-.project-card {
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
   background: white;
-  padding: 25px;
-  border-radius: 14px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #374151;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: white;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: white;
+  color: #4f46e5;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* GRID SYSTEM */
+.container, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 50px;
+}
+
+/* CARDS */
+.card, .project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  text-align: left;
   transition: 0.3s;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
+.card:hover, .project-card:hover {
+  transform: translateY(-6px);
 }
 
-/* 🌟 ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+/* SECTIONS */
+.section-title {
+  text-align: center;
+  font-size: 34px;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
 }
