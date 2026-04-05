@@ -8,6 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root{
+      --bg:#0f172a;
+      --card:#1e293b;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --accent:#38bdf8;
+    }
+
+    body.light{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --accent:#0284c7;
+    }
+
     *{
       margin:0;
       padding:0;
@@ -16,73 +32,81 @@
     }
 
     body{
-      background:#0f172a;
-      color:#e5e7eb;
+      background:var(--bg);
+      color:var(--text);
       line-height:1.6;
+      transition:0.3s ease;
     }
 
-    /* NAVBAR */
     header{
       position:sticky;
       top:0;
-      background:rgba(15,23,42,0.9);
+      background:rgba(15,23,42,0.85);
       backdrop-filter: blur(10px);
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:15px 40px;
-      z-index:1000;
+      padding:15px 30px;
       border-bottom:1px solid rgba(255,255,255,0.1);
+      z-index:1000;
+    }
+
+    body.light header{
+      background:rgba(255,255,255,0.85);
+      border-bottom:1px solid #e2e8f0;
     }
 
     .logo{
       font-weight:700;
-      color:#38bdf8;
-      font-size:18px;
+      color:var(--accent);
     }
 
     nav a{
-      color:#e5e7eb;
-      margin-left:20px;
+      margin-left:15px;
       text-decoration:none;
+      color:var(--text);
       font-size:14px;
-      transition:0.3s;
     }
 
-    nav a:hover{
-      color:#38bdf8;
+    nav a:hover{color:var(--accent);}
+
+    .toggle{
+      cursor:pointer;
+      background:var(--accent);
+      border:none;
+      padding:6px 10px;
+      border-radius:6px;
+      color:#fff;
+      font-weight:600;
     }
 
-    /* HERO */
     .hero{
       text-align:center;
-      padding:100px 20px;
-      animation:fadeIn 1.5s ease;
+      padding:90px 20px;
     }
 
     .hero h1{
-      font-size:42px;
-      color:#38bdf8;
+      font-size:40px;
+      color:var(--accent);
     }
 
-    .hero p{
-      max-width:700px;
-      margin:20px auto;
-      color:#cbd5e1;
+    .typing{
+      color:var(--muted);
+      margin-top:10px;
+      min-height:24px;
     }
 
     .btn{
       display:inline-block;
-      margin-top:20px;
-      padding:10px 20px;
-      background:#38bdf8;
-      color:#0f172a;
+      margin-top:15px;
+      padding:10px 18px;
+      background:var(--accent);
+      color:#fff;
       border-radius:8px;
       text-decoration:none;
       font-weight:600;
     }
 
-    /* SECTIONS */
     section{
       padding:60px 20px;
       max-width:1000px;
@@ -90,54 +114,59 @@
     }
 
     h2{
-      color:#38bdf8;
+      color:var(--accent);
       margin-bottom:20px;
-      border-left:4px solid #38bdf8;
+      border-left:4px solid var(--accent);
       padding-left:10px;
     }
 
-    /* CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
     .card{
-      background:#1e293b;
+      background:var(--card);
       padding:20px;
       border-radius:12px;
-      margin-bottom:20px;
       transition:0.3s;
+      opacity:0;
+      transform:translateY(20px);
+    }
+
+    .card.show{
+      opacity:1;
+      transform:translateY(0);
     }
 
     .card:hover{
       transform:translateY(-5px);
-      box-shadow:0 10px 20px rgba(0,0,0,0.3);
     }
 
     .tag{
       display:inline-block;
-      background:#38bdf8;
-      color:#0f172a;
+      margin-top:10px;
+      background:var(--accent);
+      color:#fff;
       padding:3px 8px;
       font-size:12px;
       border-radius:5px;
-      margin-top:10px;
     }
 
-    /* FOOTER */
+    .contact input, .contact textarea{
+      width:100%;
+      padding:10px;
+      margin:8px 0;
+      border-radius:8px;
+      border:none;
+    }
+
     footer{
       text-align:center;
       padding:30px;
-      border-top:1px solid rgba(255,255,255,0.1);
-      color:#94a3b8;
+      color:var(--muted);
     }
-
-    @keyframes fadeIn{
-      from{opacity:0; transform:translateY(20px);}
-      to{opacity:1; transform:translateY(0);}
-    }
-
-    /* smooth scroll */
-    html{
-      scroll-behavior:smooth;
-    }
-
   </style>
 </head>
 
@@ -150,80 +179,92 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#articles">Articles</a>
+    <a href="#contact">Contact</a>
   </nav>
+  <button class="toggle" onclick="toggleTheme()">Mode</button>
 </header>
 
-<!-- HERO -->
 <section id="home" class="hero">
   <h1>Hello, I'm Noor Fatima 👩‍💻</h1>
-  <p>Computer Engineering Student at UET Lahore (Faisalabad Campus). I build simple, clean, and real-world web projects while learning programming fundamentals and databases.</p>
-  <a class="btn" href="#projects">View My Work</a>
+  <div class="typing" id="typing"></div>
+  <a class="btn" href="#projects">View Work</a>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p><b>Roll No:</b> 2025-BSCPE-145</p>
-    <p>I completed my FSc Pre-Engineering and now studying Computer Engineering. I am focused on improving my programming and web development skills step by step.</p>
-    <span class="tag">Engineering Student</span>
+  <h2>About</h2>
+  <div class="card show">
+    <p>Computer Engineering Student at UET Lahore (Faisalabad Campus). Roll No: 2025-BSCPE-145. Passionate about web development and programming fundamentals.</p>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-
-  <div class="card">
-    <h3>Personal Portfolio Website (No Template)</h3>
-    <p>
-      This is a fully custom website built from scratch using HTML and CSS. It acts as my personal digital identity. I designed every section manually without using any templates or frameworks. The goal was to understand how real websites are structured and styled.
-      <br><br>
-      It includes Home, About, Projects, and Articles sections. I focused on layout design, spacing, responsiveness, and clean UI principles.
-    </p>
-
-    <p><b>Technologies Used:</b> HTML5, CSS3, GitHub Pages</p>
-
-    <p><b>Outcome:</b> Learned real-world website structure, improved UI design thinking, and gained experience in GitHub hosting and frontend development.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Portfolio Website (No Template)</h3>
+      <p>Built from scratch using HTML/CSS. Includes full structure, responsive layout, and GitHub Pages deployment.</p>
+      <span class="tag">HTML CSS GitHub</span>
+    </div>
   </div>
-
 </section>
 
-<!-- ARTICLES -->
 <section id="articles">
   <h2>Articles</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Programming Fundamentals</h3>
+      <p>Core concepts like variables, loops, conditions, and functions that build logical thinking and programming skills.</p>
+      <span class="tag">Programming</span>
+    </div>
 
-  <div class="card">
-    <h3>Programming Fundamentals</h3>
-    <p>
-      Programming fundamentals are the base of all programming languages. They teach how to think logically and solve problems step by step.
-      <br><br>
-      Key concepts include variables, data types, conditions, loops, and functions. Variables store data, conditions help in decision-making, loops repeat tasks, and functions organize reusable code.
-      <br><br>
-      These concepts are important because they build problem-solving skills and prepare students for advanced topics like data structures, web development, and artificial intelligence.
-    </p>
-
-    <span class="tag">Core Programming</span>
+    <div class="card">
+      <h3>Database Systems</h3>
+      <p>Structured data storage using tables, SQL, keys, and relationships used in real-world applications.</p>
+      <span class="tag">Databases</span>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h3>Database Systems</h3>
-    <p>
-      A database is a system used to store and manage data efficiently. It is used in almost every application like banking, social media, and e-commerce.
-      <br><br>
-      Data is stored in tables made of rows and columns. Important concepts include primary keys, foreign keys, SQL, and normalization.
-      <br><br>
-      Databases help reduce data duplication, improve security, and allow fast data access in large systems.
-    </p>
-
-    <span class="tag">Data Management</span>
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <div class="card show">
+    <input placeholder="Your Name" />
+    <input placeholder="Your Email" />
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Send</button>
   </div>
-
 </section>
 
 <footer>
-  <p>© 2026 Noor Fatima | Built with HTML & CSS 🚀</p>
+  © 2026 Noor Fatima | Pro Portfolio 🚀
 </footer>
+
+<script>
+  function toggleTheme(){
+    document.body.classList.toggle('light');
+  }
+
+  const text = "Computer Engineering Student | Web Developer | Learner";
+  let i=0;
+  function type(){
+    if(i<text.length){
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type,50);
+    }
+  }
+  type();
+
+  const cards = document.querySelectorAll('.card');
+  window.addEventListener('scroll', ()=>{
+    cards.forEach(c=>{
+      const rect = c.getBoundingClientRect().top;
+      if(rect < window.innerHeight - 100){
+        c.classList.add('show');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
