@@ -1,0 +1,14 @@
+# 🚀 GitHub Pages basic config (no theme / no template)
+
+title: My Personal Blog
+description: Learning web development step by step
+author: Your Name
+
+# ❌ IMPORTANT: No theme (keeps your custom HTML/CSS)
+theme: jekyll
+
+# Optional settings
+markdown: kramdown
+
+# GitHub Pages safe settings
+permalink: pretty
