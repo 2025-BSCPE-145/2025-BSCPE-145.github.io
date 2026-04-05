@@ -7,14 +7,91 @@
 <title>Noor Fatima | Engineering Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+nav button {
+  padding: 8px 14px;
+  border: 1px solid #333;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+section {
+  display: none;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* LIST ITEMS */
+.item {
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255,255,255,0.07);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item:hover {
+  background: rgba(56,189,248,0.2);
+}
+
+/* DETAIL VIEW */
+.detail {
+  display: none;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.back {
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #38bdf8;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>Noor Fatima</h1>
-  <p>Computer Engineering Student | Problem Solver</p>
+  <p>Engineering Student Portfolio</p>
 </header>
 
 <nav>
@@ -30,282 +107,138 @@
 <section id="home" class="active">
   <div class="card">
     <h2>Welcome 👋</h2>
-    <p>
-      This is my professional engineering portfolio where I showcase my academic work,
-      programming knowledge, and technical learning journey.
-    </p>
+    <p>Professional engineering portfolio.</p>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="card">
+
+  <!-- LIST VIEW -->
+  <div id="projectList">
 
     <h2>Projects 💼</h2>
 
-    <p>
-      A practical implementation guide demonstrating how a static website is deployed using GitHub Pages.
-      This project reflects my understanding of web hosting, version control, and front-end structure.
-    </p>
+    <div class="item" onclick="openProject('p1')">
+      🌐 Portfolio Website
+    </div>
 
-    <!-- PROJECT CARD -->
-    <div class="glass-card">
+    <div class="item" onclick="openProject('p2')">
+      💻 Programming Labs
+    </div>
 
-      <h3>🌐 GitHub Pages Website Deployment Project</h3>
-
-      <p>
-        A step-by-step demonstration of how to build and deploy a personal website using GitHub Pages.
-        This project covers repository setup, file structuring, and live deployment.
-      </p>
-
-      <div class="tags">
-        <span>GitHub</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Hosting</span>
-      </div>
-
-      <hr>
-
-      <h4>🔧 Process Overview</h4>
-
-      <ul>
-        <li><b>Create GitHub Account:</b> Register at github.com and verify email</li>
-        <li><b>Create Repository:</b> Name it <code>yourusername.github.io</code></li>
-        <li><b>Add Files:</b> Upload <code>index.html</code> and optional <code>style.css</code></li>
-        <li><b>Enable Pages:</b> Go to Settings → Pages → Deploy from main branch</li>
-        <li><b>Launch:</b> Website goes live on GitHub Pages URL</li>
-      </ul>
-
-      <h4>💻 Sample index.html</h4>
-
-      <pre>
-        <div class="article">
-
-  <h3>📊 Database Management Systems (DBMS)</h3>
-
-  <p class="preview">
-    A Database Management System (DBMS) is software used to store, manage, and organize data efficiently in structured form.
-  </p>
-
-  <div class="full-content">
-
-    <p>
-      A DBMS acts as an interface between users and databases, allowing secure, efficient, and structured data handling in applications like banking, education, and e-commerce.
-    </p>
-
-    <h4>🔑 Core Functions of DBMS</h4>
-    <ul>
-      <li>Data storage and retrieval</li>
-      <li>Data security and access control</li>
-      <li>Transaction management</li>
-      <li>Concurrency control (multiple users)</li>
-    </ul>
-
-    <h4>🏗️ DBMS Architecture Concepts</h4>
-    <ul>
-      <li>Physical Level – how data is stored</li>
-      <li>Logical Level – what data is stored</li>
-      <li>View Level – user-specific view</li>
-    </ul>
-
-    <h4>📚 Reference</h4>
-    <p>
-      Learn more about DBMS fundamentals:
-      <a href="https://contabo.com/blog/wiki/dbms/?utm_source=google&utm_medium=cpc&utm_campaign=brand-pmax-global&utm_term=&utm_content=&gad_source=1&utm_campaignid=22692290604&gbraid=0AAAAAD_Qy-eCxqBwFBlhPYXiB7jlmuf2r&gclid=Cj0KCQjwkMjOBhC5ARIsADIdb3cgXHeLi13Exk3fOOQQFPTP8soc1-diE24DC6anAwi3eSipMDXHb6waAgc0EALw_wcB" target="_blank">
-        DBMS Full Guide (Contabo)
-      </a>
-    </p>
-
-  </div>
-
-  <button onclick="toggleArticle(this)">Read More</button>
-</div>
-        <div class="article">
-
-  <h3>📊 Database Management Systems (DBMS)</h3>
-
-  <p class="preview">
-    A Database Management System (DBMS) is software used to store, manage, and organize data efficiently in structured form.
-  </p>
-
-  <div class="full-content">
-
-    <p>
-      A DBMS acts as an interface between users and databases, allowing secure, efficient, and structured data handling in applications like banking, education, and e-commerce.
-    </p>
-
-    <h4>🔑 Core Functions of DBMS</h4>
-    <ul>
-      <li>Data storage and retrieval</li>
-      <li>Data security and access control</li>
-      <li>Transaction management</li>
-      <li>Concurrency control (multiple users)</li>
-    </ul>
-
-    <h4>🏗️ DBMS Architecture Concepts</h4>
-    <ul>
-      <li>Physical Level – how data is stored</li>
-      <li>Logical Level – what data is stored</li>
-      <li>View Level – user-specific view</li>
-    </ul>
-
-    <h4>📚 Reference</h4>
-    <p>
-      Learn more about DBMS fundamentals:
-      <a href="https://contabo.com/blog/wiki/dbms/?utm_source=google&utm_medium=cpc&utm_campaign=brand-pmax-global&utm_term=&utm_content=&gad_source=1&utm_campaignid=22692290604&gbraid=0AAAAAD_Qy-eCxqBwFBlhPYXiB7jlmuf2r&gclid=Cj0KCQjwkMjOBhC5ARIsADIdb3cgXHeLi13Exk3fOOQQFPTP8soc1-diE24DC6anAwi3eSipMDXHb6waAgc0EALw_wcB" target="_blank">
-        DBMS Full Guide (Contabo)
-      </a>
-    </p>
-
-  </div>
-
-  <button onclick="toggleArticle(this)">Read More</button>
-</div>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;My Portfolio&lt;/title&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-  &lt;h1&gt;Hello, I am Noor 👩‍💻&lt;/h1&gt;
-  &lt;p&gt;Welcome to my GitHub website!&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-      </pre>
-
-      <h4>🎯 Outcome</h4>
-      <p>
-        Successfully deployed a live website using GitHub Pages with proper version control and static hosting workflow.
-      </p>
-
+    <div class="item" onclick="openProject('p3')">
+      📊 Database Project
     </div>
 
   </div>
+
+  <!-- DETAIL VIEW -->
+  <div id="projectDetail" class="detail"></div>
+
 </section>
 
-<!-- ARTICLES (NEW) -->
+<!-- ARTICLES -->
 <section id="articles">
-  <div class="card">
+
+  <!-- LIST -->
+  <div id="articleList">
 
     <h2>Articles 📝</h2>
 
-    <!-- DATABASE ARTICLE -->
-    <div class="article">
-      <h3>📊 Database Systems</h3>
-
-      <p class="preview">
-        Database systems store, manage, and retrieve data efficiently. They are used in banking,
-        e-commerce, healthcare, and many modern applications...
-      </p>
-
-      <div class="full-content">
-
-        <p>
-          In the digital era, data is considered the “new oil.” A Database System includes a database,
-          a DBMS, and users interacting with it.
-        </p>
-
-        <h4>Core Components</h4>
-        <ul>
-          <li>Hardware (servers, storage)</li>
-          <li>Software (MySQL, PostgreSQL)</li>
-          <li>Users (DBA, developers)</li>
-        </ul>
-
-        <h4>Types</h4>
-        <ul>
-          <li>Relational (RDBMS)</li>
-          <li>NoSQL</li>
-          <li>Hierarchical</li>
-        </ul>
-
-        <h4>Applications</h4>
-        <ul>
-          <li>Banking</li>
-          <li>E-commerce</li>
-          <li>Healthcare</li>
-        </ul>
-
-      </div>
-
-      <button onclick="toggleArticle(this)">Read More</button>
+    <div class="item" onclick="openArticle('a1')">
+      📊 Database Systems
     </div>
 
-    <hr>
-
-    <!-- PROGRAMMING ARTICLE -->
-    <div class="article">
-      <h3>💻 Programming Fundamentals</h3>
-
-      <p class="preview">
-        Programming fundamentals include variables, loops, functions, and logic building
-        which form the base of all software development...
-      </p>
-
-      <div class="full-content">
-
-        <h4>Core Concepts</h4>
-
-        <p><b>Variables</b></p>
-        <pre>
-age = 25
-name = "Ali"
-        </pre>
-
-        <p><b>Loops</b></p>
-        <pre>
-for i in range(5):
-    print(i)
-        </pre>
-
-        <p><b>Functions</b></p>
-        <pre>
-def greet(name):
-    return "Hello " + name
-        </pre>
-
-        <p>
-          Mastering these concepts helps in building efficient and scalable applications.
-        </p>
-
-      </div>
-
-      <button onclick="toggleArticle(this)">Read More</button>
+    <div class="item" onclick="openArticle('a2')">
+      💻 Programming Fundamentals
     </div>
 
   </div>
+
+  <!-- DETAIL -->
+  <div id="articleDetail" class="detail"></div>
+
 </section>
-
-
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="card">
     <h2>Contact 📞</h2>
-
     <p>Email: NoorFatima45@example.com</p>
-
-    <p>
-      GitHub:
-      <a href="https://github.com/2025-BSCPE-145" target="_blank">
-        github.com/2025-BSCPE-145
-      </a>
-    </p>
-
-    <p>Location: Pakistan 🇵🇰</p>
   </div>
 </section>
 
 </main>
 
 <script>
-function showSection(id) {
-  document.querySelectorAll("section").forEach(sec => {
-    sec.classList.remove("active");
-  });
+function showSection(id){
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
+}
+
+/* PROJECT DATA */
+function openProject(id){
+  document.getElementById("projectList").style.display = "none";
+  let box = document.getElementById("projectDetail");
+  box.style.display = "block";
+
+  if(id === "p1"){
+    box.innerHTML = `
+      <div class="back" onclick="backProjects()">← Back</div>
+      <h2>🌐 Portfolio Website</h2>
+      <p>Responsive website built using HTML, CSS, JS.</p>
+    `;
+  }
+
+  if(id === "p2"){
+    box.innerHTML = `
+      <div class="back" onclick="backProjects()">← Back</div>
+      <h2>💻 Programming Labs</h2>
+      <p>Python loops, functions, and logic building exercises.</p>
+    `;
+  }
+
+  if(id === "p3"){
+    box.innerHTML = `
+      <div class="back" onclick="backProjects()">← Back</div>
+      <h2>📊 Database Project</h2>
+      <p>SQL-based student record management system.</p>
+    `;
+  }
+}
+
+function backProjects(){
+  document.getElementById("projectList").style.display = "block";
+  document.getElementById("projectDetail").style.display = "none";
+}
+
+/* ARTICLE DATA */
+function openArticle(id){
+  document.getElementById("articleList").style.display = "none";
+  let box = document.getElementById("articleDetail");
+  box.style.display = "block";
+
+  if(id === "a1"){
+    box.innerHTML = `
+      <div class="back" onclick="backArticles()">← Back</div>
+      <h2>📊 Database Systems</h2>
+      <p>Database systems manage structured data efficiently in applications.</p>
+    `;
+  }
+
+  if(id === "a2"){
+    box.innerHTML = `
+      <div class="back" onclick="backArticles()">← Back</div>
+      <h2>💻 Programming Fundamentals</h2>
+      <p>Core concepts like loops, functions, and variables.</p>
+    `;
+  }
+}
+
+function backArticles(){
+  document.getElementById("articleList").style.display = "block";
+  document.getElementById("articleDetail").style.display = "none";
 }
 </script>
 
