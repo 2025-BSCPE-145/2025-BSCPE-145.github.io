@@ -136,4 +136,117 @@ a:hover {
     margin: 10px;
     padding: 18px;
   }
+  /* ===== PROJECT STEPS (INTERACTIVE) ===== */
+.step {
+  margin-top: 15px;
+}
+
+.step h4 {
+  background: rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.step h4:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* STEP CONTENT */
+.step-content {
+  display: none;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* SHOW STEP */
+.step-content.show {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+/* CODE BLOCK */
+pre {
+  background: #020617;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+/* COPY BUTTON */
+.step button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.step button:hover {
+  background: #0ea5e9;
+}
+
+/* ===== ARTICLE (READ MORE SYSTEM) ===== */
+.article {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* ARTICLE BUTTON */
+.article button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.article button:hover {
+  background: #0ea5e9;
+}
+
+/* HIDDEN CONTENT */
+.full-content {
+  display: none;
+  margin-top: 10px;
+}
+
+/* SHOW CONTENT */
+.full-content.show {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ===== SCROLLBAR (PREMIUM TOUCH) ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 10px;
+}
+
+/* ===== SMALL UI POLISH ===== */
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 20px 0;
+}
 }
