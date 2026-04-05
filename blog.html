@@ -1,49 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Blog</title>
-
-  <!-- CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Noor Fatima</title>
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">Noor Fatima</a>
+      </div>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <button class="hamburger" id="hamburger">☰</button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </nav>
+  </header>
 
-<nav>
-  <h2>Noor's Blog</h2>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
+  <section class="hero">
+    <h1>My Blog</h1>
+    <p>Thoughts, projects, and learning notes from my BSCPE journey</p>
+  </section>
+
+  <div class="posts-grid">
+    <!-- Sample Card 1 -->
+    <div class="card">
+      <img src="https://picsum.photos/id/1015/800/600" alt="Responsive Web Design">
+      <div class="card-content">
+        <div class="meta">April 5, 2026 • 8 min read</div>
+        <h3>Building a Clean & Elegant Personal Blog</h3>
+        <p>Learned how to create a beautiful responsive website using only HTML and CSS. Focused on typography, cards, and mobile navigation.</p>
+        <a href="posts/post1.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Sample Card 2 -->
+    <div class="card">
+      <img src="https://picsum.photos/id/201/800/600" alt="HTML CSS Project">
+      <div class="card-content">
+        <div class="meta">March 28, 2026 • 6 min read</div>
+        <h3>My First Semester Projects in Computer Engineering</h3>
+        <p>Sharing the challenges and solutions I faced while working on digital logic design and basic web development labs.</p>
+        <a href="posts/post2.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Sample Card 3 -->
+    <div class="card">
+      <img src="https://picsum.photos/id/237/800/600" alt="Learning Journey">
+      <div class="card-content">
+        <div class="meta">March 15, 2026 • 5 min read</div>
+        <h3>Why I Chose Computer Engineering</h3>
+        <p>My personal story, motivations, and what I hope to achieve in the field of hardware and software integration.</p>
+        <a href="posts/post3.html" class="read-more">Read More →</a>
+      </div>
+    </div>
   </div>
-</nav>
 
-<h1 class="title">My Blog Posts ✨</h1>
+  <footer>
+    <p>&copy; 2026 Noor Fatima • BSCPE Student</p>
+  </footer>
 
-<div class="posts">
-
-  <div class="card" data-aos="fade-up">
-    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="">
-    <h2>Programming Fundamentals</h2>
-    <p>Learn core concepts like variables, loops, and logic building.</p>
-    <a href="posts/post1.html">Read More</a>
-  </div>
-
-  <div class="card" data-aos="fade-up">
-    <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72" alt="">
-    <h2>Python Basics</h2>
-    <p>Understand syntax, functions, and real-world usage of Python.</p>
-    <a href="posts/post2.html">Read More</a>
-  </div>
-
-</div>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init();
-</script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
