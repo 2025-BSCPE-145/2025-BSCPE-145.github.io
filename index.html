@@ -1,11 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Noor Fatima | Engineering Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#e2e8f0;
+  --accent:#38bdf8;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* HEADER */
+header{
+  padding:20px;
+  text-align:center;
+  background:#0b1220;
+  border-bottom:1px solid #334155;
+}
+
+header h1{
+  color:var(--accent);
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding:15px;
+  flex-wrap:wrap;
+}
+
+nav button{
+  padding:10px 15px;
+  border:none;
+  background:var(--card);
+  color:var(--text);
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+nav button:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* SECTIONS */
+section{
+  display:none;
+  padding:30px;
+}
+
+section.active{
+  display:block;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  background:#273449;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  background:#1e293b;
+  padding:25px;
+  width:80%;
+  max-width:700px;
+  border-radius:12px;
+  max-height:80vh;
+  overflow:auto;
+}
+
+.close{
+  float:right;
+  cursor:pointer;
+  font-size:20px;
+  color:red;
+}
+</style>
 </head>
 
-<body onload="show('home')">
+<body>
+
+<header>
+  <h1>🚀 Noor Fatima | Engineering Portfolio</h1>
+  <p>Professional Developer • CS Student • Builder</p>
+</header>
 
 <nav>
   <button onclick="show('home')">Home</button>
@@ -13,30 +132,315 @@
   <button onclick="show('articles')">Articles</button>
 </nav>
 
+<!-- HOME -->
 <section id="home" class="active">
-  <h1>Welcome</h1>
+  <h2>Welcome 👋</h2>
+  <p>This is a professional engineering-level portfolio showcasing projects and technical articles.</p>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-  <h1>Projects</h1>
-  <button onclick="openModal('p1')">Open Project</button>
+  <h2>🚀 Projects</h2>
+  <div class="grid">
+
+    <div class="card" onclick="openModal('p1')">
+      <h3>Portfolio Website</h3>
+      <p>Engineering-level breakdown</p>
+    </div>
+
+  </div>
 </section>
 
+<!-- ARTICLES -->
 <section id="articles">
-  <h1>Articles</h1>
-  <button onclick="openModal('a1')">Article 1</button>
-  <button onclick="openModal('a2')">Article 2</button>
+  <h2>📘 Articles</h2>
+  <div class="grid">
+
+    <div class="card" onclick="openModal('a1')">
+      <h3>Programming Fundamentals</h3>
+      <p>Core CS concepts explained</p>
+    </div>
+
+    <div class="card" onclick="openModal('a2')">
+      <h3>Database Systems</h3>
+      <p>DBMS deep explanation</p>
+    </div>
+
+  </div>
 </section>
 
 <!-- MODAL -->
-<div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6);">
-  <div style="background:white; margin:10% auto; padding:20px; width:80%;">
-    <button onclick="closeModal()">Close</button>
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
     <div id="modal-body"></div>
   </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+/* DATA SYSTEM */
+const data = {
+
+p1: `
+<h2>🚀 Portfolio Website — Engineering Case Study</h2>
+
+<p>This project is a fully custom-built personal portfolio website designed to demonstrate real-world frontend engineering skills, UI structuring, and deployment workflow.</p>
+
+<hr/>
+
+<h3>🎯 Project Objective</h3>
+<p>The main goal was to design and develop a professional portfolio that can represent a developer’s skills, projects, and technical writing in a structured and scalable way.</p>
+
+<hr/>
+
+<h3>🧠 Problem Statement</h3>
+<p>Most beginner portfolios are either template-based or lack proper structure. This project solves that by building a clean, modular, and expandable system from scratch using only HTML, CSS, and JavaScript.</p>
+
+<hr/>
+
+<h3>🪜 Step-by-Step Development Process</h3>
+
+<ol>
+<li><b>UI Planning</b> — Designed layout structure (Home, Projects, Articles, Contact)</li>
+<li><b>HTML Architecture</b> — Built semantic section-based structure</li>
+<li><b>CSS Design System</b> — Implemented variables, spacing rules, and card UI system</li>
+<li><b>Component Design</b> — Created reusable project/article cards</li>
+<li><b>JavaScript Logic</b> — Built navigation + modal system</li>
+<li><b>Content System</b> — Structured data-driven project/article rendering</li>
+<li><b>Deployment</b> — Hosted using GitHub Pages</li>
+</ol>
+
+<hr/>
+
+<h3>🧩 System Architecture</h3>
+
+<ul>
+<li><b>Frontend Layer:</b> HTML + CSS UI structure</li>
+<li><b>Logic Layer:</b> JavaScript (navigation + modal handling)</li>
+<li><b>Content Layer:</b> JavaScript object-based data storage</li>
+</ul>
+
+<hr/>
+
+<h3>🛠 Technologies Used</h3>
+
+<ul>
+<li>HTML5 — semantic structure</li>
+<li>CSS3 — responsive UI design</li>
+<li>JavaScript (ES6) — interactivity and logic</li>
+<li>GitHub Pages — deployment</li>
+</ul>
+
+<hr/>
+
+<h3>✨ Key Features</h3>
+
+<ul>
+<li>Fully custom UI (no frameworks or templates)</li>
+<li>Responsive design for all devices</li>
+<li>Interactive modal-based content system</li>
+<li>Single-page navigation experience</li>
+<li>Expandable architecture for future scaling</li>
+</ul>
+
+<hr/>
+
+<h3>⚠️ Challenges Faced</h3>
+
+<ul>
+<li>Designing a scalable structure without frameworks</li>
+<li>Managing dynamic content inside JavaScript objects</li>
+<li>Building reusable UI components manually</li>
+</ul>
+
+<hr/>
+
+<h3>📈 Learning Outcomes</h3>
+
+<p>This project improved my understanding of:</p>
+
+<ul>
+<li>Frontend architecture design</li>
+<li>DOM manipulation and event handling</li>
+<li>UI/UX structuring principles</li>
+<li>Real-world deployment workflow</li>
+</ul>
+
+<hr/>
+
+<h3>🚀 Future Improvements</h3>
+
+<ul>
+<li>Add backend for blog system</li>
+<li>Convert into React-based portfolio</li>
+<li>Add animations and transitions</li>
+<li>Integrate contact form backend</li>
+</ul>
+
+<hr/>
+
+<h3>🎯 Conclusion</h3>
+<p>This project represents a transition from beginner-level coding to structured engineering thinking. It demonstrates how real-world developer portfolios are designed and deployed.</p>
+`
+
+,
+
+a1: `
+<h2>📘 Programming Fundamentals (Engineering Blog Edition)</h2>
+
+<p>Programming fundamentals are the backbone of all software systems. Every application—from mobile apps to AI systems—relies on these core concepts.</p>
+
+<hr/>
+
+<h3>🧠 Why Programming Fundamentals Matter</h3>
+<p>They define how a programmer thinks. Instead of memorizing syntax, you learn how to break real-world problems into logical steps.</p>
+
+<hr/>
+
+<h3>🪜 Step-by-Step Problem Solving in Programming</h3>
+<ol>
+<li><b>Understand the problem</b> — What exactly is required?</li>
+<li><b>Break it down</b> — Divide into smaller logical parts</li>
+<li><b>Design algorithm</b> — Plan step-by-step solution</li>
+<li><b>Write code</b> — Convert logic into syntax</li>
+<li><b>Test & debug</b> — Fix errors and optimize</li>
+</ol>
+
+<hr/>
+
+<h3>🔑 Core Concepts Explained</h3>
+
+<h4>🧩 1. Variables</h4>
+<p>Variables are memory containers that store data.</p>
+<p><b>Example:</b> name = "Noor", age = 20</p>
+
+<h4>🔢 2. Data Types</h4>
+<ul>
+<li>Integer → Whole numbers (10, 20)</li>
+<li>Float → Decimal numbers (3.14)</li>
+<li>String → Text ("Hello World")</li>
+<li>Boolean → True / False</li>
+</ul>
+
+<h4>🔀 3. Conditional Statements</h4>
+<p>Used for decision-making in programs.</p>
+<p><b>Example:</b> If marks ≥ 50 → Pass, else → Fail</p>
+
+<h4>🔁 4. Loops</h4>
+<p>Used to repeat tasks efficiently without rewriting code.</p>
+
+<h4>⚙️ 5. Functions</h4>
+<p>Reusable blocks of code that improve structure and reduce repetition.</p>
+
+<hr/>
+
+<h3>🌍 Real-World Analogy</h3>
+<p>Programming fundamentals are like grammar in a language—without grammar, communication is impossible.</p>
+
+<hr/>
+
+<h3>📌 Applications</h3>
+<ul>
+<li>Web development</li>
+<li>Mobile applications</li>
+<li>Artificial Intelligence</li>
+<li>Database systems</li>
+</ul>
+
+<hr/>
+
+<h3>🎯 Conclusion</h3>
+<p>Strong fundamentals = strong engineering foundation. Every advanced developer starts here.</p>
+`
+a2: `
+<h2>🗄️ Database Systems (DBMS) — Complete Engineering Guide</h2>
+
+<p>A Database Management System (DBMS) is responsible for storing, organizing, and retrieving data efficiently in modern applications.</p>
+
+<hr/>
+
+<h3>🧠 Why Databases Are Important</h3>
+<p>Every digital system—banking, social media, e-commerce—depends on databases to manage massive amounts of structured data.</p>
+
+<hr/>
+
+<h3>🪜 How DBMS Works (Step-by-Step)</h3>
+<ol>
+<li>Data is collected from users or applications</li>
+<li>It is stored in structured tables</li>
+<li>Relationships are defined between tables</li>
+<li>SQL is used to query data</li>
+<li>Data is updated, deleted, or retrieved as needed</li>
+</ol>
+
+<hr/>
+
+<h3>📊 Database Structure</h3>
+<ul>
+<li><b>Table:</b> Collection of data (like Excel sheet)</li>
+<li><b>Row:</b> Single record</li>
+<li><b>Column:</b> Attribute/field</li>
+</ul>
+
+<hr/>
+
+<h3>🔑 Core Concepts</h3>
+
+<h4>🔐 Primary Key</h4>
+<p>Uniquely identifies each record in a table.</p>
+
+<h4>🔗 Foreign Key</h4>
+<p>Connects one table to another, creating relationships.</p>
+
+<h4>💻 SQL (Structured Query Language)</h4>
+<p>Used to interact with databases.</p>
+<p><b>Example:</b> SELECT * FROM students;</p>
+
+<h4>🧹 Normalization</h4>
+<p>Process of removing redundancy and improving database efficiency.</p>
+
+<hr/>
+
+<h3>🌍 Real-World Applications</h3>
+<ul>
+<li>Banking systems</li>
+<li>E-commerce platforms (Amazon-style systems)</li>
+<li>University management systems</li>
+<li>Social media platforms</li>
+</ul>
+
+<hr/>
+
+<h3>⚠️ Key Advantages</h3>
+<ul>
+<li>High data security</li>
+<li>Reduced redundancy</li>
+<li>Fast retrieval</li>
+<li>Scalability for large systems</li>
+</ul>
+
+<hr/>
+
+<h3>🎯 Conclusion</h3>
+<p>DBMS is the backbone of every modern software system that handles data at scale.</p>
+`
+
+};
+
+function openModal(key){
+  document.getElementById('modal-body').innerHTML = data[key];
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+</script>
 
 </body>
 </html>
