@@ -3,15 +3,30 @@ layout: default
 title: "Home"
 ---
 
-{% if site.show_excerpts %}
-  {% for post in site.posts %}
-    <article>
-      {% include meta.html post=post %}
-      {{ post.excerpt }}
-      <footer class="button"><a href="{{ post.url | relative_url }}">read more</a></footer>
-    </article>
-  {% endfor %}
-{% else %}
-  {% capture source %}{% include_relative archive.html title="Posts" %}{% endcapture %}
-  {{ source | split: "---" | last }}
-{% endif %}
+<section class="hero">
+  <h1>👋 Welcome to My Portfolio</h1>
+  <p>This is my first website built using GitHub Pages 🚀</p>
+</section>
+
+<section class="project-highlight">
+  <div class="project-card">
+
+    <h2>🌟 My First GitHub Website</h2>
+
+    <p>
+      I built this project while learning HTML, CSS, and GitHub Pages.
+      It represents my first step into web development and version control.
+    </p>
+
+    <ul>
+      <li>✔ HTML structure</li>
+      <li>✔ CSS styling</li>
+      <li>✔ GitHub Pages deployment</li>
+    </ul>
+
+    <a class="btn" href="#" target="_blank">
+      🔗 View Project
+    </a>
+
+  </div>
+</section>
