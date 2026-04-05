@@ -195,42 +195,10 @@ pre {
   background: #0ea5e9;
 }
 
-/* ===== ARTICLE (READ MORE SYSTEM) ===== */
-.article {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-}
 
-/* ARTICLE BUTTON */
-.article button {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 10px;
-  background: #38bdf8;
-  color: black;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
 
-.article button:hover {
-  background: #0ea5e9;
-}
 
-/* HIDDEN CONTENT */
-.full-content {
-  display: none;
-  margin-top: 10px;
-}
 
-/* SHOW CONTENT */
-.full-content.show {
-  display: block;
-  animation: fadeIn 0.5s ease;
-}
 
 /* ===== SCROLLBAR (PREMIUM TOUCH) ===== */
 ::-webkit-scrollbar {
