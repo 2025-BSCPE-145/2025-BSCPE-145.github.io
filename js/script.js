@@ -35,6 +35,19 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', newTheme);
   updateToggleIcon(newTheme);
 });
+// Hamburger Menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link (optional but nice)
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
 // Initialize theme when page loads
 document.addEventListener('DOMContentLoaded', initTheme);
