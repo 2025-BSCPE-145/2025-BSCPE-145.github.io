@@ -1,226 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab Articles - Noor Fatima</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | My Personal Site</title>
 
-  <style>
-    /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: auto;
-      opacity: 0.8;
-    }
-
-    .btn {
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      margin: 10px;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #6366f1;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #4f46e5;
-      transform: scale(1.05);
-    }
-
-    .btn-secondary {
-      background: #e2e8f0;
-      color: black;
-    }
-
-    .btn-secondary:hover {
-      transform: scale(1.05);
-    }
-
-    /* ===== GRID ===== */
-    .latest-articles {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    /* ===== CARD ===== */
-    .article-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .article-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    }
-
-    .article-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .article-content {
-      padding: 20px;
-      text-align: left;
-    }
-
-    .article-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    .tag {
-      background: #6366f1;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-
-    .article-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
-    }
-
-    .read-more-btn {
-      text-decoration: none;
-      color: #6366f1;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0f172a;
-      color: white;
-      margin-top: 50px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-<header>
-  <nav class="navbar">
-    <div class="logo"><a href="index.html">Noor Fatima</a></div>
+  <!-- 🔵 NAVBAR -->
+  <header class="navbar">
+    <div class="logo">🚀 MyBlog</div>
 
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html" style="color:#6366f1;">Lab Articles</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <button class="hamburger" id="hamburger">☰</button>
-    <button id="theme-toggle" class="theme-toggle">🌙</button>
-  </nav>
-</header>
+  <!-- 🌟 PAGE HEADER -->
+  <section class="hero">
+    <h1>📘 My Blog</h1>
+    <p>Sharing my learning journey and projects</p>
+  </section>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Frontend Practice Journal</h1>
-  <p>I document my weekly web development labs in simple and easy words.</p>
+  <!-- 🧱 BLOG POSTS -->
+  <section class="container">
 
-  <a href="#latest-articles" class="btn btn-primary">Read Articles</a>
-  <a href="about.html" class="btn btn-secondary">About Me</a>
-</section>
-
-<!-- ARTICLES -->
-<section class="latest-articles" id="latest-articles">
-  <h2>Latest Practice Articles</h2>
-
-  <div class="articles-grid">
-
-    <!-- CARD -->
-    <div class="article-card">
-      <img src="https://picsum.photos/id/1015/800/600">
-      <div class="article-content">
-        <div class="article-header">
-          <span class="tag">Lab Project</span>
-          <span>05 Apr 2026</span>
-        </div>
-        <h3>Responsive Website</h3>
-        <p>Learned Flexbox and responsive design basics.</p>
-        <div class="article-meta">
-          <span>6 min</span>
-          <a href="posts/post1.html" class="read-more-btn">Read →</a>
-        </div>
-      </div>
+    <div class="card">
+      <h2>🚀 My First Website</h2>
+      <p>I built my first GitHub Pages website using only HTML and CSS.</p>
     </div>
 
-    <!-- CARD -->
-    <div class="article-card">
-      <img src="https://picsum.photos/id/201/800/600">
-      <div class="article-content">
-        <div class="article-header">
-          <span class="tag">CSS</span>
-          <span>28 Mar 2026</span>
-        </div>
-        <h3>Better Layout</h3>
-        <p>Improved spacing, alignment and design structure.</p>
-        <div class="article-meta">
-          <span>5 min</span>
-          <a href="posts/post2.html" class="read-more-btn">Read →</a>
-        </div>
-      </div>
+    <div class="card">
+      <h2>🎨 Learning CSS Layouts</h2>
+      <p>Today I learned Flexbox and Grid to create modern layouts.</p>
     </div>
 
-    <!-- CARD -->
-    <div class="article-card">
-      <img src="https://picsum.photos/id/237/800/600">
-      <div class="article-content">
-        <div class="article-header">
-          <span class="tag">Plan</span>
-          <span>20 Mar 2026</span>
-        </div>
-        <h3>Learning Plan</h3>
-        <p>My weekly practice strategy for web development.</p>
-        <div class="article-meta">
-          <span>5 min</span>
-          <a href="posts/post3.html" class="read-more-btn">Read →</a>
-        </div>
-      </div>
+    <div class="card">
+      <h2>⚡ JavaScript Basics</h2>
+      <p>I started learning how to add interactivity to websites.</p>
     </div>
 
-  </div>
-</section>
+    <div class="card">
+      <h2>📌 My Goals</h2>
+      <p>I want to become a full-stack developer and build real apps.</p>
+    </div>
 
-<footer>
-  <p>© 2026 Noor Fatima | Frontend Journal</p>
-</footer>
+  </section>
 
-<script src="js/script.js"></script>
+  <!-- 🧾 FOOTER -->
+  <footer>
+    <p>© 2026 My Blog | Built with ❤️ on GitHub Pages</p>
+  </footer>
 
 </body>
 </html>
