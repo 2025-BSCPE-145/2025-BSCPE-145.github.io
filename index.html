@@ -129,7 +129,36 @@ a2: `
 `
 
 };
+<body onload="show('home')">
 
+<nav>
+  <button onclick="show('home')">Home</button>
+  <button onclick="show('projects')">Projects</button>
+  <button onclick="show('articles')">Articles</button>
+</nav>
+
+<section id="home" class="active">
+  <h1>Welcome</h1>
+</section>
+
+<section id="projects">
+  <h1>Projects</h1>
+</section>
+
+<section id="articles">
+  <h1>Articles</h1>
+</section>
+
+<!-- MODAL -->
+<div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6);">
+  <div style="background:white; margin:10% auto; padding:20px; width:80%;">
+    <button onclick="closeModal()">Close</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- JS MUST GO HERE OR IN script.js -->
+</body>
 function openModal(key){
   document.getElementById('modal-body').innerHTML = data[key];
   document.getElementById('modal').style.display='flex';
