@@ -23,7 +23,6 @@ header {
 header h1 {
   font-size: 2.8rem;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
 header p {
@@ -52,7 +51,8 @@ nav button {
   font-weight: 500;
 }
 
-nav button:hover {
+nav button:hover,
+nav button.active {
   transform: translateY(-3px);
   background: rgba(255,255,255,0.18);
 }
@@ -68,7 +68,7 @@ section.active {
   display: block;
 }
 
-/* ===== GLASS CARD ===== */
+/* ===== CARD ===== */
 .card {
   max-width: 900px;
   margin: auto;
@@ -77,11 +77,9 @@ section.active {
 
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   border: 1px solid rgba(255,255,255,0.08);
 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
 }
 
@@ -89,14 +87,42 @@ section.active {
   transform: scale(1.02);
 }
 
-.card h2 {
-  margin-bottom: 15px;
-  font-size: 1.8rem;
+/* ===== GLASS CARD ===== */
+.glass-card {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+
+  transition: 0.3s ease;
 }
 
-.card h3 {
-  margin-top: 15px;
+.glass-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.12);
+}
+
+/* ===== TAGS ===== */
+.tags {
+  margin-top: 10px;
+}
+
+.tags span {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px 5px 0 0;
+}
+
+/* ===== ARTICLE ===== */
+.article {
+  margin-top: 20px;
 }
 
 /* ===== LINKS ===== */
@@ -109,61 +135,21 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== PROJECT STEPS ===== */
-.step {
-  margin-top: 15px;
-}
-
-.step h4 {
-  background: rgba(255,255,255,0.08);
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.step h4:hover {
-  background: rgba(255,255,255,0.18);
-}
-
-.step-content {
-  display: none;
-  padding: 12px;
-  margin-top: 8px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.05);
-}
-
-.step-content.show {
-  display: block;
-  animation: fadeIn 0.4s ease;
-}
-
 /* ===== CODE BLOCK ===== */
 pre {
   background: #020617;
   padding: 12px;
   border-radius: 10px;
   overflow-x: auto;
-  font-size: 0.9rem;
   color: #38bdf8;
 }
 
-/* ===== COPY BUTTON ===== */
-.step button {
-  margin-top: 8px;
-  padding: 6px 12px;
+/* ===== HR ===== */
+hr {
   border: none;
-  border-radius: 8px;
-  background: #38bdf8;
-  color: black;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: 0.3s;
-}
-
-.step button:hover {
-  background: #0ea5e9;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 20px 0;
 }
 
 /* ===== ANIMATION ===== */
@@ -188,14 +174,7 @@ pre {
   border-radius: 10px;
 }
 
-hr {
-  border: none;
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 20px 0;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
@@ -210,34 +189,4 @@ hr {
     margin: 10px;
     padding: 18px;
   }
-  .glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 16px;
-  padding: 20px;
-  color: #e5e7eb;
-  transition: 0.3s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.tags {
-  margin-top: 10px;
-}
-
-.tags span {
-  display: inline-block;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-right: 5px;
-  margin-top: 5px;
-}
 }
