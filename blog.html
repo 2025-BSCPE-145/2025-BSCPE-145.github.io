@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Noor Fatima</title>
+  <title>Lab Articles - Noor Fatima</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html">Lab Articles</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       
@@ -26,47 +26,130 @@
   </header>
 
   <section class="hero">
-    <h1>My Blog</h1>
-    <p>Thoughts, projects, and learning notes from my BSCPE journey</p>
+    <h1>Noor Fatima - Frontend Practice Journal</h1>
+    <p>I am a BSCPE student building simple and responsive web pages using HTML, CSS, and JavaScript. 
+       This blog shares my university lab tasks and what I learned every week in easy words.</p>
+    
+    <div style="margin-top: 2rem;">
+      <a href="#latest-articles" style="background: var(--accent); color: white; padding: 12px 28px; border-radius: 8px; margin-right: 12px; display: inline-block;">
+        Read All Lab Articles
+      </a>
+      <a href="about.html" style="background: #e2e8f0; color: var(--text-primary); padding: 12px 28px; border-radius: 8px; display: inline-block;">
+        About Me
+      </a>
+    </div>
   </section>
 
-  <div class="posts-grid">
-    <!-- Sample Card 1 -->
-    <div class="card">
-      <img src="https://picsum.photos/id/1015/800/600" alt="Responsive Web Design">
-      <div class="card-content">
-        <div class="meta">April 5, 2026 • 8 min read</div>
-        <h3>Building a Clean & Elegant Personal Blog</h3>
-        <p>Learned how to create a beautiful responsive website using only HTML and CSS. Focused on typography, cards, and mobile navigation.</p>
-        <a href="posts/post1.html" class="read-more">Read More →</a>
+  <div class="latest-articles" id="latest-articles">
+    <h2>Latest Practice Articles</h2>
+    <p>Simple notes from my weekly university lab tasks and learning.</p>
+
+    <!-- Article 1 -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/1015/800/600" alt="First Responsive Website">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">Lab Project</span>
+          <span class="article-date">05 Apr 2026</span>
+        </div>
+        <h3>Building My First Responsive Website</h3>
+        <p>In this lab, I created a personal website that looks good on both mobile phones and computers. I practiced arranging items using Flexbox and making nice cards with hover effects.</p>
+        <div class="article-meta">
+          <span class="read-time">6 min read</span>
+          <a href="posts/post1.html" class="read-more-btn">Read More</a>
+        </div>
       </div>
     </div>
 
-    <!-- Sample Card 2 -->
-    <div class="card">
-      <img src="https://picsum.photos/id/201/800/600" alt="HTML CSS Project">
-      <div class="card-content">
-        <div class="meta">March 28, 2026 • 6 min read</div>
-        <h3>My First Semester Projects in Computer Engineering</h3>
-        <p>Sharing the challenges and solutions I faced while working on digital logic design and basic web development labs.</p>
-        <a href="posts/post2.html" class="read-more">Read More →</a>
+    <!-- Article 2 -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/201/800/600" alt="CSS Layout Practice">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">CSS Practice</span>
+          <span class="article-date">28 Mar 2026</span>
+        </div>
+        <h3>How I Improved My Website Layout</h3>
+        <p>I learned how to use proper spacing, colors, and alignment. This lab helped me make my pages look clean and easy to read on any screen size.</p>
+        <div class="article-meta">
+          <span class="read-time">5 min read</span>
+          <a href="posts/post2.html" class="read-more-btn">Read More</a>
+        </div>
       </div>
     </div>
 
-    <!-- Sample Card 3 -->
-    <div class="card">
-      <img src="https://picsum.photos/id/237/800/600" alt="Learning Journey">
-      <div class="card-content">
-        <div class="meta">March 15, 2026 • 5 min read</div>
-        <h3>Why I Chose Computer Engineering</h3>
-        <p>My personal story, motivations, and what I hope to achieve in the field of hardware and software integration.</p>
-        <a href="posts/post3.html" class="read-more">Read More →</a>
+    <!-- Article 3 -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/237/800/600" alt="Learning Plan">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">Learning Journey</span>
+          <span class="article-date">20 Mar 2026</span>
+        </div>
+        <h3>My Weekly Web Development Learning Plan</h3>
+        <p>I shared my simple routine for practicing HTML and CSS every week. I also listed small projects I want to build next to improve my skills.</p>
+        <div class="article-meta">
+          <span class="read-time">5 min read</span>
+          <a href="posts/post3.html" class="read-more-btn">Read More</a>
+        </div>
       </div>
     </div>
+
+    <!-- Article 4 - New -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/180/800/600" alt="Tribute Page">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">Lab Task</span>
+          <span class="article-date">12 Mar 2026</span>
+        </div>
+        <h3>Creating a Simple Tribute Page</h3>
+        <p>For this lab, I made a tribute webpage for my favorite teacher. I practiced using headings, paragraphs, images, and basic styling to make it look nice.</p>
+        <div class="article-meta">
+          <span class="read-time">4 min read</span>
+          <a href="posts/post4.html" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 5 - New -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/251/800/600" alt="Contact Form">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">Form Practice</span>
+          <span class="article-date">08 Mar 2026</span>
+        </div>
+        <h3>Building a Simple Contact Form</h3>
+        <p>I created a contact form with name, email, and message fields. This helped me understand how to use HTML forms and style them with CSS.</p>
+        <div class="article-meta">
+          <span class="read-time">6 min read</span>
+          <a href="posts/post5.html" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 6 - New -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/870/800/600" alt="Navigation Menu">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">CSS Practice</span>
+          <span class="article-date">01 Mar 2026</span>
+        </div>
+        <h3>Adding a Hamburger Menu for Mobile</h3>
+        <p>I added a mobile-friendly navigation menu that opens with a hamburger icon. It was fun to make the menu slide in smoothly on small screens.</p>
+        <div class="article-meta">
+          <span class="read-time">7 min read</span>
+          <a href="posts/post6.html" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <footer>
-    <p>&copy; 2026 Noor Fatima • BSCPE Student</p>
+    <p>&copy; 2026 Noor Fatima • BSCPE Student | Frontend Practice Journal</p>
   </footer>
 
   <script src="js/script.js"></script>
