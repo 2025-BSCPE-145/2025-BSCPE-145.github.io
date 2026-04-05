@@ -55,3 +55,57 @@ section {
   width: 60%;
   border-radius: 12px;
 }
+/* SECTION */
+.section {
+  padding: 80px 10%;
+}
+
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #00d4ff;
+}
+
+/* ICON */
+.project-card i {
+  font-size: 28px;
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+/* LIST */
+.project-list {
+  margin-top: 10px;
+  padding-left: 18px;
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* TECH TEXT */
+.tech {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.9;
+}
