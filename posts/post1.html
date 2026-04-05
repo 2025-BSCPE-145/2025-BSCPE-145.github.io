@@ -1,34 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Programming Fundamentals</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building My First Responsive Website - Noor Fatima</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
+  <header>
+    <nav>
+      <div class="logo"><a href="../index.html">Noor Fatima</a></div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../blog.html">Lab Articles</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">☰</button>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
 
-<h1>Programming Fundamentals</h1>
+  <div style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+    <p style="color: var(--accent); font-weight: 500;">Lab Project • 05 April 2026 • 6 min read</p>
+    <h1 style="font-size: 2.6rem; margin: 1rem 0 2rem;">Building My First Responsive Website</h1>
 
-<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" class="post-img">
+    <img src="https://picsum.photos/id/1015/1200/600" alt="First website" style="width:100%; border-radius:12px; margin-bottom:2rem;">
 
-<p>
-Programming fundamentals are the basic building blocks of any software development process.
-They include concepts like variables, data types, operators, and control structures.
-</p>
+    <p>In this lab task, our teacher asked us to make a personal website that looks good on both phone and computer.</p>
+    
+    <h2>What I Did</h2>
+    <p>I used HTML for the structure and CSS for styling. I made a nice header with navigation and a hero section that introduces me.</p>
+    
+    <h2>What I Learned</h2>
+    <ul style="padding-left: 1.5rem; margin: 1rem 0;">
+      <li>How to use Flexbox to arrange items nicely</li>
+      <li>Making the website adjust automatically on mobile (responsive design)</li>
+      <li>Using CSS variables to easily change colors</li>
+      <li>Adding smooth hover effects on cards</li>
+    </ul>
+    
+    <p>This was my first complete project. It was challenging at first but now I feel more confident with basic web development.</p>
 
-<h2>🔹 Key Concepts</h2>
+    <a href="../blog.html" style="display:inline-block; margin-top: 3rem; color: var(--accent); font-weight: 600;">← Back to All Articles</a>
+  </div>
 
-<ul>
-  <li><b>Variables:</b> Store data values</li>
-  <li><b>Data Types:</b> int, float, string</li>
-  <li><b>Loops:</b> for, while</li>
-  <li><b>Conditionals:</b> if-else</li>
-</ul>
+  <footer style="margin-top: 6rem;">
+    <p>&copy; 2026 Noor Fatima</p>
+  </footer>
 
-<h2>💡 Why Important?</h2>
-<p>
-These concepts help in problem solving and logical thinking, which are essential for programming.
-</p>
-
+  <script src="../js/script.js"></script>
 </body>
 </html>
