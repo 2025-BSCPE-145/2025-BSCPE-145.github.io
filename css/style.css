@@ -1,29 +1,28 @@
-/* ==================== CSS VARIABLES ==================== */
+/* ==================== CSS VARIABLES - Soft Elegant Style ==================== */
 :root {
-  /* Dark Theme (Default) */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --accent: #00ffff;
-  --accent-hover: #00e6e6;
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --border-color: #334155;
-  --shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
-}
-
-[data-theme="light"] {
-  /* Light Theme */
-  --bg-primary: #f8fafc;
+  --bg-primary: #f8f4f0;      /* Warm off-white */
   --bg-secondary: #ffffff;
-  --accent: #0284c8;
-  --accent-hover: #0369a1;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --border-color: #e2e8f0;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --accent: #c98686;          /* Soft rose */
+  --accent-hover: #b36b6b;
+  --text-primary: #2c2c2c;
+  --text-secondary: #555555;
+  --border-color: #e5d9d0;
+  --shadow: 0 10px 30px rgba(201, 134, 134, 0.12);
+  --radius: 16px;
 }
 
-/* ==================== RESET & BASE ==================== */
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --accent: #e8a0a0;
+  --accent-hover: #f5b5b5;
+  --text-primary: #f0e6e0;
+  --text-secondary: #b8b8d0;
+  --border-color: #334155;
+  --shadow: 0 10px 30px rgba(232, 160, 160, 0.15);
+}
+
+/* ==================== BASE ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -34,8 +33,8 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
-  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.7;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 a {
@@ -48,144 +47,196 @@ a:hover {
   color: var(--accent-hover);
 }
 
-/* ==================== LAYOUT ==================== */
+/* ==================== HEADER & NAVIGATION ==================== */
 header {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 1.2rem 0;
 }
 
 nav {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.2rem;
   list-style: none;
 }
 
 .nav-links a {
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
+  position: relative;
 }
 
-main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+.nav-links a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
-/* Cards Grid - Much better than fixed width */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
-}
-
-.card img {
+.nav-links a:hover:after {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 
-.card-content {
-  padding: 1.5rem;
-}
-
-.card h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.35rem;
-}
-
-.card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-
-.read-more {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-/* ==================== TYPOGRAPHY ==================== */
-h1, h2, h3 {
-  line-height: 1.3;
-}
-
-h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-}
-
-/* ==================== BUTTONS & TOGGLE ==================== */
 .theme-toggle {
   background: none;
   border: 2px solid var(--accent);
   color: var(--accent);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.4rem;
   cursor: pointer;
-  font-size: 1.3rem;
   transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
   background: var(--accent);
-  color: var(--bg-primary);
+  color: var(--bg-secondary);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* ==================== BLOG POSTS GRID ==================== */
+.posts-grid {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(201, 134, 134, 0.18);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.8rem;
+}
+
+.card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.card .meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+  margin-bottom: 1.4rem;
+}
+
+.read-more {
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.read-more:hover {
+  gap: 10px;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
+  nav {
+    padding: 0 1.2rem;
+  }
+  
   .nav-links {
-    gap: 1.2rem;
+    gap: 1.4rem;
     font-size: 0.95rem;
   }
   
-  main {
-    padding: 0 1rem;
-    margin: 1.5rem auto;
+  .hero {
+    margin: 3rem auto;
+    padding: 0 1.2rem;
   }
   
   .posts-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    padding: 0 1.2rem;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  nav {
-    padding: 0 1rem;
-  }
-  
   .nav-links {
     gap: 1rem;
   }
