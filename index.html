@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noor Fatima | Engineering Portfolio</title>
+  <title>Noor Fatima | Engineering Portfolio (Legend Mode)</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#020617;
-      --panel:rgba(255,255,255,0.05);
+      --panel:rgba(255,255,255,0.06);
       --text:#e5e7eb;
       --accent:#60a5fa;
+      --muted:rgba(229,231,235,0.7);
     }
 
     [data-theme="light"]{
       --bg:#f8fafc;
       --panel:rgba(0,0,0,0.05);
       --text:#0f172a;
+      --muted:rgba(15,23,42,0.7);
       --accent:#2563eb;
     }
 
@@ -31,43 +33,20 @@
     }
 
     #progress{
-      position:fixed;
-      top:0;left:0;
-      height:3px;
-      width:0%;
-      background:var(--accent);
-      z-index:9999;
+      position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent);z-index:9999;
     }
 
     .cursor{
-      position:fixed;
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:var(--accent);
-      pointer-events:none;
-      transform:translate(-50%,-50%);
-      z-index:999;
+      position:fixed;width:12px;height:12px;border-radius:50%;background:var(--accent);
+      pointer-events:none;transform:translate(-50%,-50%);z-index:999;
     }
 
-    canvas{
-      position:fixed;
-      inset:0;
-      opacity:0.15;
-      z-index:0;
-    }
+    canvas{position:fixed;inset:0;opacity:0.12;z-index:0;}
 
     nav{
-      position:fixed;
-      top:0;
-      width:100%;
-      padding:12px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      backdrop-filter:blur(20px);
-      background:rgba(15,23,42,0.6);
-      z-index:1000;
+      position:fixed;top:0;width:100%;padding:12px 8%;
+      display:flex;justify-content:space-between;align-items:center;
+      backdrop-filter:blur(20px);background:rgba(15,23,42,0.6);z-index:1000;
     }
 
     nav ul{display:flex;gap:14px;list-style:none;font-size:14px;}
@@ -77,10 +56,16 @@
     section{display:none;padding:110px 10% 60px;min-height:100vh;}
     section.active{display:block;}
 
-    .hero{text-align:center;padding-top:20vh;}
-    .hero h1{font-size:52px;background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero{text-align:center;padding-top:18vh;}
+    .hero h1{
+      font-size:56px;
+      background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+    .sub{color:var(--muted);margin-top:10px;font-size:16px;}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
 
     .card{
       background:var(--panel);
@@ -91,29 +76,18 @@
       transition:0.3s;
     }
 
-    .card:hover{transform:translateY(-5px);}
+    .card:hover{transform:translateY(-6px);}
 
-    .badge{font-size:12px;opacity:0.7;margin-top:6px;}
+    .badge{font-size:12px;color:var(--muted);margin-top:6px;}
 
-    .modal{
-      position:fixed;
-      inset:0;
-      display:none;
-      justify-content:center;
-      align-items:center;
-      background:rgba(0,0,0,0.7);
-      z-index:2000;
-    }
+    .desc{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;}
 
-    .modal-content{
-      background:var(--bg);
-      padding:26px;
-      border-radius:14px;
-      width:92%;
-      max-width:650px;
-    }
+    .modal{position:fixed;inset:0;display:none;justify-content:center;align-items:center;background:rgba(0,0,0,0.7);z-index:2000;}
+    .modal-content{background:var(--bg);padding:26px;border-radius:14px;width:92%;max-width:700px;}
 
     .btn{padding:10px 14px;background:var(--accent);color:#fff;border:none;border-radius:10px;margin-top:12px;cursor:pointer;}
+
+    .tag{display:inline-block;font-size:11px;padding:4px 8px;border-radius:8px;background:rgba(96,165,250,0.15);margin-top:6px;}
   </style>
 </head>
 <body>
@@ -135,27 +109,27 @@
 
 <section id="home" class="active hero">
   <h1>Noor Fatima</h1>
-  <p>Engineering Student • Developer • UI Engineer</p>
-  <button class="btn" onclick="downloadResume()">Download Resume</button>
+  <p class="sub">Engineering Student • Full-Stack Learner • UI Systems Designer</p>
+  <button class="btn" onclick="downloadResume()">Download Professional Profile</button>
 </section>
 
 <section id="projects">
-  <h2>Projects (Detailed Case Studies)</h2>
+  <h2>Projects (Engineering Case Studies)</h2>
   <div class="grid" id="projectsGrid"></div>
 </section>
 
 <section id="labs">
-  <h2>Lab Reports</h2>
+  <h2>Lab Reports (Academic Engineering Work)</h2>
   <div class="grid" id="labsGrid"></div>
 </section>
 
 <section id="work">
-  <h2>Work / Engineering Practice</h2>
+  <h2>Engineering Practice & Skill Development</h2>
   <div class="grid" id="workGrid"></div>
 </section>
 
 <section id="github">
-  <h2>GitHub Repositories</h2>
+  <h2>GitHub Engineering Output</h2>
   <div class="grid" id="githubGrid"></div>
 </section>
 
@@ -167,10 +141,7 @@
 </div>
 
 <script>
-
-function route(id){
-  location.hash=id;
-}
+function route(id){location.hash=id;}
 
 function render(){
   const id=location.hash.replace('#','')||'home';
@@ -186,70 +157,70 @@ document.addEventListener('mousemove',e=>{
   cursor.style.top=e.clientY+'px';
 });
 
-// ================= PROJECTS (ENHANCED) =================
+// ================= PROFESSIONAL DATA =================
 const projects=[
   {
-    t:"Portfolio Engineering System",
-    d:"A modular UI architecture with SPA routing, modal system, and dynamic rendering.",
+    t:"Modular Portfolio Architecture System",
+    d:"A scalable single-page architecture implementing component-based rendering, routing logic, and modal-driven UX system for professional portfolio presentation.",
     tech:"HTML, CSS, JavaScript",
-    impact:"Improved UI performance and introduced component-based thinking"
+    impact:"Improves UI scalability, maintainability, and recruiter readability"
   },
   {
-    t:"Blog Engine Prototype",
-    d:"Static blog UI with card-based rendering and structured layout system.",
+    t:"Static Blog UI Engineering Prototype",
+    d:"A structured content system using card-based rendering and semantic layout design inspired by modern publishing platforms.",
     tech:"HTML, CSS",
-    impact:"Practiced scalable content architecture design"
+    impact:"Strengthens UI hierarchy design and information structuring"
   },
   {
-    t:"UI Interaction System",
-    d:"Custom cursor, animations, and scroll-based progress system.",
+    t:"Advanced UI Interaction System",
+    d:"Custom cursor tracking, scroll progress visualization, and animated background system built using Canvas API.",
     tech:"JavaScript, Canvas API",
-    impact:"Enhanced user experience and motion design understanding"
+    impact:"Enhances user engagement and motion design understanding"
   }
 ];
 
-// ================= WORK (ENHANCED) =================
 const work=[
   {
-    t:"C++ Problem Solving",
-    d:"Implemented algorithms: loops, arrays, and conditional logic.",
-    focus:"DSA Fundamentals"
+    t:"C++ Algorithmic Problem Solving",
+    d:"Practice of core DSA concepts including arrays, loops, recursion, and conditional logic for computational thinking development.",
+    focus:"Data Structures & Algorithms"
   },
   {
-    t:"Frontend Practice Clones",
-    d:"Recreated modern UI layouts to study spacing, typography, and responsiveness.",
+    t:"Frontend UI Reverse Engineering",
+    d:"Recreation of production-level interfaces to study spacing systems, typography hierarchy, and responsive design principles.",
     focus:"UI/UX Engineering"
   },
   {
-    t:"Engineering Study Notes",
-    d:"Structured academic notes for exam preparation and revision.",
-    focus:"Core Engineering Theory"
+    t:"Engineering Documentation Practice",
+    d:"Structured note-taking system for academic engineering subjects with focus on clarity, revision efficiency, and concept mapping.",
+    focus:"Academic Engineering"
   },
   {
-    t:"Mini JavaScript Apps",
-    d:"Built small utilities like calculators and DOM-based tools.",
-    focus:"Logic Building"
+    t:"JavaScript Mini-System Development",
+    d:"Development of small utility applications demonstrating DOM manipulation, event handling, and logical architecture design.",
+    focus:"Frontend Logic Systems"
   }
 ];
 
 const labs=[
-  {t:"Physics Lab",d:"Motion and velocity analysis experiment."},
-  {t:"Electrical Lab",d:"Ohm’s law verification and circuit testing."},
-  {t:"Programming Lab",d:"C++ fundamentals and control structures."}
+  {t:"Physics Experiment Report",d:"Quantitative analysis of motion, velocity, and acceleration using standard lab instrumentation and observation methods."},
+  {t:"Electrical Engineering Lab",d:"Verification of Ohm’s Law and circuit behavior through structured experimentation and measurement analysis."},
+  {t:"Programming Fundamentals Lab",d:"Implementation of C++ programs focusing on control structures, logic building, and computational problem solving."}
 ];
 
-function renderGrid(id,data,type){
+function renderGrid(id,data){
   document.getElementById(id).innerHTML=data.map(x=>`
-    <div class='card' onclick="openModal('${type}','${x.t}\n\n${x.d}\n\n${x.tech||x.focus||''}\n\n${x.impact||''}')">
+    <div class='card' onclick="openModal('${x.t}','${x.d}\n\n${x.tech||''}\n${x.focus||''}\n${x.impact||''}')">
       <h3>${x.t}</h3>
-      <div class='badge'>View Details</div>
+      <div class='desc'>${x.d.slice(0,90)}...</div>
+      <div class='badge'>Click for full engineering breakdown</div>
     </div>
   `).join('');
 }
 
-renderGrid('projectsGrid',projects,'Project');
-renderGrid('workGrid',work,'Work');
-renderGrid('labsGrid',labs,'Lab');
+renderGrid('projectsGrid',projects);
+renderGrid('workGrid',work);
+renderGrid('labsGrid',labs);
 
 function openModal(t,d){
   document.getElementById('mTitle').innerText=t;
@@ -258,16 +229,16 @@ function openModal(t,d){
 }
 
 function downloadResume(){
-  const text=`Noor Fatima\nEngineering Student\n\nPROJECTS:\n- Portfolio Engineering System\n- Blog Engine Prototype\n- UI Interaction System\n\nWORK:\n- C++ Problem Solving\n- Frontend UI Clones\n- Engineering Notes\n- JavaScript Mini Apps`;
+  const text=`NOOR FATIMA - ENGINEERING PROFILE\n\nPROJECTS:\n- Modular Portfolio Architecture System\n- Static Blog UI Engineering Prototype\n- Advanced UI Interaction System\n\nENGINEERING PRACTICE:\n- DSA (C++) Algorithmic Problem Solving\n- UI Reverse Engineering\n- Engineering Documentation\n- JavaScript Systems Development`;
 
   const blob=new Blob([text],{type:'text/plain'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download='Noor_Fatima_Resume.txt';
+  a.download='Noor_Fatima_Professional_Profile.txt';
   a.click();
 }
 
-// GitHub
+// GitHub API
 async function loadGitHub(){
   try{
     const res=await fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos');
@@ -279,32 +250,31 @@ async function loadGitHub(){
       </div>
     `).join('');
   }catch(e){
-    document.getElementById('githubGrid').innerHTML='Failed to load GitHub';
+    document.getElementById('githubGrid').innerHTML='GitHub data unavailable';
   }
 }
 loadGitHub();
 
-// background
+// background animation
 const c=document.getElementById('bg');
 const ctx=c.getContext('2d');
 c.width=window.innerWidth;
 c.height=window.innerHeight;
 
-let dots=Array.from({length:35},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)}));
+let dots=Array.from({length:40},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)}));
 
 function animate(){
   ctx.clearRect(0,0,c.width,c.height);
   ctx.fillStyle='rgba(96,165,250,0.25)';
   dots.forEach(d=>{
-    d.x+=d.vx; d.y+=d.vy;
+    d.x+=d.vx;d.y+=d.vy;
     if(d.x<0||d.x>c.width)d.vx*=-1;
     if(d.y<0||d.y>c.height)d.vy*=-1;
-    ctx.beginPath(); ctx.arc(d.x,d.y,2,0,Math.PI*2); ctx.fill();
+    ctx.beginPath();ctx.arc(d.x,d.y,2,0,Math.PI*2);ctx.fill();
   });
   requestAnimationFrame(animate);
 }
 animate();
-
 </script>
 </body>
 </html>
