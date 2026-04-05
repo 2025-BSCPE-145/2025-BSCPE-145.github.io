@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noor Fatima | BSCPE Student & Blogger</title>
+  <title>Noor Fatima | BSCPE Student</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,29 +12,68 @@
       <div class="logo">
         <a href="index.html">Noor Fatima</a>
       </div>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html">Lab Articles</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button class="hamburger" id="hamburger">☰</button>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Hi, I'm Noor Fatima 👋</h1>
-    <p>BSCPE Student | Web Developer | Tech Enthusiast<br>
-       Documenting my learning journey in Computer Engineering and Web Development.</p>
-    <a href="blog.html" class="read-more">Explore My Blog →</a>
+    <p>BSCPE Student building simple and responsive web pages with HTML, CSS, and JavaScript.<br>
+       This is my practice journal where I share easy lab tasks and what I learned every week.</p>
+    
+    <div style="margin-top: 2.5rem;">
+      <a href="blog.html" style="background:var(--accent); color:white; padding:14px 32px; border-radius:8px; margin-right:15px; display:inline-block;">Read Lab Articles</a>
+      <a href="about.html" style="background:#e2e8f0; color:var(--text-primary); padding:14px 32px; border-radius:8px; display:inline-block;">About Me</a>
+    </div>
   </section>
 
-  <main>
-    <!-- You can add a small "Recent Posts" section here later if you want -->
-  </main>
+  <div class="latest-articles">
+    <h2>Latest Practice Articles</h2>
+    <p>Simple notes from my university lab tasks and weekly learning.</p>
+
+    <!-- Preview Cards (same style as blog.html) -->
+    <div class="article-card">
+      <img src="https://picsum.photos/id/1015/800/600" alt="First Website">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">Lab Project</span>
+          <span class="article-date">05 Apr 2026</span>
+        </div>
+        <h3>Building My First Responsive Website</h3>
+        <p>In this lab, I created a clean personal website that works well on mobile and desktop. I learned how to use Flexbox and make nice cards.</p>
+        <div class="article-meta">
+          <span class="read-time">6 min read</span>
+          <a href="posts/post1.html" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <img src="https://picsum.photos/id/201/800/600" alt="CSS Practice">
+      <div class="article-content">
+        <div class="article-header">
+          <span class="tag">CSS Practice</span>
+          <span class="article-date">28 Mar 2026</span>
+        </div>
+        <h3>How I Improved My Website Layout</h3>
+        <p>I practiced spacing, colors, and making the website look neat. This helped me understand how to make pages easy to read.</p>
+        <div class="article-meta">
+          <span class="read-time">5 min read</span>
+          <a href="posts/post2.html" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2026 Noor Fatima. Made with ❤️ for learning and sharing.</p>
+    <p>&copy; 2026 Noor Fatima • BSCPE Student | Frontend Practice Journal</p>
   </footer>
 
   <script src="js/script.js"></script>
