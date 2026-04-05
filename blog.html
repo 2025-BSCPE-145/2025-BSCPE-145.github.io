@@ -5,153 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab Articles - Noor Fatima</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.8;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #6366f1;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #4f46e5;
+      transform: scale(1.05);
+    }
+
+    .btn-secondary {
+      background: #e2e8f0;
+      color: black;
+    }
+
+    .btn-secondary:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== GRID ===== */
+    .latest-articles {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    /* ===== CARD ===== */
+    .article-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .article-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .article-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: #6366f1;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .read-more-btn {
+      text-decoration: none;
+      color: #6366f1;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="index.html">Noor Fatima</a>
-      </div>
-      
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Lab Articles</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      
-      <button class="hamburger" id="hamburger">☰</button>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Noor Fatima - Frontend Practice Journal</h1>
-    <p>I am a BSCPE student building simple and responsive web pages using HTML, CSS, and JavaScript. 
-       This blog shares my university lab tasks and what I learned every week in easy words.</p>
-    
-    <div style="margin-top: 2rem;">
-      <a href="#latest-articles" style="background: var(--accent); color: white; padding: 12px 28px; border-radius: 8px; margin-right: 12px; display: inline-block;">
-        Read All Lab Articles
-      </a>
-      <a href="about.html" style="background: #e2e8f0; color: var(--text-primary); padding: 12px 28px; border-radius: 8px; display: inline-block;">
-        About Me
-      </a>
-    </div>
-  </section>
+<header>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Noor Fatima</a></div>
 
-  <div class="latest-articles" id="latest-articles">
-    <h2>Latest Practice Articles</h2>
-    <p>Simple notes from my weekly university lab tasks and learning.</p>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" style="color:#6366f1;">Lab Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
 
-    <!-- Article 1 -->
+    <button class="hamburger" id="hamburger">☰</button>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Frontend Practice Journal</h1>
+  <p>I document my weekly web development labs in simple and easy words.</p>
+
+  <a href="#latest-articles" class="btn btn-primary">Read Articles</a>
+  <a href="about.html" class="btn btn-secondary">About Me</a>
+</section>
+
+<!-- ARTICLES -->
+<section class="latest-articles" id="latest-articles">
+  <h2>Latest Practice Articles</h2>
+
+  <div class="articles-grid">
+
+    <!-- CARD -->
     <div class="article-card">
-      <img src="https://picsum.photos/id/1015/800/600" alt="First Responsive Website">
+      <img src="https://picsum.photos/id/1015/800/600">
       <div class="article-content">
         <div class="article-header">
           <span class="tag">Lab Project</span>
-          <span class="article-date">05 Apr 2026</span>
+          <span>05 Apr 2026</span>
         </div>
-        <h3>Building My First Responsive Website</h3>
-        <p>In this lab, I created a personal website that looks good on both mobile phones and computers. I practiced arranging items using Flexbox and making nice cards with hover effects.</p>
+        <h3>Responsive Website</h3>
+        <p>Learned Flexbox and responsive design basics.</p>
         <div class="article-meta">
-          <span class="read-time">6 min read</span>
-          <a href="posts/post1.html" class="read-more-btn">Read More</a>
+          <span>6 min</span>
+          <a href="posts/post1.html" class="read-more-btn">Read →</a>
         </div>
       </div>
     </div>
 
-    <!-- Article 2 -->
+    <!-- CARD -->
     <div class="article-card">
-      <img src="https://picsum.photos/id/201/800/600" alt="CSS Layout Practice">
+      <img src="https://picsum.photos/id/201/800/600">
       <div class="article-content">
         <div class="article-header">
-          <span class="tag">CSS Practice</span>
-          <span class="article-date">28 Mar 2026</span>
+          <span class="tag">CSS</span>
+          <span>28 Mar 2026</span>
         </div>
-        <h3>How I Improved My Website Layout</h3>
-        <p>I learned how to use proper spacing, colors, and alignment. This lab helped me make my pages look clean and easy to read on any screen size.</p>
+        <h3>Better Layout</h3>
+        <p>Improved spacing, alignment and design structure.</p>
         <div class="article-meta">
-          <span class="read-time">5 min read</span>
-          <a href="posts/post2.html" class="read-more-btn">Read More</a>
+          <span>5 min</span>
+          <a href="posts/post2.html" class="read-more-btn">Read →</a>
         </div>
       </div>
     </div>
 
-    <!-- Article 3 -->
+    <!-- CARD -->
     <div class="article-card">
-      <img src="https://picsum.photos/id/237/800/600" alt="Learning Plan">
+      <img src="https://picsum.photos/id/237/800/600">
       <div class="article-content">
         <div class="article-header">
-          <span class="tag">Learning Journey</span>
-          <span class="article-date">20 Mar 2026</span>
+          <span class="tag">Plan</span>
+          <span>20 Mar 2026</span>
         </div>
-        <h3>My Weekly Web Development Learning Plan</h3>
-        <p>I shared my simple routine for practicing HTML and CSS every week. I also listed small projects I want to build next to improve my skills.</p>
+        <h3>Learning Plan</h3>
+        <p>My weekly practice strategy for web development.</p>
         <div class="article-meta">
-          <span class="read-time">5 min read</span>
-          <a href="posts/post3.html" class="read-more-btn">Read More</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Article 4 - New -->
-    <div class="article-card">
-      <img src="https://picsum.photos/id/180/800/600" alt="Tribute Page">
-      <div class="article-content">
-        <div class="article-header">
-          <span class="tag">Lab Task</span>
-          <span class="article-date">12 Mar 2026</span>
-        </div>
-        <h3>Creating a Simple Tribute Page</h3>
-        <p>For this lab, I made a tribute webpage for my favorite teacher. I practiced using headings, paragraphs, images, and basic styling to make it look nice.</p>
-        <div class="article-meta">
-          <span class="read-time">4 min read</span>
-          <a href="posts/post4.html" class="read-more-btn">Read More</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Article 5 - New -->
-    <div class="article-card">
-      <img src="https://picsum.photos/id/251/800/600" alt="Contact Form">
-      <div class="article-content">
-        <div class="article-header">
-          <span class="tag">Form Practice</span>
-          <span class="article-date">08 Mar 2026</span>
-        </div>
-        <h3>Building a Simple Contact Form</h3>
-        <p>I created a contact form with name, email, and message fields. This helped me understand how to use HTML forms and style them with CSS.</p>
-        <div class="article-meta">
-          <span class="read-time">6 min read</span>
-          <a href="posts/post5.html" class="read-more-btn">Read More</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Article 6 - New -->
-    <div class="article-card">
-      <img src="https://picsum.photos/id/870/800/600" alt="Navigation Menu">
-      <div class="article-content">
-        <div class="article-header">
-          <span class="tag">CSS Practice</span>
-          <span class="article-date">01 Mar 2026</span>
-        </div>
-        <h3>Adding a Hamburger Menu for Mobile</h3>
-        <p>I added a mobile-friendly navigation menu that opens with a hamburger icon. It was fun to make the menu slide in smoothly on small screens.</p>
-        <div class="article-meta">
-          <span class="read-time">7 min read</span>
-          <a href="posts/post6.html" class="read-more-btn">Read More</a>
+          <span>5 min</span>
+          <a href="posts/post3.html" class="read-more-btn">Read →</a>
         </div>
       </div>
     </div>
 
   </div>
+</section>
 
-  <footer>
-    <p>&copy; 2026 Noor Fatima • BSCPE Student | Frontend Practice Journal</p>
-  </footer>
+<footer>
+  <p>© 2026 Noor Fatima | Frontend Journal</p>
+</footer>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
