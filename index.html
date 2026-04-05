@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noori | Developer Portfolio</title>
+  <title>Noor Fatima | Developer Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,20 +16,32 @@
     }
 
     body{
-      background: radial-gradient(circle at top, #0f172a, #020617);
+      background: radial-gradient(circle at var(--x,50%) var(--y,50%), #1e293b, #020617 60%);
       color:#e5e7eb;
       overflow-x:hidden;
+      min-height:100vh;
+    }
+
+    /* CURSOR GLOW */
+    .cursor-glow{
+      position:fixed;
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(96,165,250,0.25), transparent 60%);
+      pointer-events:none;
+      transform:translate(-50%,-50%);
+      z-index:0;
     }
 
     a{color:inherit; text-decoration:none;}
 
-    /* NAV */
     nav{
       position:fixed;
       top:0;
       width:100%;
       padding:18px 8%;
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
       background: rgba(15, 23, 42, 0.6);
       display:flex;
       justify-content:space-between;
@@ -37,24 +49,17 @@
       z-index:1000;
     }
 
-    nav h1{
-      font-size:18px;
-      font-weight:600;
-    }
+    nav h1{font-size:18px;}
 
     nav ul{
       display:flex;
-      gap:20px;
+      gap:18px;
       list-style:none;
       font-size:14px;
     }
 
-    nav ul li:hover{
-      opacity:0.7;
-      cursor:pointer;
-    }
+    nav ul li:hover{opacity:0.6;}
 
-    /* HERO */
     .hero{
       height:100vh;
       display:flex;
@@ -63,86 +68,83 @@
       align-items:center;
       text-align:center;
       padding:0 20px;
+      position:relative;
+      z-index:1;
     }
 
     .hero h2{
-      font-size:48px;
+      font-size:52px;
       font-weight:700;
       background: linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
+      animation: float 4s ease-in-out infinite;
     }
 
-    .hero p{
-      margin-top:10px;
-      max-width:600px;
-      opacity:0.8;
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
     }
+
+    .hero p{opacity:0.8; max-width:650px; margin-top:10px;}
 
     .btn{
       margin-top:20px;
       padding:10px 18px;
-      border-radius:10px;
-      background:#3b82f6;
+      border-radius:12px;
+      background:linear-gradient(90deg,#3b82f6,#6366f1);
       border:none;
       color:white;
       cursor:pointer;
       transition:0.3s;
+      box-shadow:0 10px 25px rgba(59,130,246,0.3);
     }
 
     .btn:hover{
-      transform:scale(1.05);
-      background:#2563eb;
+      transform:scale(1.05) rotateX(5deg);
     }
 
-    /* SECTIONS */
     section{
-      padding:80px 10%;
+      padding:90px 10%;
+      position:relative;
+      z-index:1;
     }
 
     .title{
-      font-size:28px;
+      font-size:30px;
       margin-bottom:30px;
     }
 
-    /* ABOUT */
     .about{
       background:rgba(255,255,255,0.03);
       padding:30px;
-      border-radius:16px;
-      backdrop-filter: blur(10px);
+      border-radius:18px;
+      backdrop-filter: blur(12px);
     }
 
-    /* PROJECTS */
+    /* PROJECT GRID */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:20px;
     }
 
     .card{
       background:rgba(255,255,255,0.05);
       padding:20px;
-      border-radius:16px;
-      transition:0.3s;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+      transform-style:preserve-3d;
     }
 
     .card:hover{
-      transform:translateY(-5px);
-      background:rgba(255,255,255,0.08);
+      transform:rotateX(10deg) rotateY(-10deg) translateY(-6px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
     }
 
-    .card h3{
-      margin-bottom:10px;
-    }
+    .tag{font-size:12px; opacity:0.7;}
 
-    .tag{
-      font-size:12px;
-      opacity:0.7;
-    }
-
-    /* SKILLS */
     .skills span{
       display:inline-block;
       margin:6px;
@@ -152,22 +154,12 @@
       font-size:12px;
     }
 
-    /* CONTACT */
-    .contact{
-      text-align:center;
-    }
+    .contact{text-align:center;}
 
-    .contact a{
-      display:inline-block;
-      margin-top:10px;
-      color:#60a5fa;
-    }
-
-    /* ANIMATION */
     .hidden{
       opacity:0;
       transform:translateY(30px);
-      transition:all 0.6s ease;
+      transition:all 0.7s ease;
     }
 
     .show{
@@ -177,6 +169,8 @@
   </style>
 </head>
 <body>
+
+<div class="cursor-glow" id="glow"></div>
 
 <nav>
   <h1>Noori.dev</h1>
@@ -190,38 +184,20 @@
 
 <section class="hero">
   <h2>Noor Fatima</h2>
-  <p>Engineering Student | Frontend Developer | Building modern web experiences with clean UI and performance in mind.</p>
-  <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-    View My Work
-  </button>
+  <p>Engineering Student | Frontend Developer | Building high-performance modern UI systems.</p>
+  <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Explore Work</button>
 </section>
 
 <section id="about" class="hidden">
   <h2 class="title">About Me</h2>
   <div class="about">
-    I am an engineering student passionate about web development, UI/UX design, and building modern responsive websites. I enjoy turning ideas into clean, functional digital experiences.
+    I specialize in crafting modern, responsive, and interactive web interfaces. I focus on performance, animation systems, and clean UI architecture.
   </div>
 </section>
 
 <section id="projects" class="hidden">
-  <h2 class="title">Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p class="tag">HTML • CSS • JS</p>
-      <p>Modern personal portfolio with animations and responsive design.</p>
-    </div>
-    <div class="card">
-      <h3>Blog UI</h3>
-      <p class="tag">Frontend Design</p>
-      <p>Clean blog interface with article cards and reading layout.</p>
-    </div>
-    <div class="card">
-      <h3>GitHub Pages Project</h3>
-      <p class="tag">Deployment</p>
-      <p>Hosted multiple static websites using GitHub Pages.</p>
-    </div>
-  </div>
+  <h2 class="title">Projects (Live System)</h2>
+  <div class="grid" id="projectGrid"></div>
 </section>
 
 <section id="skills" class="hidden">
@@ -230,29 +206,82 @@
     <span>HTML</span>
     <span>CSS</span>
     <span>JavaScript</span>
-    <span>Responsive Design</span>
+    <span>UI/UX</span>
     <span>GitHub</span>
-    <span>UI Design</span>
+    <span>Animations</span>
   </div>
 </section>
 
 <section id="contact" class="hidden contact">
   <h2 class="title">Contact</h2>
-  <p>Let’s build something amazing 🚀</p>
-  <a href="mailto:youremail@example.com">Send Email</a>
+  <p>Let’s build something elite 🚀</p>
 </section>
 
 <script>
-  // Scroll animation
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-      }
-    });
-  });
 
-  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+// CURSOR GLOW
+const glow = document.getElementById('glow');
+document.addEventListener('mousemove', (e)=>{
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+
+  document.body.style.setProperty('--x', e.clientX + 'px');
+  document.body.style.setProperty('--y', e.clientY + 'px');
+});
+
+// SCROLL ANIMATION
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.hidden').forEach(el=>observer.observe(el));
+
+// PROJECT SYSTEM (STATIC + READY FOR API)
+const projects = [
+  {
+    title:"Portfolio Website",
+    desc:"Modern UI portfolio with animations and responsive layout",
+    tech:"HTML • CSS • JS"
+  },
+  {
+    title:"Blog UI System",
+    desc:"Card-based blog interface with clean reading experience",
+    tech:"Frontend Design"
+  },
+  {
+    title:"GitHub Pages Deployments",
+    desc:"Multiple live projects hosted using GitHub Pages",
+    tech:"Deployment"
+  }
+];
+
+const grid = document.getElementById('projectGrid');
+
+function renderProjects(){
+  grid.innerHTML = projects.map(p=>`
+    <div class="card">
+      <h3>${p.title}</h3>
+      <p class="tag">${p.tech}</p>
+      <p>${p.desc}</p>
+    </div>
+  `).join('');
+}
+
+renderProjects();
+
+// OPTIONAL: GitHub API ready hook (future upgrade)
+async function fetchGitHubProjects(username){
+  try{
+    const res = await fetch(`https://api.github.com/users/${username}/repos`);
+    const data = await res.json();
+    console.log("GitHub repos ready:", data);
+  }catch(e){console.log(e)}
+}
+
 </script>
 
 </body>
