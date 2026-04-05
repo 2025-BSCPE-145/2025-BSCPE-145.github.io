@@ -1,65 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Noor Fatima | Portfolio</title>
+<title>Noor Fatima | Engineering Portfolio</title>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <h1>Noor Fatima</h1>
-    <p>Computer Engineering Student | Developer | Problem Solver</p>
+<header>
+  <h1>Noor Fatima</h1>
+  <p>Computer Engineering Student | Problem Solver</p>
+</header>
 
-    <!-- NAVIGATION -->
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('projects')">Projects</button>
+  <button onclick="showSection('articles')">Articles</button>
+  <button onclick="showSection('contact')">Contact</button>
+</nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h2>Welcome to My Portfolio 👩💻</h2>
+<main>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="card">
+    <h2>Welcome 👋</h2>
     <p>
-      I am passionate about building efficient software systems, learning new technologies,
-      and solving real-world engineering problems through code.
+      This is my professional engineering portfolio where I showcase my academic work,
+      programming knowledge, and technical learning journey.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS (ONLY ONE PROJECT NOW) -->
+<section id="projects">
+  <div class="card">
+
+    <h2>Project 💼</h2>
+
+    <h3>🌐 How to Make a Website on GitHub (GitHub Pages)</h3>
+
+    <p><b>🧩 Step 1: Create a GitHub Account</b></p>
+    <ul>
+      <li>Go to: https://github.com</li>
+      <li>Sign up (if you don’t already have an account)</li>
+      <li>Verify your email</li>
+    </ul>
+
+    <hr>
+
+    <p><b>📁 Step 2: Create a New Repository</b></p>
+    <ul>
+      <li>Click 👉 New Repository</li>
+      <li>Repository name: <b>yourusername.github.io</b> (must match exactly)</li>
+      <li>Set to Public</li>
+      <li>Tick Add README (optional)</li>
+      <li>Click 👉 Create repository</li>
+    </ul>
+
+    <hr>
+
+    <p><b>💻 Step 3: Add Website Files</b></p>
+
+    <p><b>index.html</b></p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, I am Noor 👩‍💻&lt;/h1&gt;
+  &lt;p&gt;Welcome to my GitHub website!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <p><b>style.css (optional)</b></p>
+    <pre>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #f4f4f4;
+}
+    </pre>
+
+    <hr>
+
+    <p><b>⬆️ Step 4: Upload Files</b></p>
+    <ul>
+      <li>Add file → Upload files</li>
+      <li>Upload index.html + style.css</li>
+      <li>Click 👉 Commit changes</li>
+    </ul>
+
+    <hr>
+
+    <p><b>🌍 Step 5: Enable GitHub Pages</b></p>
+    <ul>
+      <li>Go to Settings</li>
+      <li>Scroll to Pages</li>
+      <li>Source: Deploy from branch</li>
+      <li>Branch: main</li>
+      <li>Folder: /root</li>
+      <li>Click 👉 Save</li>
+    </ul>
+
+    <hr>
+
+    <p><b>🎉 Step 6: Open Website</b></p>
+    <p>Your site will be live at:</p>
+    <p><b>https://yourusername.github.io</b></p>
+
+  </div>
+</section>
+
+<!-- ARTICLES (NEW) -->
+<section id="articles">
+  <div class="card">
+
+    <h2>Articles 📝</h2>
+
+    <!-- DATABASE ARTICLE -->
+    <div class="article">
+      <h3>📊 Database Systems</h3>
+
+      <p class="preview">
+        Database systems store, manage, and retrieve data efficiently. They are used in banking,
+        e-commerce, healthcare, and many modern applications...
+      </p>
+
+      <div class="full-content">
+
+        <p>
+          In the digital era, data is considered the “new oil.” A Database System includes a database,
+          a DBMS, and users interacting with it.
+        </p>
+
+        <h4>Core Components</h4>
+        <ul>
+          <li>Hardware (servers, storage)</li>
+          <li>Software (MySQL, PostgreSQL)</li>
+          <li>Users (DBA, developers)</li>
+        </ul>
+
+        <h4>Types</h4>
+        <ul>
+          <li>Relational (RDBMS)</li>
+          <li>NoSQL</li>
+          <li>Hierarchical</li>
+        </ul>
+
+        <h4>Applications</h4>
+        <ul>
+          <li>Banking</li>
+          <li>E-commerce</li>
+          <li>Healthcare</li>
+        </ul>
+
+      </div>
+
+      <button onclick="toggleArticle(this)">Read More</button>
+    </div>
+
+    <hr>
+
+    <!-- PROGRAMMING ARTICLE -->
+    <div class="article">
+      <h3>💻 Programming Fundamentals</h3>
+
+      <p class="preview">
+        Programming fundamentals include variables, loops, functions, and logic building
+        which form the base of all software development...
+      </p>
+
+      <div class="full-content">
+
+        <h4>Core Concepts</h4>
+
+        <p><b>Variables</b></p>
+        <pre>
+age = 25
+name = "Ali"
+        </pre>
+
+        <p><b>Loops</b></p>
+        <pre>
+for i in range(5):
+    print(i)
+        </pre>
+
+        <p><b>Functions</b></p>
+        <pre>
+def greet(name):
+    return "Hello " + name
+        </pre>
+
+        <p>
+          Mastering these concepts helps in building efficient and scalable applications.
+        </p>
+
+      </div>
+
+      <button onclick="toggleArticle(this)">Read More</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="card">
+    <h2>Contact 📞</h2>
+
+    <p>Email: NoorFatima45@example.com</p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/2025-BSCPE-145" target="_blank">
+        github.com/2025-BSCPE-145
+      </a>
     </p>
 
-    <a class="btn" href="projects.html">View My Projects</a>
-  </section>
+    <p>Location: Pakistan 🇵🇰</p>
+  </div>
+</section>
 
-  <!-- HIGHLIGHTS -->
-  <section class="highlights">
+</main>
 
-    <div class="card">
-      <h3>💻 Programming</h3>
-      <p>C, C++, and Python development with focus on problem-solving and logic building.</p>
-    </div>
-
-    <div class="card">
-      <h3>📊 Data Management</h3>
-      <p>Working with structured data, algorithms, and efficient storage systems.</p>
-    </div>
-
-    <div class="card">
-      <h3>🌐 Web Development</h3>
-      <p>Building responsive websites using HTML, CSS, and JavaScript.</p>
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Noor Fatima | Built with HTML, CSS & JavaScript</p>
-  </footer>
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+}
+</script>
 
 </body>
 </html>
