@@ -4,6 +4,13 @@ function show(id) {
 
   document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
   event.target.classList.add('active');
+  function show(id, event) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  if (event) event.target.classList.add('active');
+}
 }
 
 /* 🧠 DATA ENGINE (React-style structure) */
