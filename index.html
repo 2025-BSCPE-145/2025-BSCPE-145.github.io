@@ -1,172 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noor Fatima | Engineering Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<title>Noor Fatima | Engineering Portfolio</title>
 
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
-  <nav class="navbar">
-    <div class="logo">Noor Fatima</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#articles">Articles</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <h1>Noor Fatima</h1>
+  <p>Computer Engineering Student | Developer | Problem Solver</p>
 </header>
 
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('projects')">Projects</button>
+  <button onclick="showSection('articles')">Articles</button>
+  <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<main>
+
 <!-- HOME -->
-<section id="home" class="section home">
-  <div class="container">
-    <h1>Hi, I'm Noor Fatima 👋</h1>
-    <p>Engineering Student at UET | Web Development | Programming | Data Systems</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>About Me</h2>
+<section id="home" class="active">
+  <div class="card">
+    <h2>Welcome 👋</h2>
     <p>
-      I am an engineering student passionate about software development, web technologies, and data management systems.
-      I enjoy building real-world projects and learning modern development tools.
-    </p>
-    <p>
-      My goal is to become a professional software engineer and contribute to impactful digital solutions.
+      This is my professional engineering portfolio where I showcase my projects,
+      technical articles, and academic work in Computer Engineering.
     </p>
   </div>
 </section>
 
-<!-- 💼 PROJECTS (UPDATED) -->
-<section id="projects" class="section">
-  <div class="container">
-    <h2>Projects</h2>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="card">
+    <h2>Projects 💼</h2>
 
-    <div class="card-grid">
+   
 
-      <div class="card">
-        <h3>Core Programming Project</h3>
-        <p>
-          This project focuses on foundational programming concepts such as loops, conditions, functions, and logic building.
-          It helped strengthen my problem-solving skills and algorithmic thinking.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Data Management System</h3>
-        <p>
-          A structured system designed to store, update, and retrieve data efficiently.
-          It demonstrates understanding of data handling, organization, and system design principles.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Web Portfolio Website</h3>
-        <p>
-          A responsive personal portfolio website built using HTML, CSS, and JavaScript.
-          It showcases my academic work, skills, and projects in a professional layout.
-        </p>
-      </div>
-
-    </div>
-  </div>
+    
 </section>
 
-<!-- 📰 ARTICLES (EXPANDED + PROFESSIONAL BLOG STYLE) -->
-<section id="articles" class="section">
-  <div class="container">
-    <h2>Articles</h2>
+<!-- ARTICLES -->
+<section id="articles">
+  <div class="card">
+    <h2>Articles 📝</h2>
 
-    <div class="card-grid">
+    <h3>Introduction to Programming</h3>
+    <p>Basics of logic building, algorithms, and structured thinking in programming.</p>
 
-      <div class="card">
-        <h3>Introduction to Programming</h3>
-        <p>
-          Programming is the process of writing instructions for computers to perform tasks.
-          It involves logic building, problem solving, and understanding languages like C++, Python, and Java.
-        </p>
-      </div>
+    <h3>GitHub Pages Deployment</h3>
+    <p>Step-by-step guide on how to host static websites using GitHub Pages.</p>
 
-      <div class="card">
-        <h3>Importance of Data Structures</h3>
-        <p>
-          Data structures help organize information efficiently.
-          They improve performance in searching, sorting, and managing large-scale applications.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Web Development Basics</h3>
-        <p>
-          Web development involves building websites using HTML (structure), CSS (design), and JavaScript (logic).
-          These technologies form the foundation of modern websites.
-        </p>
-      </div>
-
-      <!-- 🌐 NEW ARTICLE ADDED -->
-      <div class="card">
-        <h3>How to Make a Website on GitHub Pages</h3>
-        <p>
-          GitHub Pages allows you to host websites for free directly from a GitHub repository.
-          Follow these steps to create your own website:
-        </p>
-
-        <p><strong>Step 1:</strong> Create a GitHub account at github.com and verify your email.</p>
-
-        <p><strong>Step 2:</strong> Create a new repository named <b>yourusername.github.io</b> (important).</p>
-
-        <p><strong>Step 3:</strong> Add your website files:
-          <br>✔ index.html (main page)
-          <br>✔ style.css (design file)
-        </p>
-
-        <p><strong>Step 4:</strong> Upload files to GitHub using “Add file → Upload files”.</p>
-
-        <p><strong>Step 5:</strong> Go to Settings → Pages → Select “Deploy from branch (main)”.</p>
-
-        <p><strong>Step 6:</strong> Your website will be live at:
-          <br><b>https://yourusername.github.io</b>
-        </p>
-      </div>
-
-    </div>
+    <h3>Data Structures Overview</h3>
+    <p>Understanding arrays, stacks, queues, and their real-world applications.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact Me</h2>
-
-    <p>Email: noorfatima@example.com</p>
-    <p>GitHub: github.com/noorfatima</p>
-
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+<section id="contact">
+  <div class="card">
+    <h2>Contact 📞</h2>
+    <p>Email: NoorFatima45@example.com</p>
+    <p>GitHub: https://github.com/2025-BSCPE-145.github.io</p>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Noor Fatima | Engineering Portfolio</p>
-</footer>
+</main>
 
+<script src="script.js"></script>
 </body>
 </html>
