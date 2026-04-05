@@ -1,17 +1,40 @@
-// DARK MODE
-function toggleMode() {
-  document.body.classList.toggle("light");
-}
+// ==================== THEME TOGGLE ====================
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
 
-// TYPING EFFECT
-const text = "Engineering Student | Web Developer | Blogger";
-let i = 0;
-
-function typing() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typing, 80);
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme) {
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateToggleIcon(savedTheme);
+  } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    htmlElement.setAttribute('data-theme', 'light');
+    updateToggleIcon('light');
+  } else {
+    // Default to dark
+    htmlElement.setAttribute('data-theme', 'dark');
+    updateToggleIcon('dark');
   }
 }
-typing();
+
+function updateToggleIcon(theme) {
+  if (theme === 'light') {
+    themeToggle.textContent = '☀️';
+  } else {
+    themeToggle.textContent = '🌙';
+  }
+}
+
+// Toggle event
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  htmlElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateToggleIcon(newTheme);
+});
+
+// Initialize theme when page loads
+document.addEventListener('DOMContentLoaded', initTheme);
