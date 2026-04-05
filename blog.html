@@ -2,7 +2,12 @@
 <html>
 <head>
   <title>Blog</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,19 +24,26 @@
 
 <div class="posts">
 
-  <div class="card">
+  <div class="card" data-aos="fade-up">
+    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="">
     <h2>Programming Fundamentals</h2>
-    <p>Basics of programming concepts.</p>
+    <p>Learn core concepts like variables, loops, and logic building.</p>
     <a href="posts/post1.html">Read More</a>
   </div>
 
-  <div class="card">
+  <div class="card" data-aos="fade-up">
+    <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72" alt="">
     <h2>Python Basics</h2>
-    <p>Introduction to Python language.</p>
+    <p>Understand syntax, functions, and real-world usage of Python.</p>
     <a href="posts/post2.html">Read More</a>
   </div>
 
 </div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>
