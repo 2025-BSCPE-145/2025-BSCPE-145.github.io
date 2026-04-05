@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Noor Fatima | Engineering Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -11,183 +11,110 @@
 :root{
   --bg:#0f172a;
   --card:#1e293b;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
+  --text:#e2e8f0;
   --accent:#38bdf8;
 }
 
-body.light{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --text:#0f172a;
-  --muted:#475569;
-  --accent:#0284c7;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
 body{
   background:var(--bg);
   color:var(--text);
-  transition:0.3s ease;
-  scroll-behavior:smooth;
+  line-height:1.6;
 }
 
-/* NAV */
+/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 28px;
-  background:rgba(15,23,42,0.9);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(255,255,255,0.1);
-  z-index:1000;
-}
-
-body.light header{
-  background:rgba(255,255,255,0.9);
-  border-bottom:1px solid #e2e8f0;
-}
-
-nav a{
-  margin-left:14px;
-  text-decoration:none;
-  color:var(--text);
-  font-size:14px;
-  font-weight:500;
-}
-
-nav a:hover{color:var(--accent);}
-
-.logo{font-weight:700;color:var(--accent);}
-
-.toggle{
-  background:var(--accent);
-  border:none;
-  padding:6px 10px;
-  border-radius:6px;
-  color:white;
-  cursor:pointer;
-}
-
-/* PAGE */
-section.page{
-  display:none;
-  padding:70px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-section.page.active{
-  display:block;
-  animation:fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* HERO */
-.hero{
+  padding:20px;
   text-align:center;
-  padding:90px 20px;
+  background:#0b1220;
+  border-bottom:1px solid #334155;
 }
 
-.hero h1{
-  font-size:44px;
+header h1{
   color:var(--accent);
 }
 
-.hero p{color:var(--muted);margin-top:10px;}
-
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 18px;
-  background:var(--accent);
-  color:#fff;
-  border-radius:8px;
-  text-decoration:none;
-  cursor:pointer;
+/* NAV */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding:15px;
+  flex-wrap:wrap;
 }
 
-/* GRID */
+nav button{
+  padding:10px 15px;
+  border:none;
+  background:var(--card);
+  color:var(--text);
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+nav button:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* SECTIONS */
+section{
+  display:none;
+  padding:30px;
+}
+
+section.active{
+  display:block;
+}
+
+/* CARDS */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
 .card{
   background:var(--card);
   padding:20px;
-  border-radius:14px;
-  transition:0.3s;
+  border-radius:12px;
   cursor:pointer;
+  transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 30px rgba(0,0,0,0.3);
-}
-
-h2{
-  color:var(--accent);
-  border-left:4px solid var(--accent);
-  padding-left:10px;
-  margin-bottom:20px;
-}
-
-.tag{
-  display:inline-block;
-  margin-top:10px;
-  background:var(--accent);
-  color:#fff;
-  padding:3px 8px;
-  font-size:12px;
-  border-radius:5px;
-}
-
-/* SCREENSHOTS */
-.screenshot img{
-  width:100%;
-  border-radius:10px;
-  margin-bottom:10px;
+  transform:translateY(-5px);
+  background:#273449;
 }
 
 /* MODAL */
 .modal{
-  display:none;
   position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
   justify-content:center;
   align-items:center;
-  padding:20px;
 }
 
 .modal-content{
-  background:var(--card);
+  background:#1e293b;
   padding:25px;
+  width:80%;
+  max-width:700px;
   border-radius:12px;
-  max-width:800px;
-  width:100%;
+  max-height:80vh;
+  overflow:auto;
 }
 
 .close{
   float:right;
   cursor:pointer;
-  color:var(--accent);
-  font-size:22px;
+  font-size:20px;
+  color:red;
 }
 </style>
 </head>
@@ -195,143 +122,129 @@ h2{
 <body>
 
 <header>
-  <div class="logo">Noor Fatima</div>
-
-  <nav>
-    <a onclick="go('home')">Home</a>
-    <a onclick="go('about')">About</a>
-    <a onclick="go('projects')">Projects</a>
-    <a onclick="go('screens')">Screenshots</a>
-    <a onclick="go('articles')">Articles</a>
-    <a onclick="go('contact')">Contact</a>
-  </nav>
-
-  <button class="toggle" onclick="toggleTheme()">Mode</button>
+  <h1>🚀 Noor Fatima | Engineering Portfolio</h1>
+  <p>Professional Developer • CS Student • Builder</p>
 </header>
 
-<!-- HOME -->
-<section id="home" class="page active">
-  <div class="hero">
-    <h1>Noor Fatima 👩‍💻</h1>
-    <p>Computer Engineering Student | UET Faisalabad Campus</p>
-    <a class="btn" onclick="go('projects')">Explore Projects</a>
-  </div>
-</section>
+<nav>
+  <button onclick="show('home')">Home</button>
+  <button onclick="show('projects')">Projects</button>
+  <button onclick="show('articles')">Articles</button>
+</nav>
 
-<!-- ABOUT -->
-<section id="about" class="page">
-  <h2>About Me</h2>
-  <div class="card">
-    Engineering student passionate about software development, databases, and real-world system design.
-  </div>
+<!-- HOME -->
+<section id="home" class="active">
+  <h2>Welcome 👋</h2>
+  <p>This is a professional engineering-level portfolio showcasing projects and technical articles.</p>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="page">
-  <h2>Projects</h2>
-
+<section id="projects">
+  <h2>🚀 Projects</h2>
   <div class="grid">
+
     <div class="card" onclick="openModal('p1')">
       <h3>Portfolio Website</h3>
-      <p>Built without templates</p>
-      <span class="tag">Frontend</span>
-    </div>
-  </div>
-</section>
-
-<!-- SCREENSHOTS -->
-<section id="screens" class="page">
-  <h2>Project Screenshots</h2>
-
-  <div class="grid">
-
-    <div class="card screenshot">
-      <img src="images/project1.png">
-      <h3>Home Page</h3>
-    </div>
-
-    <div class="card screenshot">
-      <img src="images/project2.png">
-      <h3>Projects Section</h3>
-    </div>
-
-    <div class="card screenshot">
-      <img src="images/project3.png">
-      <h3>Articles Section</h3>
+      <p>Engineering-level breakdown</p>
     </div>
 
   </div>
 </section>
 
 <!-- ARTICLES -->
-<section id="articles" class="page">
-  <h2>Articles</h2>
-
+<section id="articles">
+  <h2>📘 Articles</h2>
   <div class="grid">
+
     <div class="card" onclick="openModal('a1')">
       <h3>Programming Fundamentals</h3>
-      <span class="tag">Core CS</span>
+      <p>Core CS concepts explained</p>
     </div>
 
     <div class="card" onclick="openModal('a2')">
       <h3>Database Systems</h3>
-      <span class="tag">DBMS</span>
+      <p>DBMS deep explanation</p>
     </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="page">
-  <h2>Contact</h2>
-  <div class="card">
-    Email: noor.fatima@example.com <br>
-    GitHub: github.com/noorfatima
   </div>
 </section>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">×</span>
+    <span class="close" onclick="closeModal()">✖</span>
     <div id="modal-body"></div>
   </div>
 </div>
 
 <script>
-
-function go(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-function toggleTheme(){
-  document.body.classList.toggle('light');
-}
-
+/* DATA SYSTEM */
 const data = {
-p1:`<h2>Portfolio Project</h2>
-<p>Built using pure HTML, CSS, and GitHub Pages.</p>
-<ul>
-<li>Manual UI design</li>
-<li>Responsive layout</li>
-<li>No templates used</li>
-</ul>`,
 
-a1:`<h2>Programming Fundamentals</h2>
-<ul>
-<li>Variables store data</li>
-<li>Conditions control logic</li>
-<li>Loops repeat tasks</li>
-<li>Functions reuse code</li>
-</ul>`,
+p1: `
+<h2>🚀 Portfolio Website</h2>
 
-a2:`<h2>Database Systems</h2>
+<p>This project is a fully custom-built engineering-level portfolio website.</p>
+
+<h3>🪜 Steps</h3>
 <ul>
-<li>Tables store data</li>
-<li>Primary key ensures uniqueness</li>
-<li>SQL manages database</li>
-<li>Normalization improves structure</li>
-</ul>`
+<li>UI planning</li>
+<li>HTML structure</li>
+<li>CSS design system</li>
+<li>JavaScript modal system</li>
+<li>GitHub deployment</li>
+</ul>
+
+<h3>🛠 Tech Stack</h3>
+<ul>
+<li>HTML5</li>
+<li>CSS3</li>
+<li>JavaScript</li>
+</ul>
+
+<h3>🎯 Outcome</h3>
+<p>Learned real-world frontend architecture.</p>
+`,
+
+a1: `
+<h2>📘 Programming Fundamentals</h2>
+
+<p>Core building blocks of programming.</p>
+
+<h3>Concepts</h3>
+<ul>
+<li>Variables</li>
+<li>Loops</li>
+<li>Conditions</li>
+<li>Functions</li>
+</ul>
+
+<h3>Conclusion</h3>
+<p>Essential for every developer.</p>
+`,
+
+a2: `
+<h2>🗄️ Database Systems</h2>
+
+<p>DBMS manages structured data efficiently.</p>
+
+<h3>Concepts</h3>
+<ul>
+<li>Tables</li>
+<li>Primary Key</li>
+<li>SQL</li>
+<li>Normalization</li>
+</ul>
+
+<h3>Conclusion</h3>
+<p>Backbone of modern applications.</p>
+`
+
 };
 
 function openModal(key){
@@ -342,7 +255,6 @@ function openModal(key){
 function closeModal(){
   document.getElementById('modal').style.display='none';
 }
-
 </script>
 
 </body>
