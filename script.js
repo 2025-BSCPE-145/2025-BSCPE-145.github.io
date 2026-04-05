@@ -24,5 +24,19 @@ function showSection(id, el) {
   if (el) {
     el.classList.add("active");
     el.setAttribute("aria-selected", "true");
+    function toggleArticle(button) {
+  const article = button.parentElement;
+  const fullContent = article.querySelector(".full-content");
+
+  if (!fullContent) return;
+
+  if (fullContent.style.display === "block") {
+    fullContent.style.display = "none";
+    button.textContent = "Read More";
+  } else {
+    fullContent.style.display = "block";
+    button.textContent = "Read Less";
+  }
+}
   }
 }
