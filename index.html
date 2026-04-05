@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noor Fatima | Welcome to my  Portfolio</title>
+  <title>Noor Fatima | Ultra GOD MODE Portfolio</title>
+
+  <meta name="description" content="Noor Fatima - Engineering Student & Frontend Developer Portfolio" />
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -28,37 +30,42 @@
       background: radial-gradient(circle at var(--x,50%) var(--y,50%), var(--bg), #000);
       color:var(--text);
       overflow-x:hidden;
-      min-height:100vh;
       transition:0.4s;
     }
 
-    /* PARTICLES CANVAS */
+    #progress{
+      position:fixed;
+      top:0;
+      left:0;
+      height:3px;
+      background:var(--accent);
+      width:0%;
+      z-index:9999;
+    }
+
+    .cursor{
+      position:fixed;
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:var(--accent);
+      pointer-events:none;
+      transform:translate(-50%,-50%);
+      z-index:999;
+    }
+
     canvas{
       position:fixed;
       inset:0;
       z-index:0;
-      opacity:0.25;
+      opacity:0.2;
     }
-
-    /* CURSOR GLOW */
-    .cursor-glow{
-      position:fixed;
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(96,165,250,0.25), transparent 60%);
-      pointer-events:none;
-      transform:translate(-50%,-50%);
-      z-index:1;
-    }
-
-    a{color:inherit;text-decoration:none;}
 
     nav{
       position:fixed;
       top:0;
       width:100%;
-      padding:16px 8%;
+      padding:14px 8%;
       backdrop-filter: blur(18px);
       background:rgba(15,23,42,0.6);
       display:flex;
@@ -68,10 +75,16 @@
     }
 
     nav ul{display:flex;gap:16px;list-style:none;font-size:14px;}
+    nav ul li{cursor:pointer;opacity:0.8;}
+    nav ul li:hover{opacity:1;}
 
-    .toggle{cursor:pointer;padding:6px 10px;border-radius:8px;background:var(--panel);}
+    section{
+      padding:100px 10%;
+      min-height:100vh;
+      position:relative;
+      z-index:2;
+    }
 
-    /* HERO */
     .hero{
       height:100vh;
       display:flex;
@@ -79,8 +92,6 @@
       justify-content:center;
       align-items:center;
       text-align:center;
-      position:relative;
-      z-index:2;
     }
 
     .hero h2{
@@ -88,36 +99,34 @@
       background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      animation:float 4s ease-in-out infinite;
     }
 
-    @keyframes float{50%{transform:translateY(-10px)}}
-
-    section{padding:90px 10%;position:relative;z-index:2;}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
 
     .card{
       background:var(--panel);
       padding:20px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,0.08);
-      transition:0.3s;
       cursor:pointer;
+      transition:0.3s;
     }
 
-    .card:hover{transform:translateY(-6px) scale(1.02);}
+    .card:hover{transform:scale(1.03);}
 
-    .badge{font-size:12px;opacity:0.7;}
+    .badge{font-size:12px;opacity:0.7;margin-top:5px;}
 
-    /* MODAL */
     .modal{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.7);
       display:none;
       align-items:center;
       justify-content:center;
+      background:rgba(0,0,0,0.7);
       z-index:2000;
     }
 
@@ -125,31 +134,31 @@
       background:var(--bg);
       padding:30px;
       border-radius:16px;
+      max-width:600px;
       width:90%;
-      max-width:500px;
-      border:1px solid rgba(255,255,255,0.1);
     }
 
-    .show{opacity:1;transform:translateY(0);}
-    .hidden{opacity:0;transform:translateY(30px);transition:0.6s;}
+    .active{opacity:1;}
   </style>
 </head>
 <body>
 
-<canvas id="particles"></canvas>
-<div class="cursor-glow" id="glow"></div>
+<div id="progress"></div>
+<div class="cursor" id="cursor"></div>
+<canvas id="bg"></canvas>
 
 <nav>
-  <h1>Noori.dev</h1>
+  <h3>Noor Fatima.dev</h3>
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#github">GitHub</a></li>
+    <li onclick="go('home')">Home</li>
+    <li onclick="go('projects')">Projects</li>
+    <li onclick="go('labs')">Lab Reports</li>
+    <li onclick="go('work')">Work</li>
+    <li onclick="go('github')">GitHub</li>
   </ul>
-  <div class="toggle" onclick="toggleTheme()">Theme</div>
 </nav>
 
-<section class="hero" id="home">
+<section id="home" class="hero">
   <h2>Noor Fatima</h2>
   <p>Engineering Student • Frontend Developer • UI Engineer</p>
 </section>
@@ -159,12 +168,21 @@
   <div class="grid" id="projectGrid"></div>
 </section>
 
+<section id="labs">
+  <h2>Lab Reports</h2>
+  <div class="grid" id="labGrid"></div>
+</section>
+
+<section id="work">
+  <h2>Work (Offline / Academic Projects)</h2>
+  <div class="grid" id="workGrid"></div>
+</section>
+
 <section id="github">
-  <h2>GitHub Live</h2>
+  <h2>GitHub Projects</h2>
   <div class="grid" id="githubGrid"></div>
 </section>
 
-<!-- MODAL -->
 <div class="modal" id="modal" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <h2 id="mTitle"></h2>
@@ -174,70 +192,61 @@
 
 <script>
 
-// THEME
-function toggleTheme(){
-  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
+function go(id){
+  document.querySelectorAll('section').forEach(s=>s.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// CURSOR
-const glow=document.getElementById('glow');
-document.addEventListener('mousemove',(e)=>{
-  glow.style.left=e.clientX+'px';
-  glow.style.top=e.clientY+'px';
-  document.body.style.setProperty('--x',e.clientX+'px');
-  document.body.style.setProperty('--y',e.clientY+'px');
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+  cursor.style.left=e.clientX+'px';
+  cursor.style.top=e.clientY+'px';
 });
 
-// PARTICLES
-const canvas=document.getElementById('particles');
-const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('progress').style.width=scrolled+'%';
+});
 
-let dots=Array.from({length:80},()=>({
-  x:Math.random()*canvas.width,
-  y:Math.random()*canvas.height,
-  vx:(Math.random()-0.5)*1,
-  vy:(Math.random()-0.5)*1
-}));
-
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle='rgba(96,165,250,0.5)';
-
-  dots.forEach(d=>{
-    d.x+=d.vx;
-    d.y+=d.vy;
-
-    if(d.x<0||d.x>canvas.width)d.vx*=-1;
-    if(d.y<0||d.y>canvas.height)d.vy*=-1;
-
-    ctx.beginPath();
-    ctx.arc(d.x,d.y,2,0,Math.PI*2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(draw);
-}
-draw();
-
-// PROJECT DATA
 const projects=[
-  {title:"Portfolio UI",desc:"Advanced animated portfolio system"},
-  {title:"Blog Engine UI",desc:"Card-based reading system"}
+  {t:"Portfolio UI",d:"Advanced UI system"},
+  {t:"Blog Engine",d:"Static blog system"}
 ];
 
-const grid=document.getElementById('projectGrid');
-grid.innerHTML=projects.map((p,i)=>`
-<div class='card' onclick="openModal(${i})">
-  <h3>${p.title}</h3>
-  <div class='badge'>Click for details</div>
+document.getElementById('projectGrid').innerHTML=
+projects.map(p=>`
+<div class='card' onclick="openModal('Project','${p.t}: ${p.d}')">
+<h3>${p.t}</h3><div class='badge'>Click</div>
 </div>`).join('');
 
-function openModal(i){
-  const p=projects[i];
-  document.getElementById('mTitle').innerText=p.title;
-  document.getElementById('mDesc').innerText=p.desc;
+const labs=[
+  {t:"Physics Lab",d:"Motion analysis report"},
+  {t:"Electrical Lab",d:"Ohm’s Law experiment"}
+];
+
+document.getElementById('labGrid').innerHTML=
+labs.map(l=>`
+<div class='card' onclick="openModal('Lab Report','${l.t}: ${l.d}')">
+<h3>${l.t}</h3><div class='badge'>View</div>
+</div>`).join('');
+
+const work=[
+  {t:"C++ Practice",d:"Console-based algorithms"},
+  {t:"HTML UI Clones",d:"Static frontend practice"},
+  {t:"Engineering Notes",d:"Offline academic work"}
+];
+
+document.getElementById('workGrid').innerHTML=
+work.map(w=>`
+<div class='card' onclick="openModal('Work','${w.t}: ${w.d}')">
+<h3>${w.t}</h3><div class='badge'>Offline</div>
+</div>`).join('');
+
+function openModal(t,d){
+  document.getElementById('mTitle').innerText=t;
+  document.getElementById('mDesc').innerText=d;
   document.getElementById('modal').style.display='flex';
 }
 
@@ -245,24 +254,59 @@ function closeModal(){
   document.getElementById('modal').style.display='none';
 }
 
-// GITHUB LIVE
 async function loadGitHub(user){
   try{
     const res=await fetch(`https://api.github.com/users/${user}/repos`);
     const data=await res.json();
 
-    document.getElementById('githubGrid').innerHTML=data.slice(0,6).map(r=>`
+    document.getElementById('githubGrid').innerHTML=
+    data.slice(0,6).map(r=>`
       <div class='card'>
         <h3>${r.name}</h3>
-        <div class='badge'>⭐ ${r.stargazers_count} • 🍴 ${r.forks_count}</div>
-        <p>${r.description||'No description'}</p>
+        <div class='badge'>⭐ ${r.stargazers_count}</div>
+        <p>${r.description||''}</p>
       </div>
     `).join('');
-
-  }catch(e){console.log(e)}
+  }catch(e){
+    document.getElementById('githubGrid').innerHTML="Failed to load";
+  }
 }
 
-loadGitHub('your-github-username');
+loadGitHub('YOUR_GITHUB_USERNAME');
+
+const c=document.getElementById('bg');
+const ctx=c.getContext('2d');
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+
+let dots=Array.from({length:40},()=>({
+  x:Math.random()*c.width,
+  y:Math.random()*c.height,
+  vx:(Math.random()-0.5),
+  vy:(Math.random()-0.5)
+}));
+
+function animate(){
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.fillStyle='rgba(96,165,250,0.3)';
+
+  dots.forEach(d=>{
+    d.x+=d.vx;
+    d.y+=d.vy;
+    if(d.x<0||d.x>c.width)d.vx*=-1;
+    if(d.y<0||d.y>c.height)d.vy*=-1;
+
+    ctx.beginPath();
+    ctx.arc(d.x,d.y,2,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+// default show home
+['projects','labs','work','github'].forEach(id=>document.getElementById(id).style.display='none');
 
 </script>
 
