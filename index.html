@@ -1,280 +1,229 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noor Fatima | Engineering Portfolio (Legend Mode)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noor Fatima | Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#020617;
-      --panel:rgba(255,255,255,0.06);
-      --text:#e5e7eb;
-      --accent:#60a5fa;
-      --muted:rgba(229,231,235,0.7);
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
     }
-
-    [data-theme="light"]{
-      --bg:#f8fafc;
-      --panel:rgba(0,0,0,0.05);
-      --text:#0f172a;
-      --muted:rgba(15,23,42,0.7);
-      --accent:#2563eb;
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
     body{
-      background: radial-gradient(circle at var(--x,50%) var(--y,50%), var(--bg), #000);
-      color:var(--text);
-      overflow-x:hidden;
+      background:#0f172a;
+      color:#e5e7eb;
+      line-height:1.6;
     }
 
-    #progress{
-      position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent);z-index:9999;
+    /* NAVBAR */
+    header{
+      position:sticky;
+      top:0;
+      background:rgba(15,23,42,0.9);
+      backdrop-filter: blur(10px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
     }
 
-    .cursor{
-      position:fixed;width:12px;height:12px;border-radius:50%;background:var(--accent);
-      pointer-events:none;transform:translate(-50%,-50%);z-index:999;
+    .logo{
+      font-weight:700;
+      color:#38bdf8;
+      font-size:18px;
     }
 
-    canvas{position:fixed;inset:0;opacity:0.12;z-index:0;}
-
-    nav{
-      position:fixed;top:0;width:100%;padding:12px 8%;
-      display:flex;justify-content:space-between;align-items:center;
-      backdrop-filter:blur(20px);background:rgba(15,23,42,0.6);z-index:1000;
-    }
-
-    nav ul{display:flex;gap:14px;list-style:none;font-size:14px;}
-    nav li{cursor:pointer;opacity:0.8;}
-    nav li:hover{opacity:1;}
-
-    section{display:none;padding:110px 10% 60px;min-height:100vh;}
-    section.active{display:block;}
-
-    .hero{text-align:center;padding-top:18vh;}
-    .hero h1{
-      font-size:56px;
-      background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-    }
-
-    .sub{color:var(--muted);margin-top:10px;font-size:16px;}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
-
-    .card{
-      background:var(--panel);
-      padding:18px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.08);
-      cursor:pointer;
+    nav a{
+      color:#e5e7eb;
+      margin-left:20px;
+      text-decoration:none;
+      font-size:14px;
       transition:0.3s;
     }
 
-    .card:hover{transform:translateY(-6px);}
+    nav a:hover{
+      color:#38bdf8;
+    }
 
-    .badge{font-size:12px;color:var(--muted);margin-top:6px;}
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:100px 20px;
+      animation:fadeIn 1.5s ease;
+    }
 
-    .desc{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;}
+    .hero h1{
+      font-size:42px;
+      color:#38bdf8;
+    }
 
-    .modal{position:fixed;inset:0;display:none;justify-content:center;align-items:center;background:rgba(0,0,0,0.7);z-index:2000;}
-    .modal-content{background:var(--bg);padding:26px;border-radius:14px;width:92%;max-width:700px;}
+    .hero p{
+      max-width:700px;
+      margin:20px auto;
+      color:#cbd5e1;
+    }
 
-    .btn{padding:10px 14px;background:var(--accent);color:#fff;border:none;border-radius:10px;margin-top:12px;cursor:pointer;}
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:10px 20px;
+      background:#38bdf8;
+      color:#0f172a;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+    }
 
-    .tag{display:inline-block;font-size:11px;padding:4px 8px;border-radius:8px;background:rgba(96,165,250,0.15);margin-top:6px;}
+    /* SECTIONS */
+    section{
+      padding:60px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    h2{
+      color:#38bdf8;
+      margin-bottom:20px;
+      border-left:4px solid #38bdf8;
+      padding-left:10px;
+    }
+
+    /* CARDS */
+    .card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:20px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .tag{
+      display:inline-block;
+      background:#38bdf8;
+      color:#0f172a;
+      padding:3px 8px;
+      font-size:12px;
+      border-radius:5px;
+      margin-top:10px;
+    }
+
+    /* FOOTER */
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#94a3b8;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    /* smooth scroll */
+    html{
+      scroll-behavior:smooth;
+    }
+
   </style>
 </head>
+
 <body>
 
-<div id="progress"></div>
-<div class="cursor" id="cursor"></div>
-<canvas id="bg"></canvas>
+<header>
+  <div class="logo">Noor Fatima</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#articles">Articles</a>
+  </nav>
+</header>
 
-<nav>
-  <h3>Noor Fatima.dev</h3>
-  <ul>
-    <li onclick="route('home')">Home</li>
-    <li onclick="route('projects')">Projects</li>
-    <li onclick="route('labs')">Lab Reports</li>
-    <li onclick="route('work')">Work</li>
-    <li onclick="route('github')">GitHub</li>
-  </ul>
-</nav>
-
-<section id="home" class="active hero">
-  <h1>Noor Fatima</h1>
-  <p class="sub">Engineering Student • Full-Stack Learner • UI Systems Designer</p>
-  <button class="btn" onclick="downloadResume()">Download Professional Profile</button>
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Hello, I'm Noor Fatima 👩‍💻</h1>
+  <p>Computer Engineering Student at UET Lahore (Faisalabad Campus). I build simple, clean, and real-world web projects while learning programming fundamentals and databases.</p>
+  <a class="btn" href="#projects">View My Work</a>
 </section>
 
-<section id="projects">
-  <h2>Projects (Engineering Case Studies)</h2>
-  <div class="grid" id="projectsGrid"></div>
-</section>
-
-<section id="labs">
-  <h2>Lab Reports (Academic Engineering Work)</h2>
-  <div class="grid" id="labsGrid"></div>
-</section>
-
-<section id="work">
-  <h2>Engineering Practice & Skill Development</h2>
-  <div class="grid" id="workGrid"></div>
-</section>
-
-<section id="github">
-  <h2>GitHub Engineering Output</h2>
-  <div class="grid" id="githubGrid"></div>
-</section>
-
-<div class="modal" id="modal" onclick="this.style.display='none'">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h2 id="mTitle"></h2>
-    <p id="mDesc"></p>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p><b>Roll No:</b> 2025-BSCPE-145</p>
+    <p>I completed my FSc Pre-Engineering and now studying Computer Engineering. I am focused on improving my programming and web development skills step by step.</p>
+    <span class="tag">Engineering Student</span>
   </div>
-</div>
+</section>
 
-<script>
-function route(id){location.hash=id;}
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
 
-function render(){
-  const id=location.hash.replace('#','')||'home';
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-window.addEventListener('hashchange',render);
-render();
+  <div class="card">
+    <h3>Personal Portfolio Website (No Template)</h3>
+    <p>
+      This is a fully custom website built from scratch using HTML and CSS. It acts as my personal digital identity. I designed every section manually without using any templates or frameworks. The goal was to understand how real websites are structured and styled.
+      <br><br>
+      It includes Home, About, Projects, and Articles sections. I focused on layout design, spacing, responsiveness, and clean UI principles.
+    </p>
 
-const cursor=document.getElementById('cursor');
-document.addEventListener('mousemove',e=>{
-  cursor.style.left=e.clientX+'px';
-  cursor.style.top=e.clientY+'px';
-});
+    <p><b>Technologies Used:</b> HTML5, CSS3, GitHub Pages</p>
 
-// ================= PROFESSIONAL DATA =================
-const projects=[
-  {
-    t:"Modular Portfolio Architecture System",
-    d:"A scalable single-page architecture implementing component-based rendering, routing logic, and modal-driven UX system for professional portfolio presentation.",
-    tech:"HTML, CSS, JavaScript",
-    impact:"Improves UI scalability, maintainability, and recruiter readability"
-  },
-  {
-    t:"Static Blog UI Engineering Prototype",
-    d:"A structured content system using card-based rendering and semantic layout design inspired by modern publishing platforms.",
-    tech:"HTML, CSS",
-    impact:"Strengthens UI hierarchy design and information structuring"
-  },
-  {
-    t:"Advanced UI Interaction System",
-    d:"Custom cursor tracking, scroll progress visualization, and animated background system built using Canvas API.",
-    tech:"JavaScript, Canvas API",
-    impact:"Enhances user engagement and motion design understanding"
-  }
-];
+    <p><b>Outcome:</b> Learned real-world website structure, improved UI design thinking, and gained experience in GitHub hosting and frontend development.</p>
+  </div>
 
-const work=[
-  {
-    t:"C++ Algorithmic Problem Solving",
-    d:"Practice of core DSA concepts including arrays, loops, recursion, and conditional logic for computational thinking development.",
-    focus:"Data Structures & Algorithms"
-  },
-  {
-    t:"Frontend UI Reverse Engineering",
-    d:"Recreation of production-level interfaces to study spacing systems, typography hierarchy, and responsive design principles.",
-    focus:"UI/UX Engineering"
-  },
-  {
-    t:"Engineering Documentation Practice",
-    d:"Structured note-taking system for academic engineering subjects with focus on clarity, revision efficiency, and concept mapping.",
-    focus:"Academic Engineering"
-  },
-  {
-    t:"JavaScript Mini-System Development",
-    d:"Development of small utility applications demonstrating DOM manipulation, event handling, and logical architecture design.",
-    focus:"Frontend Logic Systems"
-  }
-];
+</section>
 
-const labs=[
-  {t:"Physics Experiment Report",d:"Quantitative analysis of motion, velocity, and acceleration using standard lab instrumentation and observation methods."},
-  {t:"Electrical Engineering Lab",d:"Verification of Ohm’s Law and circuit behavior through structured experimentation and measurement analysis."},
-  {t:"Programming Fundamentals Lab",d:"Implementation of C++ programs focusing on control structures, logic building, and computational problem solving."}
-];
+<!-- ARTICLES -->
+<section id="articles">
+  <h2>Articles</h2>
 
-function renderGrid(id,data){
-  document.getElementById(id).innerHTML=data.map(x=>`
-    <div class='card' onclick="openModal('${x.t}','${x.d}\n\n${x.tech||''}\n${x.focus||''}\n${x.impact||''}')">
-      <h3>${x.t}</h3>
-      <div class='desc'>${x.d.slice(0,90)}...</div>
-      <div class='badge'>Click for full engineering breakdown</div>
-    </div>
-  `).join('');
-}
+  <div class="card">
+    <h3>Programming Fundamentals</h3>
+    <p>
+      Programming fundamentals are the base of all programming languages. They teach how to think logically and solve problems step by step.
+      <br><br>
+      Key concepts include variables, data types, conditions, loops, and functions. Variables store data, conditions help in decision-making, loops repeat tasks, and functions organize reusable code.
+      <br><br>
+      These concepts are important because they build problem-solving skills and prepare students for advanced topics like data structures, web development, and artificial intelligence.
+    </p>
 
-renderGrid('projectsGrid',projects);
-renderGrid('workGrid',work);
-renderGrid('labsGrid',labs);
+    <span class="tag">Core Programming</span>
+  </div>
 
-function openModal(t,d){
-  document.getElementById('mTitle').innerText=t;
-  document.getElementById('mDesc').innerText=d;
-  document.getElementById('modal').style.display='flex';
-}
+  <div class="card">
+    <h3>Database Systems</h3>
+    <p>
+      A database is a system used to store and manage data efficiently. It is used in almost every application like banking, social media, and e-commerce.
+      <br><br>
+      Data is stored in tables made of rows and columns. Important concepts include primary keys, foreign keys, SQL, and normalization.
+      <br><br>
+      Databases help reduce data duplication, improve security, and allow fast data access in large systems.
+    </p>
 
-function downloadResume(){
-  const text=`NOOR FATIMA - ENGINEERING PROFILE\n\nPROJECTS:\n- Modular Portfolio Architecture System\n- Static Blog UI Engineering Prototype\n- Advanced UI Interaction System\n\nENGINEERING PRACTICE:\n- DSA (C++) Algorithmic Problem Solving\n- UI Reverse Engineering\n- Engineering Documentation\n- JavaScript Systems Development`;
+    <span class="tag">Data Management</span>
+  </div>
 
-  const blob=new Blob([text],{type:'text/plain'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='Noor_Fatima_Professional_Profile.txt';
-  a.click();
-}
+</section>
 
-// GitHub API
-async function loadGitHub(){
-  try{
-    const res=await fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos');
-    const data=await res.json();
-    document.getElementById('githubGrid').innerHTML=data.slice(0,6).map(r=>`
-      <div class='card'>
-        <h3>${r.name}</h3>
-        <div class='badge'>⭐ ${r.stargazers_count}</div>
-      </div>
-    `).join('');
-  }catch(e){
-    document.getElementById('githubGrid').innerHTML='GitHub data unavailable';
-  }
-}
-loadGitHub();
+<footer>
+  <p>© 2026 Noor Fatima | Built with HTML & CSS 🚀</p>
+</footer>
 
-// background animation
-const c=document.getElementById('bg');
-const ctx=c.getContext('2d');
-c.width=window.innerWidth;
-c.height=window.innerHeight;
-
-let dots=Array.from({length:40},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)}));
-
-function animate(){
-  ctx.clearRect(0,0,c.width,c.height);
-  ctx.fillStyle='rgba(96,165,250,0.25)';
-  dots.forEach(d=>{
-    d.x+=d.vx;d.y+=d.vy;
-    if(d.x<0||d.x>c.width)d.vx*=-1;
-    if(d.y<0||d.y>c.height)d.vy*=-1;
-    ctx.beginPath();ctx.arc(d.x,d.y,2,0,Math.PI*2);ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
 </body>
 </html>
