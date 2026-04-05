@@ -1,45 +1,38 @@
-function show(id){
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  const target = document.getElementById(id);
-  if (!target) {
-    console.warn("Section not found:", id);
-    return;
-  }
+<body onload="show('home')">
 
-  target.classList.add('active');
-}
+<nav>
+  <button onclick="show('home')">Home</button>
+  <button onclick="show('projects')">Projects</button>
+  <button onclick="show('articles')">Articles</button>
+</nav>
 
-/* DATA SYSTEM */
-const data = {
-  p1: `
-    <h2>🚀 Portfolio Website — Engineering Case Study</h2>
-    <p>Professional engineering portfolio built using HTML, CSS, and JavaScript.</p>
-  `,
-  a1: `
-    <h2>📘 Programming Fundamentals</h2>
-    <p>Core logic and problem solving foundations.</p>
-  `,
-  a2: `
-    <h2>🗄️ DBMS Basics</h2>
-    <p>Structured data management systems.</p>
-  `
-};
+<section id="home" class="active">
+  <h1>Welcome</h1>
+</section>
 
-function openModal(key){
-  const modal = document.getElementById("modal");
-  const body = document.getElementById("modal-body");
+<section id="projects">
+  <h1>Projects</h1>
+</section>
 
-  if (!modal || !body || !data[key]) {
-    console.warn("Modal or data missing:", key);
-    return;
-  }
+<section id="articles">
+  <h1>Articles</h1>
+</section>
 
-  body.innerHTML = data[key];
-  modal.style.display = "flex";
-}
+<div id="modal">
+  <div>
+    <button onclick="closeModal()">Close</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
 
-function closeModal(){
-  const modal = document.getElementById("modal");
-  if (modal) modal.style.display = "none";
-}
+<script src="script.js"></script>
+
+</body>
+</html>
