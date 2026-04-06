@@ -41,32 +41,139 @@
 
   <div class="project-card modern">
     <h3>📌 What is a Database?</h3>
-    <p>Structured collection of data stored electronically in tables or files.</p>
+    <p>Structured collection of data stored electronically.</p>
   </div>
 
   <div class="project-card modern">
     <h3>📊 Types of Databases</h3>
-    <p>Relational (MySQL) and NoSQL (MongoDB) systems.</p>
+    <p>Relational (MySQL) and NoSQL (MongoDB).</p>
   </div>
 
   <div class="project-card modern">
     <h3>🧠 ER Model</h3>
-    <p>Defines entities, attributes, and relationships in database design.</p>
+    <p>Entities, attributes, and relationships in database design.</p>
   </div>
 
   <div class="project-card modern">
     <h3>🔑 Keys</h3>
-    <p>Primary, Foreign, Candidate keys used for data relationships.</p>
+    <p>Primary, Foreign, and Candidate keys.</p>
   </div>
 
   <div class="project-card modern">
     <h3>⚙️ Normalization</h3>
-    <p>Removes redundancy and improves data consistency.</p>
+    <p>Removes redundancy and improves consistency.</p>
   </div>
 
   <div class="project-card modern">
     <h3>🧾 SQL</h3>
-    <p>Language used to store, retrieve, and manage database data.</p>
+    <p>Language used to manage databases.</p>
+  </div>
+
+</section>
+
+<!-- =========================
+     FULL DBMS NOTES SECTION
+========================= -->
+<section class="content">
+
+  <h2>🗄️ Complete DBMS Notes</h2>
+
+  <div class="card highlight">
+
+    <h3>🧠 Core Idea of Database</h3>
+    <ul>
+      <li>What data is stored?</li>
+      <li>How is data accessed?</li>
+      <li>How is data maintained?</li>
+    </ul>
+
+    <h3>🏗️ Structure of Database</h3>
+    <p><b>Tables (Relations), Rows (Tuples), Columns (Attributes)</b></p>
+
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>GPA</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Ali</td>
+        <td>CS</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Sara</td>
+        <td>SE</td>
+        <td>3.8</td>
+      </tr>
+    </table>
+
+    <h3>⚙️ Characteristics</h3>
+    <ul>
+      <li>Data Persistence</li>
+      <li>Data Independence</li>
+      <li>Reduced Redundancy</li>
+      <li>Data Integrity</li>
+      <li>Concurrency Control</li>
+      <li>Security Control</li>
+    </ul>
+
+    <h3>🧩 Types of Databases</h3>
+    <ul>
+      <li>Relational Database (MySQL, Oracle)</li>
+      <li>NoSQL (MongoDB, Redis, Cassandra)</li>
+      <li>Distributed Database</li>
+      <li>Cloud Database ☁️</li>
+      <li>Centralized Database</li>
+    </ul>
+
+    <h3>🔗 ER Diagram</h3>
+    <p>Entities = objects, Attributes = properties, Relationships = connections</p>
+
+    <p><b>Example:</b> Student → Enrolls → Course</p>
+
+    <h3>🔑 Keys</h3>
+    <ul>
+      <li><b>Primary Key:</b> Unique identifier</li>
+      <li><b>Candidate Key:</b> Possible unique keys</li>
+      <li><b>Foreign Key:</b> Links tables</li>
+    </ul>
+
+    <h3>⚙️ Normalization</h3>
+    <ul>
+      <li>1NF → Atomic values</li>
+      <li>2NF → Remove partial dependency</li>
+      <li>3NF → Remove transitive dependency</li>
+    </ul>
+
+    <h3>💻 SQL Queries</h3>
+
+    <pre><code>
+SELECT * FROM Student;
+
+INSERT INTO Student (RollNo, Name)
+VALUES (101, 'Ali');
+
+UPDATE Student
+SET Name = 'Ahmed'
+WHERE RollNo = 101;
+
+DELETE FROM Student
+WHERE RollNo = 101;
+    </code></pre>
+
+    <h3>🔗 JOIN Example</h3>
+
+    <pre><code>
+SELECT Student.Name, Marks.Score
+FROM Student
+INNER JOIN Marks
+ON Student.RollNo = Marks.RollNo;
+    </code></pre>
+
   </div>
 
 </section>
@@ -77,8 +184,8 @@
 
   <div class="card highlight">
     <p>
-      DBMS is the backbone of modern applications like banking systems,
-      social media platforms, and e-commerce websites.
+      DBMS is used in banking systems, social media apps, e-commerce platforms,
+      and university management systems.
     </p>
   </div>
 </section>
