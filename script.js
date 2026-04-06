@@ -14,7 +14,7 @@ function showSection(id, el) {
     sec.classList.remove("active");
   });
 
-  // Show target section
+  // Show selected section
   targetSection.classList.add("active");
 
   // Reset nav buttons
@@ -32,23 +32,28 @@ function showSection(id, el) {
 
 
 /* ============================
-   ARTICLE TOGGLE SYSTEM (IMPROVED)
+   ARTICLE TOGGLE SYSTEM (FIXED + CLEAN)
 ============================ */
 function toggleArticle(button) {
   const article = button.closest(".article-card");
 
-  if (!article) return;
+  if (!article) {
+    console.warn("Article card not found.");
+    return;
+  }
 
   const content = article.querySelector(".full-content");
-  if (!content) return;
+
+  if (!content) {
+    console.warn("Full content not found.");
+    return;
+  }
+
+  // Toggle state
+  article.classList.toggle("open");
 
   const isOpen = article.classList.contains("open");
 
-  if (isOpen) {
-    article.classList.remove("open");
-    button.innerText = "Read More";
-  } else {
-    article.classList.add("open");
-    button.innerText = "Show Less";
-  }
+  // Update button text
+  button.innerText = isOpen ? "Show Less" : "Read More";
 }
