@@ -44,86 +44,224 @@
     <h2>Projects 💼</h2>
 
     <div class="glass-card">
-      <h3>🌐 GitHub Pages Website Deployment</h3>
+       
+      <h3>🌐 GitHub Website Creation Guide</h3>
 
-      <p>
-        A step-by-step project demonstrating how to build and deploy a website using GitHub Pages.
-      </p>
+      <div class="full-content" style="display:block; text-align:left;">
 
-      <h4>🔧 Process</h4>
-      <ul>
-        <li>Create GitHub account</li>
-        <li>Create repository</li>
-        <li>Upload files</li>
-        <li>Enable GitHub Pages</li>
-        <li>Launch website</li>
-      </ul>
+        <h4>🧩 Step 1: Create Account</h4>
+        <p>Go to GitHub and sign up.</p>
 
-      <h4>💻 Sample Code</h4>
-      <pre>
-&lt;h1&gt;Hello, I am Noor 👩‍💻&lt;/h1&gt;
-&lt;p&gt;Welcome to my GitHub website!&lt;/p&gt;
-      </pre>
+        <h4>📁 Step 2: Create Repository</h4>
+        <ul>
+          <li>Name: yourusername.github.io</li>
+          <li>Public repository</li>
+        </ul>
 
-      <h4>🎯 Outcome</h4>
-      <p>Successfully deployed a live website.</p>
+        <h4>💻 Step 3: Add index.html</h4>
+        <p>Create index.html file and add your code.</p>
+
+        <h4>⚙️ Step 4: Enable Pages</h4>
+        <p>Go to Settings → Pages → Deploy from branch.</p>
+
+        <h4>🌍 Step 5: Open Website</h4>
+        <p>Your site will be live after a few minutes.</p>
+
+      </div>
     </div>
 
   </div>
 </section>
-
 <!-- ARTICLES -->
 <section id="articles">
   <div class="card">
 
     <h2>Articles 📝</h2>
-
     <!-- ARTICLE 1 -->
-    <div class="article">
-      <h3>📊 Database Systems</h3>
+<div class="article">
+  <h3>📊 Database Systems (Complete Guide)</h3>
 
-      <p class="preview">
-        Database systems store and manage data efficiently...
-      </p>
+  <div class="full-content" style="display:block; text-align:left;">
 
-      <div class="full-content">
-        <p>
-          A DBMS helps organize and secure data for applications like banking and e-commerce.
-        </p>
+    <h4>📌 Introduction</h4>
+    <p>
+      A database system is a structured and systematic way of storing, managing, and retrieving data.
+      It forms the backbone of modern information systems, enabling efficient data handling.
+    </p>
 
-        <ul>
-          <li>Storage</li>
-          <li>Security</li>
-          <li>Concurrency</li>
-        </ul>
-      </div>
+    <h4>📌 ER Model</h4>
+    <ul>
+      <li>Entities (objects)</li>
+      <li>Attributes (properties)</li>
+      <li>Relationships (connections)</li>
+    </ul>
 
-      <button onclick="toggleArticle(this)">Read More</button>
-    </div>
+    <h4>📌 Basic ER Example</h4>
+    <pre>
+[Student] ---<Enrolls>--- [Course]
+    </pre>
 
-    <hr>
+    <h4>📌 SQL Example</h4>
+    <pre>
+CREATE TABLE Student (
+  Student_ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Age INT
+);
+    </pre>
+
+    <h4>🏥 Hospital Management System</h4>
+    <pre>
+[Patient] ----<books>---- [Appointment] ----<attended by>---- [Doctor]
+
+[Appointment] ----<results in>---- [Treatment]
+
+[Patient] ----<receives>---- [Treatment]
+
+[Patient] ----<generates>---- [Bill]
+    </pre>
+
+    <ul>
+      <li>Appointment links Patient and Doctor</li>
+      <li>Many-to-Many handled using junction table</li>
+      <li>Supports treatment and billing system</li>
+    </ul>
+
+    <h4>🏦 Banking System</h4>
+    <pre>
+[Customer] ----<owns>---- [Account]
+
+[Account] ----<has>---- [Transaction]
+
+[Account] ----<belongs to>---- [Branch]
+    </pre>
+
+    <ul>
+      <li>Supports joint accounts</li>
+      <li>Tracks transactions</li>
+      <li>Branch manages accounts</li>
+    </ul>
+
+    <h4>⚖️ Comparison</h4>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Feature</th>
+        <th>Hospital</th>
+        <th>Banking</th>
+      </tr>
+      <tr>
+        <td>Core Entity</td>
+        <td>Patient</td>
+        <td>Customer</td>
+      </tr>
+      <tr>
+        <td>Complexity</td>
+        <td>Medium-High</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>Real-Time Need</td>
+        <td>Moderate</td>
+        <td>Very High</td>
+      </tr>
+    </table>
+
+    <h4>🎯 Conclusion</h4>
+    <p>
+      ER diagrams provide a clear blueprint for designing efficient and scalable database systems.
+      They help reduce errors and improve system structure before implementation.
+    </p>
+
+  </div>
+</div>
 
     <!-- ARTICLE 2 -->
     <div class="article">
-      <h3>💻 Programming Fundamentals</h3>
+  <h3>💻 Programming Fundamentals</h3>
+      <div class="article">
+  <h3>💻 Programming Fundamentals (Complete Guide)</h3>
 
-      <p class="preview">
-        Programming basics include variables, loops, and functions...
-      </p>
+  <div class="full-content" style="display:block; text-align:left;">
 
-      <div class="full-content">
-        <pre>
+    <h4>📌 Introduction</h4>
+    <p>
+      Programming fundamentals form the backbone of all software development.
+      These concepts allow developers to build efficient, scalable, and reliable systems.
+    </p>
+
+    <h4>🧠 Core Concepts</h4>
+
+    <h5>1. Variables</h5>
+    <pre>
+age = 20
+name = "Noor"
+isStudent = True
+    </pre>
+
+    <h5>2. Conditional Statement</h5>
+    <pre>
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+    </pre>
+
+    <h5>3. Loop Example</h5>
+    <pre>
 for i in range(5):
     print(i)
-        </pre>
-      </div>
+    </pre>
 
-      <button onclick="toggleArticle(this)">Read More</button>
-    </div>
+    <h4>🔄 Flowchart (Even or Odd)</h4>
+    <pre>
+Start → Input n → Check (n % 2 == 0)
+        ↓Yes              ↓No
+     Print Even      Print Odd
+             → End
+    </pre>
+
+    <h4>🔁 Loop Flowchart</h4>
+    <pre>
+Start → i = 1 → Check (i ≤ 5)
+        ↓Yes              ↓No
+     Print i           End
+        ↓
+     i = i + 1 → repeat
+    </pre>
+
+    <h4>🧠 Memory Model</h4>
+    <pre>
+x = 10
+y = x
+x = 20
+
+Memory:
+x → 20
+y → 10
+    </pre>
+
+    <h4>🧩 Array Memory</h4>
+    <pre>
+arr = [1, 2, 3]
+
+arr → [1][2][3]
+    </pre>
+
+    <h4>🔧 Function Call Stack</h4>
+    <pre>
+add(2,3)
+→ returns 5
+→ stored in result
+    </pre>
+
+    <h4>🎯 Conclusion</h4>
+    <p>
+      Understanding programming fundamentals helps in writing clean code,
+      solving problems efficiently, and building real-world applications.
+    </p>
 
   </div>
-</section>
-
+</div>
 <!-- CONTACT -->
 <section id="contact">
   <div class="card">
