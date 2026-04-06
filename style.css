@@ -9,6 +9,8 @@
   --border: #30363d;
   --primary: #58a6ff;
   --accent: #238636;
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* LIGHT MODE */
@@ -20,6 +22,8 @@ body.light {
   --border: #e2e8f0;
   --primary: #2563eb;
   --accent: #16a34a;
+
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -74,38 +78,6 @@ body.loaded {
 }
 
 /* =========================
-   CONTENT AREA
-========================= */
-.content {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  line-height: 1.7;
-}
-
-.content h1 {
-  font-size: 34px;
-  margin-bottom: 10px;
-}
-
-.content h2 {
-  margin-top: 25px;
-  color: var(--primary);
-}
-
-.content h3 {
-  margin-top: 18px;
-}
-
-.content ul {
-  margin-left: 20px;
-}
-
-.content li {
-  margin-bottom: 6px;
-}
-
-/* =========================
    NAVBAR
 ========================= */
 .navbar {
@@ -124,6 +96,8 @@ body.loaded {
 
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+
+  transition: 0.3s ease;
 }
 
 .logo {
@@ -178,6 +152,109 @@ nav a:hover {
   color: var(--muted);
 }
 
+/* HERO BUTTONS */
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  margin: 10px 8px 0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  opacity: 0.95;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.about h2 {
+  color: var(--text);
+  margin-bottom: 15px;
+}
+
+/* =========================
+   GRID SYSTEM
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+  padding: 40px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+
+  opacity: 0;
+  transform: translateY(15px);
+  box-shadow: var(--shadow);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.25);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   PROJECT CARDS
+========================= */
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+}
+
 /* =========================
    SECTIONS
 ========================= */
@@ -194,48 +271,6 @@ nav a:hover {
 }
 
 /* =========================
-   GRID SYSTEM
-========================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 25px;
-}
-
-/* =========================
-   CARDS
-========================= */
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 20px;
-  border-radius: 14px;
-  transition: all 0.3s ease;
-
-  opacity: 0;
-  transform: translateY(15px);
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
-}
-
-/* clickable cards */
-.link-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-/* =========================
    BUTTON
 ========================= */
 .btn {
@@ -247,13 +282,7 @@ nav a:hover {
   margin-top: 15px;
   text-decoration: none;
   font-weight: 500;
-  letter-spacing: 0.3px;
   transition: 0.3s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
 }
 
 /* =========================
