@@ -1,24 +1,40 @@
 // =========================
-// THEME TOGGLE SYSTEM
+// SAFE THEME TOGGLE SYSTEM (FIXED)
 // =========================
 
-const toggleBtn = document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light");
-  toggleBtn.textContent = "🌞";
-}
+  const toggleBtn = document.getElementById("themeToggle");
 
-// Toggle theme
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+  // If button doesn't exist, stop script safely
+  if (!toggleBtn) return;
 
-  if (document.body.classList.contains("light")) {
+  // Load saved theme safely
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light");
     toggleBtn.textContent = "🌞";
-    localStorage.setItem("theme", "light");
   } else {
+    document.body.classList.remove("light");
     toggleBtn.textContent = "🌙";
-    localStorage.setItem("theme", "dark");
   }
+
+  // Toggle theme
+  toggleBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+    const isLight = document.body.classList.contains("light");
+
+    if (isLight) {
+      toggleBtn.textContent = "🌞";
+      localStorage.setItem("theme", "light");
+    } else {
+      toggleBtn.textContent = "🌙";
+      localStorage.setItem("theme", "dark");
+    }
+
+  });
+
 });
