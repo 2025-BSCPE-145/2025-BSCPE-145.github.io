@@ -1,4 +1,6 @@
-/* ===== GLOBAL RESET ===== */
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== BODY BACKGROUND ===== */
 body {
   background: linear-gradient(135deg, #0f172a, #1e293b, #0b1220);
   color: #e2e8f0;
@@ -15,7 +16,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== HEADER ===== */
+/* =========================
+   HEADER
+========================= */
 header {
   text-align: center;
   padding: 40px 20px;
@@ -24,7 +27,6 @@ header {
 header h1 {
   font-size: 2.8rem;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
 header p {
@@ -32,7 +34,9 @@ header p {
   margin-top: 8px;
 }
 
-/* ===== NAVIGATION ===== */
+/* =========================
+   NAVIGATION
+========================= */
 nav {
   display: flex;
   justify-content: center;
@@ -50,17 +54,17 @@ nav button {
   color: white;
   backdrop-filter: blur(12px);
   transition: all 0.3s ease;
-  font-weight: 500;
 }
 
 nav button:hover,
 nav button.active {
-  transform: translateY(-3px) scale(1.03);
+  transform: translateY(-3px);
   background: rgba(56, 189, 248, 0.25);
-  color: #fff;
 }
 
-/* ===== SECTIONS ===== */
+/* =========================
+   SECTIONS (PAGE SYSTEM)
+========================= */
 section {
   display: none;
   padding: 20px;
@@ -71,49 +75,55 @@ section.active {
   display: block;
 }
 
-/* ===== CARD ===== */
+/* =========================
+   MAIN CARD (GENERAL USE)
+========================= */
 .card {
   max-width: 900px;
   margin: auto;
   padding: 25px;
   border-radius: 22px;
-
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255,255,255,0.08);
-
   box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
 }
 
-/* ===== GLASS CARD ===== */
-.glass-card {
+/* =========================
+   ARTICLE PAGE STYLES
+   (USE: <body class="articles-page">)
+========================= */
+.articles-page .article-card {
+  background: #1e293b;
+  padding: 18px;
   margin-top: 15px;
-  padding: 20px;
-  border-radius: 16px;
-
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-
+  border-radius: 12px;
   transition: 0.3s ease;
 }
 
-.glass-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.12);
+.articles-page .article-card:hover {
+  transform: scale(1.03);
 }
 
-/* ===== TAGS ===== */
-.tags {
+.articles-page .article-card a {
+  display: inline-block;
   margin-top: 10px;
+  color: #38bdf8;
 }
 
+/* ARTICLE CONTENT */
+.article {
+  margin-top: 20px;
+}
+
+/* =========================
+   TAGS
+========================= */
 .tags span {
   display: inline-block;
   background: rgba(56, 189, 248, 0.15);
@@ -124,24 +134,22 @@ section.active {
   margin: 5px 5px 0 0;
 }
 
-/* ===== ARTICLE ===== */
-.article {
-  margin-top: 20px;
-}
-
-/* ===== LINKS ===== */
+/* =========================
+   LINKS
+========================= */
 a {
   color: #38bdf8;
   text-decoration: none;
-  transition: 0.2s ease;
 }
 
 a:hover {
-  text-decoration: underline;
   color: #7dd3fc;
+  text-decoration: underline;
 }
 
-/* ===== CODE BLOCK ===== */
+/* =========================
+   CODE BLOCK
+========================= */
 pre {
   background: #020617;
   padding: 14px;
@@ -151,21 +159,17 @@ pre {
   border-left: 3px solid #38bdf8;
 }
 
-/* ===== HR ===== */
-hr {
-  border: none;
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 20px 0;
-}
-
-/* ===== FULL CONTENT TOGGLE ===== */
+/* =========================
+   FULL CONTENT TOGGLE
+========================= */
 .full-content {
   display: none;
   margin-top: 10px;
 }
 
-/* ===== ANIMATION ===== */
+/* =========================
+   ANIMATION
+========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -177,7 +181,9 @@ hr {
   }
 }
 
-/* ===== SCROLLBAR ===== */
+/* =========================
+   SCROLLBAR
+========================= */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -187,7 +193,9 @@ hr {
   border-radius: 10px;
 }
 
-/* ===== MOBILE ===== */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
@@ -202,58 +210,4 @@ hr {
     margin: 10px;
     padding: 18px;
   }
-  body {
-  font-family: 'Poppins', sans-serif;
-  background: #0f172a;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-.content {
-  padding: 30px;
-  max-width: 800px;
-  margin: auto;
-}
-}
-
-.article-card {
-  background: #1e293b;
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 10px;
-}
-
-.article-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #38bdf8;
 }
