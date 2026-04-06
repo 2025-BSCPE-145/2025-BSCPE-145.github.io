@@ -2,14 +2,12 @@
    DOM READY
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-
   handleLoader();
   handleTheme();
   handleScrollReveal();
   handleSmoothScroll();
   handleNavbarEffect();
   handleSidebar();
-
 });
 
 
@@ -22,12 +20,12 @@ function handleLoader() {
   window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 
-    if (loader) {
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.pointerEvents = "none";
-      }, 500);
-    }
+    if (!loader) return;
+
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+    }, 400);
   });
 }
 
@@ -38,46 +36,39 @@ function handleLoader() {
 function handleTheme() {
   const toggle = document.getElementById("themeToggle");
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "light") {
+  // apply saved theme on load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
     document.body.classList.add("light");
   }
 
   toggle?.addEventListener("click", () => {
     document.body.classList.toggle("light");
 
-    if (document.body.classList.contains("light")) {
-      localStorage.setItem("theme", "light");
-    } else {
-      localStorage.setItem("theme", "dark");
-    }
+    const isLight = document.body.classList.contains("light");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
   });
 }
 
 
 /* =========================
-   SCROLL REVEAL (SECTIONS + CARDS)
+   SCROLL REVEAL
 ========================= */
 function handleScrollReveal() {
-
-  const revealElements = document.querySelectorAll(".section, .card");
+  const elements = document.querySelectorAll(".section, .card, .project-card");
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-
-        // stagger effect for cards
-        setTimeout(() => {
-          entry.target.classList.add("show");
-        }, index * 100);
-
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // prevents repeated triggering
       }
     });
   }, {
     threshold: 0.15
   });
 
-  revealElements.forEach(el => observer.observe(el));
+  elements.forEach((el) => observer.observe(el));
 }
 
 
@@ -85,17 +76,20 @@ function handleScrollReveal() {
    SMOOTH SCROLL
 ========================= */
 function handleSmoothScroll() {
-  const links = document.querySelectorAll("a[href^='#']");
-
-  links.forEach(link => {
+  document.querySelectorAll("a[href^='#']").forEach((link) => {
     link.addEventListener("click", (e) => {
-      e.preventDefault();
+      const targetId = link.getAttribute("href");
 
-      const target = document.querySelector(link.getAttribute("href"));
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
 
       if (target) {
+        e.preventDefault();
+
         target.scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
+          block: "start"
         });
       }
     });
@@ -104,34 +98,48 @@ function handleSmoothScroll() {
 
 
 /* =========================
-   NAVBAR SCROLL EFFECT
+   NAVBAR EFFECT
 ========================= */
 function handleNavbarEffect() {
   const navbar = document.querySelector(".navbar");
+  if (!navbar) return;
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
-    } else {
-      navbar.style.boxShadow = "none";
-    }
+    const scrolled = window.scrollY > 50;
+
+    navbar.style.boxShadow = scrolled
+      ? "0 4px 20px rgba(0,0,0,0.25)"
+      : "none";
+
+    navbar.style.backdropFilter = scrolled
+      ? "blur(10px)"
+      : "none";
   });
 }
 
 
 /* =========================
-   SIDEBAR TOGGLE (MOBILE)
+   SIDEBAR (MOBILE MENU)
 ========================= */
 function handleSidebar() {
   const sidebar = document.querySelector(".sidebar");
   const openBtn = document.getElementById("menuBtn");
   const closeBtn = document.getElementById("closeBtn");
 
+  if (!sidebar) return;
+
   openBtn?.addEventListener("click", () => {
-    sidebar?.classList.add("active");
+    sidebar.classList.add("active");
   });
 
   closeBtn?.addEventListener("click", () => {
-    sidebar?.classList.remove("active");
+    sidebar.classList.remove("active");
+  });
+
+  // optional: close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && e.target !== openBtn) {
+      sidebar.classList.remove("active");
+    }
   });
 }
