@@ -1,0 +1,60 @@
+<h1>Object Oriented Programming (OOP)</h1>
+
+<p>Object Oriented Programming (OOP) is a popular programming paradigm that uses <strong>objects</strong> and <strong>classes</strong> to organize and structure code. It helps make programs more reusable, manageable, and closer to real-world thinking.</p>
+
+<h2>Why Use OOP?</h2>
+<ul>
+  <li>Code reusability (write once, use many times)</li>
+  <li>Better organization of large programs</li>
+  <li>Easier maintenance and debugging</li>
+  <li>Models real-world entities (like Student, Car, Bank Account)</li>
+</ul>
+
+<h2>Core Concepts (Four Pillars of OOP)</h2>
+<ul>
+  <li><strong>Class:</strong> A blueprint or template for creating objects. It defines properties (data) and methods (functions).</li>
+  <li><strong>Object:</strong> An instance of a class. It represents a real entity with actual values.</li>
+  <li><strong>Inheritance:</strong> Allows a child class to inherit properties and methods from a parent class. Promotes code reuse.</li>
+  <li><strong>Polymorphism:</strong> The ability of the same function or method to behave differently based on the object calling it (e.g., method overriding).</li>
+  <li><strong>Encapsulation:</strong> Bundling data and methods together while hiding internal details using access modifiers (private, public).</li>
+  <li><strong>Abstraction:</strong> Hiding complex implementation details and showing only the necessary features to the user.</li>
+</ul>
+
+<h2>Simple Example: Student Class</h2>
+<p>Here is a basic example of a "Student" class (shown in simple C++ style):</p>
+
+<pre>
+class Student {
+    private:
+        string name;
+        int rollNo;
+        float marks;
+
+    public:
+        void setData(string n, int r, float m) {
+            name = n;
+            rollNo = r;
+            marks = m;
+        }
+
+        void display() {
+            cout << "Name: " << name << endl;
+            cout << "Roll No: " << rollNo << endl;
+            cout << "Marks: " << marks << endl;
+        }
+};
+</pre>
+
+<p><strong>How it works:</strong><br>
+- We create a class named <strong>Student</strong>.<br>
+- We can create multiple objects (like student1, student2) from this class.<br>
+- Each object can store its own name, roll number, and marks.</p>
+
+<h2>Benefits of OOP</h2>
+<ul>
+  <li>Reduces code duplication</li>
+  <li>Makes teamwork easier on big projects</li>
+  <li>Helps in building scalable applications</li>
+</ul>
+
+<p>This article helped me understand how real software is built using classes and objects.</p>
