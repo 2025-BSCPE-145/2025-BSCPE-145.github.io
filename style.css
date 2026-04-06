@@ -12,7 +12,156 @@ body {
   color: #e5e7eb;
   line-height: 1.6;
 }
+/* ============ RESET ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
 
+body {
+  background: #0a0a0f;
+  color: #e5e7eb;
+  transition: 0.4s;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: #f4f4f4;
+  color: #111;
+}
+
+/* ============ NAVBAR ============ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+.active-link {
+  border-bottom: 2px solid #60a5fa;
+}
+
+/* ============ HERO ============ */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 45px;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  padding: 70px 40px;
+}
+
+/* ============ CARDS ============ */
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hover */
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* ============ GRID ============ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ============ BUTTON ============ */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* ============ CONTACT FORM ============ */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1f2937;
+  color: white;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111827;
+  margin-top: 40px;
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111827;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 200px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
 /* ================= NAVBAR ================= */
 .navbar {
   display: flex;
