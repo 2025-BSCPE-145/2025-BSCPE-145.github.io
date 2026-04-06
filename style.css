@@ -1,11 +1,11 @@
-/* =========================
+/* ============================
    GLOBAL RESET
-========================= */
+============================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -13,201 +13,174 @@ body {
   color: #e2e8f0;
   min-height: 100vh;
   line-height: 1.6;
-  overflow-x: hidden;
+  padding: 20px;
 }
 
-/* =========================
+
+/* ============================
    HEADER
-========================= */
+============================ */
 header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 10px;
+  margin-bottom: 20px;
 }
 
 header h1 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
+  color: #38bdf8;
 }
 
-header p {
-  color: #94a3b8;
-  margin-top: 8px;
-}
 
-/* =========================
-   NAVIGATION
-========================= */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-nav button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.08);
-  color: white;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
-}
-
-nav button:hover,
-nav button.active {
-  transform: translateY(-3px);
-  background: rgba(56, 189, 248, 0.25);
-}
-
-/* =========================
-   SECTIONS (PAGE SYSTEM)
-========================= */
+/* ============================
+   SECTIONS (for multi-page system)
+============================ */
 section {
   display: none;
-  padding: 20px;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 section.active {
   display: block;
 }
 
-/* =========================
-   MAIN CARD (GENERAL USE)
-========================= */
-.card {
-  max-width: 900px;
-  margin: auto;
-  padding: 25px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* =========================
-   ARTICLE PAGE STYLES
-   (USE: <body class="articles-page">)
-========================= */
-.articles-page .article-card {
-  background: #1e293b;
-  padding: 18px;
-  margin-top: 15px;
-  border-radius: 12px;
-  transition: 0.3s ease;
-}
-
-.articles-page .article-card:hover {
-  transform: scale(1.03);
-}
-
-.articles-page .article-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #38bdf8;
-}
-
-/* ARTICLE CONTENT */
-.article {
-  margin-top: 20px;
-}
-
-/* =========================
-   TAGS
-========================= */
-.tags span {
-  display: inline-block;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin: 5px 5px 0 0;
-}
-
-/* =========================
-   LINKS
-========================= */
-a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #7dd3fc;
-  text-decoration: underline;
-}
-
-/* =========================
-   CODE BLOCK
-========================= */
-pre {
-  background: #020617;
-  padding: 14px;
-  border-radius: 10px;
-  overflow-x: auto;
-  color: #38bdf8;
-  border-left: 3px solid #38bdf8;
-}
-
-/* =========================
-   FULL CONTENT TOGGLE
-========================= */
-.full-content {
-  display: none;
-  margin-top: 10px;
-}
-
-/* =========================
-   ANIMATION
-========================= */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
-::-webkit-scrollbar {
-  width: 8px;
+
+/* ============================
+   ARTICLE CARD
+============================ */
+.article {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-::-webkit-scrollbar-thumb {
+
+/* ============================
+   CONTENT AREA
+============================ */
+.full-content {
+  padding: 10px 5px;
+  transition: all 0.3s ease;
+}
+
+
+/* ============================
+   HEADINGS
+============================ */
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+h4 {
+  margin-top: 18px;
+  font-size: 1.2rem;
+  color: #38bdf8;
+}
+
+h5 {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #fbbf24;
+}
+
+
+/* ============================
+   PARAGRAPH
+============================ */
+p {
+  margin-top: 8px;
+  color: #cbd5e1;
+}
+
+
+/* ============================
+   CODE BLOCKS
+============================ */
+pre {
+  background: #0b1220;
+  border-left: 4px solid #38bdf8;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+
+/* ============================
+   READ MORE BUTTON
+============================ */
+.read-more-btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.read-more-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+
+/* ============================
+   NAV BUTTONS (if you use sidebar/menu)
+============================ */
+.nav-btn,
+button[data-section] {
+  padding: 10px 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1e293b;
+  color: #e2e8f0;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover,
+button[data-section]:hover {
+  background: #334155;
+}
+
+.nav-btn.active,
+button[data-section].active {
   background: #38bdf8;
-  border-radius: 10px;
+  color: #0b1220;
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-@media (max-width: 600px) {
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: center;
+  .article {
+    padding: 15px;
   }
 
-  .card {
-    margin: 10px;
-    padding: 18px;
+  pre {
+    font-size: 0.85rem;
   }
 }
