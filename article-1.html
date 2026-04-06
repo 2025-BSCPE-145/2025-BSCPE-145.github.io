@@ -1,102 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Programming Basics</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<header>
-  <h1>💻 Programming Basics</h1>
-</header>
-    <div class="article">
-  <h3>💻 Programming Fundamentals</h3>
-      <div class="article">
-  <h3>💻 Programming Fundamentals (Complete Guide)</h3>
+<h2>Articles 📝</h2>
+    <!-- ARTICLE 1 -->
+<div class="article">
+  <h3>📊 Database Systems (Complete Guide)</h3>
 
   <div class="full-content" style="display:block; text-align:left;">
 
     <h4>📌 Introduction</h4>
     <p>
-      Programming fundamentals form the backbone of all software development.
-      These concepts allow developers to build efficient, scalable, and reliable systems.
+      A database system is a structured and systematic way of storing, managing, and retrieving data.
+      It forms the backbone of modern information systems, enabling efficient data handling.
     </p>
 
-    <h4>🧠 Core Concepts</h4>
+    <h4>📌 ER Model</h4>
+    <ul>
+      <li>Entities (objects)</li>
+      <li>Attributes (properties)</li>
+      <li>Relationships (connections)</li>
+    </ul>
 
-    <h5>1. Variables</h5>
+    <h4>📌 Basic ER Example</h4>
     <pre>
-age = 20
-name = "Noor"
-isStudent = True
+[Student] ---<Enrolls>--- [Course]
     </pre>
 
-    <h5>2. Conditional Statement</h5>
+    <h4>📌 SQL Example</h4>
     <pre>
-if age >= 18:
-    print("Adult")
-else:
-    print("Minor")
+CREATE TABLE Student (
+  Student_ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Age INT
+);
     </pre>
 
-    <h5>3. Loop Example</h5>
+    <h4>🏥 Hospital Management System</h4>
     <pre>
-for i in range(5):
-    print(i)
+[Patient] ----<books>---- [Appointment] ----<attended by>---- [Doctor]
+
+[Appointment] ----<results in>---- [Treatment]
+
+[Patient] ----<receives>---- [Treatment]
+
+[Patient] ----<generates>---- [Bill]
     </pre>
 
-    <h4>🔄 Flowchart (Even or Odd)</h4>
+    <ul>
+      <li>Appointment links Patient and Doctor</li>
+      <li>Many-to-Many handled using junction table</li>
+      <li>Supports treatment and billing system</li>
+    </ul>
+
+    <h4>🏦 Banking System</h4>
     <pre>
-Start → Input n → Check (n % 2 == 0)
-        ↓Yes              ↓No
-     Print Even      Print Odd
-             → End
+[Customer] ----<owns>---- [Account]
+
+[Account] ----<has>---- [Transaction]
+
+[Account] ----<belongs to>---- [Branch]
     </pre>
 
-    <h4>🔁 Loop Flowchart</h4>
-    <pre>
-Start → i = 1 → Check (i ≤ 5)
-        ↓Yes              ↓No
-     Print i           End
-        ↓
-     i = i + 1 → repeat
-    </pre>
+    <ul>
+      <li>Supports joint accounts</li>
+      <li>Tracks transactions</li>
+      <li>Branch manages accounts</li>
+    </ul>
 
-    <h4>🧠 Memory Model</h4>
-    <pre>
-x = 10
-y = x
-x = 20
-
-Memory:
-x → 20
-y → 10
-    </pre>
-
-    <h4>🧩 Array Memory</h4>
-    <pre>
-arr = [1, 2, 3]
-
-arr → [1][2][3]
-    </pre>
-
-    <h4>🔧 Function Call Stack</h4>
-    <pre>
-add(2,3)
-→ returns 5
-→ stored in result
-    </pre>
+    <h4>⚖️ Comparison</h4>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Feature</th>
+        <th>Hospital</th>
+        <th>Banking</th>
+      </tr>
+      <tr>
+        <td>Core Entity</td>
+        <td>Patient</td>
+        <td>Customer</td>
+      </tr>
+      <tr>
+        <td>Complexity</td>
+        <td>Medium-High</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>Real-Time Need</td>
+        <td>Moderate</td>
+        <td>Very High</td>
+      </tr>
+    </table>
 
     <h4>🎯 Conclusion</h4>
     <p>
-      Understanding programming fundamentals helps in writing clean code,
-      solving problems efficiently, and building real-world applications.
+      ER diagrams provide a clear blueprint for designing efficient and scalable database systems.
+      They help reduce errors and improve system structure before implementation.
     </p>
 
   </div>
 </div>
-    </section>
-
-</body>
-</html>
