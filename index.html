@@ -1,117 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Professional Website</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css"/>
+  <title>Dev Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="navbar">
-    <div class="logo">DevPortfolio</div>
+<header class="navbar">
+  <div class="logo">GitHub Portfolio</div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#articles">Articles</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+  </nav>
+</header>
 
+<section class="hero">
+  <h1>Hi, I'm a Developer 👋</h1>
+  <p>Welcome to my professional GitHub portfolio website.</p>
+</section>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm a Developer 👋</h1>
-      <p>
-        I build modern, responsive and high-performance websites using HTML, CSS and JavaScript.
-      </p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
+<section class="section">
+  <h2>Featured Work 🚀</h2>
 
-
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      I am an engineering student passionate about web development, software engineering,
-      and building clean UI/UX experiences. I enjoy turning ideas into real-world projects.
-    </p>
-  </section>
-
-
-  <!-- ================= PROJECTS ================= -->
-  <section id="projects" class="section dark">
-    <h2>Projects 🚀</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>A responsive personal portfolio with dark UI and animations.</p>
-      </div>
-
-      <div class="card">
-        <h3>To-Do App</h3>
-        <p>A task management app using JavaScript local storage.</p>
-      </div>
-
-      <div class="card">
-        <h3>Blog System</h3>
-        <p>A multi-page article website with dynamic content layout.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= ARTICLES ================= -->
-  <section id="articles" class="section">
-    <h2>Articles 📝</h2>
-
-    <div class="article">
-      <h3>Database Systems (Complete Guide)</h3>
-      <p>
-        A database system is a structured way of storing, managing, and retrieving data efficiently.
-        It is used in almost every modern software application.
-      </p>
+  <div class="grid">
+    <div class="card">
+      <h3>GitHub Website Hosting</h3>
+      <p>Learn how to deploy a website using GitHub Pages.</p>
     </div>
 
-    <div class="article">
-      <h3>Programming Fundamentals</h3>
-      <p>
-        Programming fundamentals include variables, loops, conditions, and functions —
-        the building blocks of all software development.
-      </p>
+    <div class="card">
+      <h3>Machine Learning Project</h3>
+      <p>Basic ML model using Python and dataset training.</p>
     </div>
-  </section>
-
-
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section dark">
-    <h2>Contact Me 📩</h2>
-
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <p>© 2026 DevPortfolio | Built with HTML, CSS & JavaScript</p>
-  </footer>
+  </div>
+</section>
 
 </body>
 </html>
