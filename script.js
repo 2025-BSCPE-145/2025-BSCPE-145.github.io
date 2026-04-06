@@ -1,6 +1,10 @@
+<script>
+// ============================
+// SECTION SWITCHING SYSTEM
+// ============================
 function showSection(id, el) {
-  // Get target section safely
   const targetSection = document.getElementById(id);
+
   if (!targetSection) {
     console.warn(`Section with id "${id}" not found.`);
     return;
@@ -14,7 +18,7 @@ function showSection(id, el) {
   // Show selected section
   targetSection.classList.add("active");
 
-  // Remove active state from all nav buttons
+  // Reset nav buttons
   document.querySelectorAll("nav button").forEach(button => {
     button.classList.remove("active");
     button.setAttribute("aria-selected", "false");
@@ -24,19 +28,26 @@ function showSection(id, el) {
   if (el) {
     el.classList.add("active");
     el.setAttribute("aria-selected", "true");
-    function toggleArticle(button) {
-  const article = button.parentElement;
-  const fullContent = article.querySelector(".full-content");
+  }
+}
 
-  if (!fullContent) return;
 
-  if (fullContent.style.display === "block") {
-    fullContent.style.display = "none";
-    button.textContent = "Read More";
+// ============================
+// ARTICLE TOGGLE SYSTEM
+// ============================
+function toggleArticle(button) {
+  const content = button.previousElementSibling;
+
+  if (!content) return;
+
+  const isHidden = content.style.display === "none" || content.style.display === "";
+
+  if (isHidden) {
+    content.style.display = "block";
+    button.innerText = "Show Less";
   } else {
-    fullContent.style.display = "block";
-    button.textContent = "Read Less";
+    content.style.display = "none";
+    button.innerText = "Read More";
   }
 }
-  }
-}
+</script>
