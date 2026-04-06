@@ -43,7 +43,33 @@ window.onload = () => {
   }
   revealOnScroll();
 };
+// ================= SMOOTH PAGE LOAD =================
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
 
+// ================= ACTIVE LINK =================
+const links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+// ================= SCROLL REVEAL =================
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".card, .section").forEach(el => {
+  observer.observe(el);
+});
 // ================= SCROLL ANIMATION =================
 function revealOnScroll() {
   const elements = document.querySelectorAll(".card, .section");
