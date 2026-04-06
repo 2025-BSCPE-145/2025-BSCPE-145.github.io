@@ -18,7 +18,70 @@ function initSectionSystem() {
     switchSection(targetId, btn, sections, navButtons);
   });
 }
+// ================= MENU =================
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
 
+// ================= THEME (SAVE MODE) =================
+function toggleTheme() {
+  document.body.classList.toggle("light");
+
+  // save preference
+  if (document.body.classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+// load theme
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  if (theme === "light") {
+    document.body.classList.add("light");
+  }
+  revealOnScroll();
+};
+
+// ================= SCROLL ANIMATION =================
+function revealOnScroll() {
+  const elements = document.querySelectorAll(".card, .section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+// ================= ACTIVE NAV =================
+const links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active-link"));
+    link.classList.add("active-link");
+  });
+});
+
+// ================= CONTACT FORM =================
+function submitForm(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  if (name && email) {
+    alert("Message sent successfully 🚀");
+  } else {
+    alert("Please fill all fields!");
+  }
+}
 /* ============================
    SWITCH SECTION LOGIC
 ============================ */
