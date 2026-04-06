@@ -18,10 +18,10 @@
 </header>
 
 <nav>
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('projects')">Projects</button>
-  <button onclick="showSection('articles')">Articles</button>
-  <button onclick="showSection('contact')">Contact</button>
+  <button data-section="home" class="active">Home</button>
+  <button data-section="projects">Projects</button>
+  <button data-section="articles">Articles</button>
+  <button data-section="contact">Contact</button>
 </nav>
 
 <main>
@@ -31,8 +31,8 @@
   <div class="card">
     <h2>Welcome 👋</h2>
     <p>
-      This is my professional engineering portfolio where I showcase my academic work,
-      programming knowledge, and technical learning journey.
+      This is my professional engineering portfolio showcasing my academic work,
+      programming skills, and development journey.
     </p>
   </div>
 </section>
@@ -40,59 +40,51 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="card">
-
     <h2>Projects 💼</h2>
 
     <div class="glass-card">
-       
-    
-      <h3>🌐 GitHub Website Creation Guide</h3>
+      <h3>🌐 GitHub Pages Deployment Guide</h3>
 
-      <div class="full-content" style="display:block; text-align:left;">
+      <div class="full-content">
+        <h4>Step 1</h4>
+        <p>Create GitHub account.</p>
 
-        <h4>🧩 Step 1: Create Account</h4>
-        <p>Go to GitHub and sign up.</p>
+        <h4>Step 2</h4>
+        <p>Create repository: username.github.io</p>
 
-        <h4>📁 Step 2: Create Repository</h4>
-        <ul>
-          <li>Name: yourusername.github.io</li>
-          <li>Public repository</li>
-        </ul>
+        <h4>Step 3</h4>
+        <p>Add index.html file</p>
 
-        <h4>💻 Step 3: Add index.html</h4>
-        <p>Create index.html file and add your code.</p>
+        <h4>Step 4</h4>
+        <p>Enable GitHub Pages</p>
 
-        <h4>⚙️ Step 4: Enable Pages</h4>
-        <p>Go to Settings → Pages → Deploy from branch.</p>
-
-        <h4>🌍 Step 5: Open Website</h4>
-        <p>Your site will be live after a few minutes.</p>
-
+        <h4>Step 5</h4>
+        <p>Your site goes live 🚀</p>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ARTICLES -->
-<section id="articles">
+<section id="articles" class="articles-section">
   <div class="card">
     <h2>Articles 📝</h2>
 
     <div class="article-card">
-      <h3>📊 Database Systems</h3>
-      <p>Complete guide to ER models, SQL, and real-world systems.</p>
+      <h3>Database Systems</h3>
+      <p>ER models, SQL basics, real-world systems.</p>
       <a href="article-1.html">Read More →</a>
     </div>
 
     <div class="article-card">
-      <h3>💻 Programming Fundamentals</h3>
-      <p>Learn variables, loops, conditions, and memory concepts.</p>
+      <h3>Programming Fundamentals</h3>
+      <p>Variables, loops, conditions, memory model.</p>
       <a href="article-2.html">Read More →</a>
     </div>
 
   </div>
 </section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="card">
@@ -113,28 +105,6 @@
 
 </main>
 
-<script>
-// SECTION SWITCH
-function showSection(id) {
-  document.querySelectorAll("section").forEach(sec => {
-    sec.classList.remove("active");
-  });
-  document.getElementById(id).classList.add("active");
-}
-
-// READ MORE TOGGLE
-function toggleArticle(btn) {
-  const content = btn.previousElementSibling;
-
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    btn.innerText = "Read More";
-  } else {
-    content.style.display = "block";
-    btn.innerText = "Show Less";
-  }
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
