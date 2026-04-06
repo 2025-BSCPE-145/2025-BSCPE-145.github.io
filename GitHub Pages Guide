@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Pages Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+
+    h1, h2, h3 {
+      color: #58a6ff;
+    }
+
+    code {
+      background: #161b22;
+      padding: 5px;
+      display: block;
+      border-radius: 5px;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #161b22;
+      border-radius: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      color: #3fb950;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🌐 Create & Host Your Website for Free (GitHub Pages)</h1>
+
+<div class="section">
+  <h2>🧩 1. Create a GitHub Account</h2>
+  <p>Go to: https://github.com</p>
+  <ul>
+    <li>Username</li>
+    <li>Email</li>
+    <li>Password</li>
+  </ul>
+  <p>Verify your email</p>
+  <p class="highlight">✅ You’re ready when you see your dashboard</p>
+</div>
+
+<div class="section">
+  <h2>📁 2. Create a New Repository</h2>
+  <ul>
+    <li>Click “+” → New repository</li>
+    <li>Repository name → <b>yourusername.github.io</b></li>
+    <li>Visibility → Public</li>
+  </ul>
+
+  <p>📌 Example:</p>
+  <code>noori-dev.github.io</code>
+</div>
+
+<div class="section">
+  <h2>💻 3. Add Your Website Files</h2>
+  <ul>
+    <li>index.html (required)</li>
+    <li>style.css (optional)</li>
+    <li>script.js (optional)</li>
+  </ul>
+
+  <p>📌 Structure:</p>
+  <code>
+/project<br>
+├── index.html<br>
+├── style.css<br>
+└── script.js
+  </code>
+</div>
+
+<div class="section">
+  <h2>✍️ 4. Upload Code to GitHub</h2>
+
+  <h3>Option A: Easy</h3>
+  <ul>
+    <li>Add file → Upload files</li>
+    <li>Drag & drop</li>
+    <li>Commit changes</li>
+  </ul>
+
+  <h3>Option B: Git</h3>
+  <code>
+git init<br>
+git add .<br>
+git commit -m "Initial commit"<br>
+git branch -M main<br>
+git remote add origin https://github.com/username/repo.git<br>
+git push -u origin main
+  </code>
+</div>
+
+<div class="section">
+  <h2>🌿 5. Create a Branch (Optional)</h2>
+  <p>Name it:</p>
+  <code>gh-pages</code>
+  <p>Keeps your main code separate from deployment</p>
+</div>
+
+<div class="section">
+  <h2>⚙️ 6. Enable GitHub Pages</h2>
+  <ul>
+    <li>Go to Settings → Pages</li>
+    <li>Select branch: main or gh-pages</li>
+    <li>Folder: /root</li>
+    <li>Click Save</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🔗 7. Get Your Website Link</h2>
+  <code>https://yourusername.github.io/</code>
+  <p class="highlight">🎉 Your site is LIVE!</p>
+</div>
+
+<div class="section">
+  <h2>🎨 8. Customize Your Website</h2>
+
+  <h3>✔ Custom Domain</h3>
+  <p>Buy from GoDaddy or Namecheap</p>
+
+  <h3>✔ Enable HTTPS</h3>
+  <p>Turn on “Enforce HTTPS”</p>
+</div>
+
+<div class="section">
+  <h2>⚡ 9. Update Anytime</h2>
+  <ul>
+    <li>Edit files</li>
+    <li>Commit changes</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🧪 10. Test Before Publishing</h2>
+  <ul>
+    <li>Check broken links</li>
+    <li>Check CSS errors</li>
+    <li>Check JS console</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🚀 11. Pro Tips</h2>
+
+  <h3>Responsive Design</h3>
+  <code>
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+  </code>
+
+  <h3>Clean URLs</h3>
+  <code>site.com/page/</code>
+
+  <h3>README File</h3>
+  <code>README.md</code>
+
+  <h3>.gitignore</h3>
+  <code>
+node_modules/<br>
+.DS_Store
+  </code>
+</div>
+
+<div class="section">
+  <h2>⚠️ Common Mistakes</h2>
+  <ul>
+    <li>No index.html</li>
+    <li>Wrong branch</li>
+    <li>Files in wrong folder</li>
+    <li>Case-sensitive errors</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>📦 Bonus Features</h2>
+  <ul>
+    <li>Animations (CSS/JS)</li>
+    <li>Dark Mode 🌙</li>
+    <li>Contact Form</li>
+    <li>Analytics</li>
+    <li>SEO</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🧠 Summary</h2>
+  <ul>
+    <li>Free hosting 💸</li>
+    <li>Fast deployment 🚀</li>
+    <li>Easy updates 🔄</li>
+  </ul>
+</div>
+
+</body>
+</html>
