@@ -1,208 +1,137 @@
+/* =========================
+   DOM READY
+========================= */
 document.addEventListener("DOMContentLoaded", () => {
-  initSectionSystem();
+
+  handleLoader();
+  handleTheme();
+  handleScrollReveal();
+  handleSmoothScroll();
+  handleNavbarEffect();
+  handleSidebar();
+
 });
 
-/* ============================
-   SECTION SYSTEM (IMPROVED)
-============================ */
-function initSectionSystem() {
-  const navButtons = document.querySelectorAll("[data-section]");
-  const sections = document.querySelectorAll("main section");
 
-  // Use event delegation for better performance (1 listener instead of many)
-  document.querySelector("nav").addEventListener("click", (e) => {
-    const btn = e.target.closest("[data-section]");
-    if (!btn) return;
+/* =========================
+   LOADER
+========================= */
+function handleLoader() {
+  const loader = document.getElementById("loader");
 
-    const targetId = btn.dataset.section;
-    switchSection(targetId, btn, sections, navButtons);
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+
+    if (loader) {
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+      }, 500);
+    }
   });
 }
-// ================= LOADER =================
-window.addEventListener("load", () => {
-  document.getElementById("loader").style.display = "none";
-  document.body.classList.add("loaded");
-});
 
-// ================= SIDEBAR =================
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
 
-// ================= BLOG CMS (JSON LOADER) =================
-fetch("articles.json")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("articles-container");
+/* =========================
+   DARK / LIGHT MODE
+========================= */
+function handleTheme() {
+  const toggle = document.getElementById("themeToggle");
 
-    data.forEach(article => {
-      container.innerHTML += `
-        <a href="article-view.html?id=${article.id}" class="card link-card">
-          <h3>${article.title}</h3>
-        </a>
-      `;
-    });
-  });
-
-// ================= ARTICLE VIEW PAGE =================
-if (window.location.pathname.includes("article-view.html")) {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-
-  fetch("articles.json")
-    .then(res => res.json())
-    .then(data => {
-      const article = data.find(a => a.id == id);
-
-      if (article) {
-        document.getElementById("article-title").innerText = article.title;
-        document.getElementById("article-content").innerText = article.content;
-      }
-    });
-}
-// ================= MENU =================
-function toggleMenu() {
-  document.getElementById("nav").classList.toggle("active");
-}
-
-// ================= THEME (SAVE MODE) =================
-function toggleTheme() {
-  document.body.classList.toggle("light");
-
-  // save preference
-  if (document.body.classList.contains("light")) {
-    localStorage.setItem("theme", "light");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
-}
-
-// load theme
-window.onload = () => {
-  const theme = localStorage.getItem("theme");
-  if (theme === "light") {
+  // Load saved theme
+  if (localStorage.getItem("theme") === "light") {
     document.body.classList.add("light");
   }
-  revealOnScroll();
-};
-// ================= SMOOTH PAGE LOAD =================
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
 
-// ================= ACTIVE LINK =================
-const links = document.querySelectorAll("nav a");
+  toggle?.addEventListener("click", () => {
+    document.body.classList.toggle("light");
 
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    links.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-
-// ================= SCROLL REVEAL =================
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+    if (document.body.classList.contains("light")) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
     }
   });
-}, { threshold: 0.1 });
+}
 
-document.querySelectorAll(".card, .section").forEach(el => {
-  observer.observe(el);
-});
-// ================= SCROLL ANIMATION =================
-function revealOnScroll() {
-  const elements = document.querySelectorAll(".card, .section");
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+/* =========================
+   SCROLL REVEAL (SECTIONS + CARDS)
+========================= */
+function handleScrollReveal() {
+
+  const revealElements = document.querySelectorAll(".section, .card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+
+        // stagger effect for cards
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 100);
+
       }
     });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-}
-
-// ================= ACTIVE NAV =================
-const links = document.querySelectorAll("nav a");
-
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    links.forEach(l => l.classList.remove("active-link"));
-    link.classList.add("active-link");
+  }, {
+    threshold: 0.15
   });
-});
 
-// ================= CONTACT FORM =================
-function submitForm(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-
-  if (name && email) {
-    alert("Message sent successfully 🚀");
-  } else {
-    alert("Please fill all fields!");
-  }
+  revealElements.forEach(el => observer.observe(el));
 }
-/* ============================
-   SWITCH SECTION LOGIC
-============================ */
-function switchSection(id, activeBtn, sections, navButtons) {
-  const target = document.getElementById(id);
-  if (!target) return;
 
-  // Hide all sections
-  sections.forEach(sec => sec.classList.remove("active"));
 
-  // Show target
-  target.classList.add("active");
+/* =========================
+   SMOOTH SCROLL
+========================= */
+function handleSmoothScroll() {
+  const links = document.querySelectorAll("a[href^='#']");
 
-  // Update nav state
-  navButtons.forEach(btn => btn.classList.remove("active"));
-  activeBtn.classList.add("active");
+  links.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
 
-  // Smooth UX scroll
-  scrollToTopSmooth();
+      const target = document.querySelector(link.getAttribute("href"));
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  });
 }
-// ============================
-// DARK MODE TOGGLE
-// ============================
-const toggleBtn = document.getElementById("darkToggle");
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
 
-    // save preference
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+function handleNavbarEffect() {
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
     } else {
-      localStorage.setItem("theme", "light");
+      navbar.style.boxShadow = "none";
     }
   });
 }
 
-// load saved theme
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-  }
-});
+/* =========================
+   SIDEBAR TOGGLE (MOBILE)
+========================= */
+function handleSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const openBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeBtn");
 
-/* ============================
-   SCROLL HANDLER (REUSABLE)
-============================ */
-function scrollToTopSmooth() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  openBtn?.addEventListener("click", () => {
+    sidebar?.classList.add("active");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    sidebar?.classList.remove("active");
   });
 }
