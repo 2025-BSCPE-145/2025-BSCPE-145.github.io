@@ -1,112 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Noor Fatima | Engineering Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Noor Fatima | Engineering Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <h1>Noor Fatima</h1>
-  <p>Computer Engineering Student | Problem Solver</p>
-</header>
+    <header>
+        <h1>Noor Fatima</h1>
+        <p>Computer Engineering Student | Problem Solver</p>
+    </header>
 
-<nav>
-  <button data-section="home" class="active">Home</button>
-  <button data-section="projects">Projects</button>
-  <button data-section="articles">Articles</button>
-  <button data-section="contact">Contact</button>
-</nav>
+    <nav>
+        <button data-section="home" class="active">Home</button>
+        <button data-section="projects">Projects</button>
+        <button data-section="articles">Articles</button>
+        <button data-section="contact">Contact</button>
+    </nav>
 
-<main>
-  <!-- HOME -->
-  <section id="home" class="active">
-    <div class="card">
-      <h2>Welcome 👋</h2>
-      <p>
-        This is my professional engineering portfolio showcasing my academic work,
-        programming skills, and development journey.
-      </p>
-    </div>
-  </section>
+    <main>
+        <!-- HOME -->
+        <section id="home" class="active">
+            <div class="card">
+                <h2>Welcome 👋</h2>
+                <p>
+                    This is my professional engineering portfolio showcasing my academic work, 
+                    programming skills, and development journey as a Computer Engineering student.
+                </p>
+            </div>
+        </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="card">
-      <h2>Projects 💼</h2>
-      
-      <div class="glass-card">
-        <h3>🌐 GitHub Pages Deployment Guide</h3>
-        <div class="full-content">
-          <h4>Step 1</h4>
-          <p>Create GitHub account.</p>
-          <h4>Step 2</h4>
-          <p>Create repository: username.github.io</p>
-          <h4>Step 3</h4>
-          <p>Add index.html file</p>
-          <h4>Step 4</h4>
-          <p>Enable GitHub Pages</p>
-          <h4>Step 5</h4>
-          <p>Your site goes live 🚀</p>
-        </div>
-      </div>
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="card">
+                <h2>Projects 💼</h2>
+                
+                <!-- Existing Project -->
+                <div class="glass-card">
+                    <h3>🌐 GitHub Pages Deployment Guide</h3>
+                    <div class="full-content">
+                        <h4>Step 1</h4>
+                        <p>Create GitHub account.</p>
+                        <h4>Step 2</h4>
+                        <p>Create repository: username.github.io</p>
+                        <h4>Step 3</h4>
+                        <p>Add index.html file</p>
+                        <h4>Step 4</h4>
+                        <p>Enable GitHub Pages</p>
+                        <h4>Step 5</h4>
+                        <p>Your site goes live 🚀</p>
+                    </div>
+                </div>
 
-      <!-- New Project Added -->
-      <div class="glass-card">
-        <h3> Machine Learning Project</h3>
-        <div class="full-content">
-          <p>My project on Machine Learning.</p>
-        </div>
-      </div>
+                <!-- Expanded Machine Learning Project -->
+                <div class="glass-card">
+                    <h3>🤖 Machine Learning Project</h3>
+                    <div class="full-content">
+                        <p><strong>Project Title:</strong> Simple Machine Learning Model for Prediction</p>
+                        <p>This project focuses on building and training a basic machine learning model using Python. 
+                           I implemented data preprocessing, model training, and evaluation techniques.</p>
+                        <p><strong>Technologies Used:</strong> Python, Scikit-learn, Pandas, Matplotlib</p>
+                        <p><strong>Key Learnings:</strong> Supervised learning, data cleaning, model accuracy evaluation, 
+                           and visualization of results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </div>
-  </section>
+        <!-- LEARNING ARTICLES -->
+        <section id="articles" class="articles-section">
+            <div class="card">
+                <h2>Learning Articles 📝</h2>
+                
+                <div class="article-card">
+                    <h3>Database Systems</h3>
+                    <p>ER models, SQL basics, real-world systems.</p>
+                    <a href="article-1.html">Read More →</a>
+                </div>
+                
+                <div class="article-card">
+                    <h3>Programming Fundamentals</h3>
+                    <p>Variables, loops, conditions, memory model.</p>
+                    <a href="article-2.html">Read More →</a>
+                </div>
+                
+                <div class="article-card">
+                    <h3>Object Oriented Programming (OOP)</h3>
+                    <p>Classes, objects, inheritance, polymorphism, and encapsulation.</p>
+                    <a href="article-3.html">Read More →</a>
+                </div>
+            </div>
+        </section>
 
-  <!-- LEARNING ARTICLES -->
-  <section id="articles" class="articles-section">
-    <div class="card">
-      <h2>Learning Articles 📝</h2>
-      
-      <div class="article-card">
-        <h3>Database Systems</h3>
-        <p>ER models, SQL basics, real-world systems.</p>
-        <a href="article-1.html">Read More →</a>
-      </div>
-      
-      <div class="article-card">
-        <h3>Programming Fundamentals</h3>
-        <p>Variables, loops, conditions, memory model.</p>
-        <a href="article-2.html">Read More →</a>
-      </div>
-      
-      <!-- New Article Added -->
-      <div class="article-card">
-        <h3>Object Oriented Programming (OOP)</h3>
-        <p>Classes, objects, inheritance, polymorphism, and encapsulation.</p>
-        <a href="article-3.html">Read More →</a>
-      </div>
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="card">
+                <h2>Contact 📞</h2>
+                <p>Email: NoorFatima45@example.com</p>
+                <p>
+                    GitHub: 
+                    <a href="https://github.com/2025-BSCPE-145" target="_blank">
+                        github.com/2025-BSCPE-145
+                    </a>
+                </p>
+                <p>Location: Pakistan 🇵🇰</p>
+            </div>
+        </section>
+    </main>
 
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="card">
-      <h2>Contact </h2>
-      <p>Email: NoorFatima45@example.com</p>
-      <p>
-        GitHub: 
-        <a href="https://github.com/2025-BSCPE-145" target="_blank">
-          github.com/2025-BSCPE-145
-        </a>
-      </p>
-      <p>Location: Pakistan 🇵🇰</p>
-    </div>
-  </section>
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
