@@ -57,7 +57,34 @@ body.loaded {
   font-size: 18px;
   z-index: 9999;
 }
+.content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.7;
+}
 
+.content h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.content h2 {
+  margin-top: 25px;
+  color: #58a6ff;
+}
+
+.content h3 {
+  margin-top: 18px;
+}
+
+.content ul {
+  margin-left: 20px;
+}
+
+.content li {
+  margin-bottom: 6px;
+}
 /* =========================
    NAVBAR
 ========================= */
