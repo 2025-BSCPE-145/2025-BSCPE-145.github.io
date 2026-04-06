@@ -1,5 +1,28 @@
-/* Enhanced style.css for Noor Fatima Portfolio */
+/* ============================
+   DESIGN SYSTEM (NEW)
+============================ */
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --text: #2c3e50;
+  --muted: #555;
 
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+
+  --shadow-sm: 0 5px 15px rgba(0,0,0,0.06);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 25px rgba(0,0,0,0.12);
+
+  --transition: all 0.25s ease;
+}
+
+/* ============================
+   GLOBAL RESET
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -9,157 +32,224 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #333;
+  color: var(--text);
   line-height: 1.7;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
+/* ============================
+   HEADER
+============================ */
 header {
   text-align: center;
   padding: 50px 20px 25px;
-  background: white;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
 }
 
 header h1 {
   font-size: 2.9rem;
-  color: #2c3e50;
+  color: var(--text);
   margin-bottom: 10px;
 }
 
 header p {
   font-size: 1.35rem;
-  color: #555;
+  color: var(--muted);
   font-weight: 300;
 }
 
+/* ============================
+   NAVIGATION
+============================ */
 nav {
   text-align: center;
   padding: 18px;
-  background: white;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 nav button {
-  background: none;
+  background: transparent;
   border: none;
   padding: 12px 24px;
   margin: 0 10px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.3s ease;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
   font-weight: 500;
+  color: var(--text);
 }
 
-nav button:hover,
-nav button.active {
-  background: #3498db;
+nav button:hover {
+  background: var(--primary);
   color: white;
   transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
+nav button.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* ============================
+   MAIN LAYOUT
+============================ */
 main {
   max-width: 1150px;
   margin: 35px auto;
   padding: 0 20px;
 }
 
+/* ============================
+   CARDS
+============================ */
 .card {
-  background: white;
-  border-radius: 18px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
   padding: 35px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-md);
   margin-bottom: 35px;
+  transition: var(--transition);
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass-style card */
 .glass-card {
-  background: rgba(255,255,255,0.97);
-  border-radius: 14px;
+  background: rgba(255,255,255,0.95);
+  border-radius: var(--radius-sm);
   padding: 25px;
   margin: 22px 0;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-  border: 1px solid #f0f0f0;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-3px);
 }
 
 .glass-card h3 {
-  color: #2980b9;
+  color: var(--primary-dark);
   margin-bottom: 16px;
   font-size: 1.45rem;
 }
 
-.glass-card p, .glass-card ul {
-  margin-bottom: 14px;
-}
-
-.glass-card ul {
-  padding-left: 20px;
-}
-
+/* ============================
+   HEADINGS
+============================ */
 h2 {
-  color: #2c3e50;
+  color: var(--text);
   margin-bottom: 28px;
   font-size: 2rem;
-  border-bottom: 4px solid #3498db;
+  border-bottom: 4px solid var(--primary);
   padding-bottom: 12px;
 }
 
 h3 {
-  color: #2980b9;
+  color: var(--primary-dark);
   margin-bottom: 14px;
 }
 
+/* ============================
+   ARTICLES
+============================ */
 .article-card {
-  background: white;
+  background: var(--surface);
   padding: 22px;
   margin: 16px 0;
-  border-radius: 14px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
 
 .article-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
 }
 
+/* ============================
+   LINKS
+============================ */
 a {
-  color: #3498db;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 500;
+  transition: var(--transition);
 }
 
 a:hover {
+  color: var(--primary-dark);
   text-decoration: underline;
-  color: #2980b9;
 }
 
-/* Better spacing for long content like ML project */
+/* ============================
+   CONTENT SPACING
+============================ */
 .full-content p {
   margin-bottom: 16px;
 }
 
 .full-content h4 {
-  color: #2c3e50;
+  color: var(--text);
   margin: 20px 0 10px;
   font-size: 1.15rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  header h1 { 
-    font-size: 2.3rem; 
+/* ============================
+   ANIMATIONS
+============================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-  nav button { 
-    display: block; 
-    margin: 10px auto; 
-    width: 85%; 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card, .glass-card, .article-card {
+  animation: fadeUp 0.5s ease;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  nav button {
+    display: block;
+    margin: 10px auto;
+    width: 85%;
     padding: 14px;
   }
+
   .card, .glass-card {
-    padding: 22px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
   }
 }
