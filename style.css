@@ -21,22 +21,59 @@ body {
 ============================ */
 header {
   text-align: center;
-  padding: 20px 10px;
-  margin-bottom: 20px;
+  padding: 30px 10px;
 }
 
 header h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.2rem;
   color: #38bdf8;
 }
 
+header p {
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
 /* ============================
-   SECTIONS SYSTEM
+   NAVIGATION
+============================ */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+nav button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.05);
+  color: #e2e8f0;
+
+  transition: 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+nav button:hover {
+  transform: translateY(-2px);
+  background: rgba(56, 189, 248, 0.15);
+}
+
+nav button.active {
+  background: #38bdf8;
+  color: #0b1220;
+}
+
+/* ============================
+   SECTION SYSTEM
 ============================ */
 section {
   display: none;
-  animation: fadeIn 0.4s ease-in-out;
+  animation: fadeIn 0.5s ease;
 }
 
 section.active {
@@ -49,118 +86,89 @@ section.active {
 }
 
 /* ============================
-   ARTICLES GRID (UPDATED)
+   CARD SYSTEM
+============================ */
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+/* ============================
+   ARTICLES GRID
 ============================ */
 .articles-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
 /* ============================
-   ARTICLE CARDS (MODERN)
+   ARTICLE CARDS
 ============================ */
 .article-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 18px;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-
   display: flex;
   flex-direction: column;
-  transition: 0.3s ease;
+
+  transition: 0.25s ease;
 }
 
 .article-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: #38bdf8;
 }
 
-/* Titles */
 .article-card h3 {
-  font-size: 1.2rem;
   color: #f8fafc;
-  margin-bottom: 10px;
 }
 
-/* Preview text */
 .article-card p {
-  font-size: 0.95rem;
   color: #cbd5e1;
-  margin-bottom: 15px;
+  margin: 10px 0;
 }
 
-/* Read More Button */
 .article-card a {
-  display: inline-block;
   margin-top: auto;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
 
   background: linear-gradient(135deg, #38bdf8, #2563eb);
   color: white;
   text-decoration: none;
+
+  border-radius: 10px;
   font-weight: 600;
-
-  transition: 0.2s ease;
-  text-align: center;
-}
-
-.article-card a:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
 }
 
 /* ============================
-   ARTICLE PAGE STYLE
+   ARTICLE PAGE
 ============================ */
 .article {
   max-width: 900px;
   margin: 30px auto;
 
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.04);
   border-radius: 16px;
   padding: 30px;
-
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-}
-
-/* ============================
-   HEADINGS
-============================ */
-h3 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: #f8fafc;
-}
-
-h4 {
-  margin-top: 18px;
-  font-size: 1.2rem;
-  color: #38bdf8;
-}
-
-h5 {
-  margin-top: 12px;
-  font-size: 1rem;
-  color: #fbbf24;
 }
 
 /* ============================
    TEXT
 ============================ */
-p {
-  margin-top: 8px;
-  color: #cbd5e1;
-}
+h3 { color: #f8fafc; font-size: 1.6rem; }
+h4 { color: #38bdf8; margin-top: 18px; }
+h5 { color: #fbbf24; margin-top: 12px; }
+
+p { color: #cbd5e1; margin-top: 8px; }
 
 /* ============================
    CODE BLOCKS
@@ -169,75 +177,24 @@ pre {
   background: #0b1220;
   border-left: 4px solid #38bdf8;
   padding: 12px;
-  margin-top: 10px;
   border-radius: 8px;
   overflow-x: auto;
-  color: #e2e8f0;
-  font-size: 0.9rem;
+  margin-top: 10px;
 }
 
 /* ============================
-   NAV BUTTONS
-============================ */
-.nav-btn,
-button[data-section] {
-  padding: 10px 14px;
-  margin: 5px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-
-  background: #1e293b;
-  color: #e2e8f0;
-
-  transition: 0.2s ease;
-}
-
-.nav-btn:hover,
-button[data-section]:hover {
-  background: #334155;
-}
-
-.nav-btn.active,
-button[data-section].active {
-  background: #38bdf8;
-  color: #0b1220;
-}
-
-/* ============================
-   BACK BUTTON
-============================ */
-.back-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 14px;
-
-  background: #1e293b;
-  color: #e2e8f0;
-
-  border-radius: 8px;
-  text-decoration: none;
-
-  transition: 0.2s ease;
-}
-
-.back-btn:hover {
-  background: #334155;
-}
-
-/* ============================
-   RESPONSIVE DESIGN
+   RESPONSIVE
 ============================ */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  nav button {
+    font-size: 0.9rem;
   }
 
   .article {
     padding: 18px;
-  }
-
-  pre {
-    font-size: 0.85rem;
   }
 }
