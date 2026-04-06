@@ -1,4 +1,28 @@
 /* =========================
+   ROOT VARIABLES (THEME)
+========================= */
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --border: #30363d;
+  --primary: #58a6ff;
+  --accent: #238636;
+}
+
+/* LIGHT MODE */
+body.light {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --accent: #16a34a;
+}
+
+/* =========================
    RESET
 ========================= */
 * {
@@ -9,10 +33,10 @@
 }
 
 body {
-  background: #0d1117;
-  color: #e6edf3;
+  background: var(--bg);
+  color: var(--text);
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease, background 0.3s, color 0.3s;
 }
 
 body.loaded {
@@ -25,11 +49,11 @@ body.loaded {
 #loader {
   position: fixed;
   inset: 0;
-  background: #0d1117;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #58a6ff;
+  color: var(--primary);
   font-size: 18px;
   z-index: 9999;
 }
@@ -47,27 +71,47 @@ body.loaded {
   align-items: center;
 
   padding: 15px 40px;
-  background: rgba(22, 27, 34, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #30363d;
+  background: rgba(22, 27, 34, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .logo {
   font-weight: 700;
-  color: #58a6ff;
+  color: var(--primary);
   letter-spacing: 0.5px;
 }
 
+/* NAV LINKS */
 nav a {
   margin-left: 18px;
   text-decoration: none;
-  color: #c9d1d9;
-  transition: 0.3s;
+  color: var(--text);
   position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
-  color: #58a6ff;
+  color: var(--primary);
 }
 
 /* =========================
@@ -85,7 +129,7 @@ nav a:hover {
 
 .hero p {
   margin-top: 10px;
-  color: #8b949e;
+  color: var(--muted);
 }
 
 /* =========================
@@ -117,11 +161,11 @@ nav a:hover {
    CARDS
 ========================= */
 .card {
-  background: #161b22;
-  border: 1px solid #30363d;
+  background: var(--card);
+  border: 1px solid var(--border);
   padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s ease;
+  border-radius: 14px;
+  transition: all 0.3s ease;
 
   opacity: 0;
   transform: translateY(15px);
@@ -133,8 +177,9 @@ nav a:hover {
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: #58a6ff;
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* clickable cards */
@@ -150,7 +195,7 @@ nav a:hover {
 .btn {
   display: inline-block;
   padding: 12px 22px;
-  background: #238636;
+  background: var(--accent);
   color: #fff;
   border-radius: 8px;
   margin-top: 15px;
@@ -159,11 +204,12 @@ nav a:hover {
 }
 
 .btn:hover {
-  background: #2ea043;
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 /* =========================
-   SIDEBAR (optional)
+   SIDEBAR
 ========================= */
 .sidebar {
   position: fixed;
@@ -171,10 +217,10 @@ nav a:hover {
   top: 0;
   width: 260px;
   height: 100%;
-  background: #161b22;
+  background: var(--card);
   padding: 20px;
   transition: 0.3s ease;
-  border-right: 1px solid #30363d;
+  border-right: 1px solid var(--border);
 }
 
 .sidebar.active {
@@ -183,13 +229,13 @@ nav a:hover {
 
 .sidebar a {
   display: block;
-  color: #e6edf3;
+  color: var(--text);
   margin: 15px 0;
   text-decoration: none;
 }
 
 .sidebar a:hover {
-  color: #58a6ff;
+  color: var(--primary);
 }
 
 /* =========================
@@ -198,7 +244,29 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 30px;
-  color: #8b949e;
-  border-top: 1px solid #30363d;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
   margin-top: 50px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
 }
