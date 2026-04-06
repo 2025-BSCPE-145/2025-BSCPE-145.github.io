@@ -1,44 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dev Portfolio</title>
+
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="logo">GitHub Portfolio</div>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="articles.html">Articles</a>
+    <a href="#projects">Projects</a>
+    <a href="#articles">Articles</a>
   </nav>
 </header>
 
+
+<!-- ================= HERO ================= -->
 <section class="hero">
   <h1>Hi, I'm a Developer 👋</h1>
   <p>Welcome to my professional GitHub portfolio website.</p>
 </section>
 
-<section class="section">
-  <h2>Featured Work 🚀</h2>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+  <h2>Projects 🚀</h2>
 
   <div class="grid">
+
+    <!-- PROJECT 1 -->
     <div class="card">
-      <h3>GitHub Website Hosting</h3>
-      <p>Learn how to deploy a website using GitHub Pages.</p>
+      <h3>🌐 GitHub Website (Hosting Guide)</h3>
+      <p>
+        Learn how to create and host a website using GitHub Pages.
+        Includes step-by-step link template setup and deployment process.
+      </p>
     </div>
 
+    <!-- PROJECT 2 -->
     <div class="card">
-      <h3>Machine Learning Project</h3>
-      <p>Basic ML model using Python and dataset training.</p>
+      <h3>🤖 Machine Learning Project</h3>
+      <p>
+        A beginner-friendly machine learning project using Python.
+        Covers dataset training, preprocessing, and prediction model.
+      </p>
     </div>
+
   </div>
 </section>
+
+
+<!-- ================= ARTICLES ================= -->
+<section id="articles" class="section">
+  <h2>Articles 📝</h2>
+
+  <div class="grid">
+
+    <!-- ARTICLE 1 -->
+    <div class="card">
+      <h3>📘 Programming Fundamentals</h3>
+      <p>
+        Learn the basics of programming including variables, syntax,
+        and problem-solving logic.
+      </p>
+    </div>
+
+    <!-- ARTICLE 2 -->
+    <div class="card">
+      <h3>🔁 Loops in Programming</h3>
+      <p>
+        Understand for loop, while loop, and how iteration works in programming languages.
+      </p>
+    </div>
+
+    <!-- ARTICLE 3 -->
+    <div class="card">
+      <h3>🗄️ Database Systems</h3>
+      <p>
+        Introduction to databases, SQL queries, and how data is stored and managed.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>© 2026 GitHub Portfolio | Built with HTML & CSS</p>
+</footer>
 
 </body>
 </html>
