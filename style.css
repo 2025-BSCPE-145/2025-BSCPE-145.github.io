@@ -8,7 +8,11 @@ body {
   background: #0d1117;
   color: #e6edf3;
 }
-
+.link-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 /* NAVBAR */
 .navbar {
   background: #161b22;
