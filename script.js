@@ -18,6 +18,48 @@ function initSectionSystem() {
     switchSection(targetId, btn, sections, navButtons);
   });
 }
+// ================= LOADER =================
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
+  document.body.classList.add("loaded");
+});
+
+// ================= SIDEBAR =================
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+// ================= BLOG CMS (JSON LOADER) =================
+fetch("articles.json")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("articles-container");
+
+    data.forEach(article => {
+      container.innerHTML += `
+        <a href="article-view.html?id=${article.id}" class="card link-card">
+          <h3>${article.title}</h3>
+        </a>
+      `;
+    });
+  });
+
+// ================= ARTICLE VIEW PAGE =================
+if (window.location.pathname.includes("article-view.html")) {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  fetch("articles.json")
+    .then(res => res.json())
+    .then(data => {
+      const article = data.find(a => a.id == id);
+
+      if (article) {
+        document.getElementById("article-title").innerText = article.title;
+        document.getElementById("article-content").innerText = article.content;
+      }
+    });
+}
 // ================= MENU =================
 function toggleMenu() {
   document.getElementById("nav").classList.toggle("active");
