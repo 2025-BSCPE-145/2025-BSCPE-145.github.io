@@ -3,34 +3,29 @@
 <head>
   <title>Articles</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
+<!-- LOADER -->
+<div id="loader">Loading Articles...</div>
+
 <header class="navbar">
-  <div class="logo">Articles</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="articles.html">Articles</a>
-  </nav>
+  <div class="logo">Blog CMS</div>
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 </header>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="article.html">Articles</a>
+</div>
 
 <section class="section">
   <h2>Articles 📝</h2>
-
-  <div class="grid">
-
-    <a href="article1.html" class="card link-card">
-      <h3>📘 GitHub Website Guide</h3>
-      <p>Step-by-step guide to host your website on GitHub Pages.</p>
-    </a>
-
-    <a href="article2.html" class="card link-card">
-      <h3>🤖 Machine Learning Basics</h3>
-      <p>Introduction to ML concepts and beginner projects.</p>
-    </a>
-
-  </div>
+  <div id="articles-container"></div>
 </section>
 
 </body>
