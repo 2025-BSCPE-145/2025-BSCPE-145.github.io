@@ -1,7 +1,30 @@
 /* ============================
+   DOM READY
+============================ */
+document.addEventListener("DOMContentLoaded", () => {
+
+  initSectionSystem();
+  initReadMoreSystem();
+
+});
+
+
+/* ============================
    SECTION SWITCHING SYSTEM
 ============================ */
-function showSection(id, el) {
+function initSectionSystem() {
+  const navButtons = document.querySelectorAll("[data-section]");
+
+  navButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-section");
+      showSection(targetId, btn);
+    });
+  });
+}
+
+
+function showSection(id, clickedBtn) {
   const targetSection = document.getElementById(id);
 
   if (!targetSection) {
@@ -14,46 +37,59 @@ function showSection(id, el) {
     sec.classList.remove("active");
   });
 
-  // Show selected section
+  // Show target section
   targetSection.classList.add("active");
 
-  // Reset nav buttons
-  document.querySelectorAll("nav button").forEach(btn => {
+  // Update active nav button
+  document.querySelectorAll("[data-section]").forEach(btn => {
     btn.classList.remove("active");
-    btn.setAttribute("aria-selected", "false");
   });
 
-  // Activate clicked button
-  if (el) {
-    el.classList.add("active");
-    el.setAttribute("aria-selected", "true");
+  if (clickedBtn) {
+    clickedBtn.classList.add("active");
   }
+
+  // Smooth scroll to top of section
+  targetSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 
 /* ============================
-   ARTICLE TOGGLE SYSTEM (FIXED + CLEAN)
+   READ MORE / READ LESS SYSTEM
 ============================ */
-function toggleArticle(button) {
-  const article = button.closest(".article-card");
+function initReadMoreSystem() {
+  const articles = document.querySelectorAll(".article");
 
-  if (!article) {
-    console.warn("Article card not found.");
-    return;
-  }
+  articles.forEach(article => {
 
-  const content = article.querySelector(".full-content");
+    const content = article.querySelector(".full-content");
 
-  if (!content) {
-    console.warn("Full content not found.");
-    return;
-  }
+    if (!content) return;
 
-  // Toggle state
-  article.classList.toggle("open");
+    // Create toggle button dynamically
+    const btn = document.createElement("button");
+    btn.className = "read-more-btn";
+    btn.textContent = "Read Less";
 
-  const isOpen = article.classList.contains("open");
+    content.after(btn);
 
-  // Update button text
-  button.innerText = isOpen ? "Show Less" : "Read More";
+    let expanded = true;
+
+    btn.addEventListener("click", () => {
+      expanded = !expanded;
+
+      if (expanded) {
+        content.style.maxHeight = "none";
+        btn.textContent = "Read Less";
+      } else {
+        content.style.maxHeight = "200px";
+        content.style.overflow = "hidden";
+        btn.textContent = "Read More";
+      }
+    });
+
+  });
 }
